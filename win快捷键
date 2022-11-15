@@ -1,0 +1,22 @@
+alt+tab    快速切换窗口
+alt+f4     快速关闭打开窗口
+按下win键  弹出开始菜单
+win+r      调出运行窗口
+	cmd       打开命令行
+	regedit   打开注册表
+	control   打开控制面板
+	mstsc     启动远程连接窗口
+	taskmgr   打开任务管理器
+	mspaint   打开画图板
+	notepad   打开记事本
+	calc      打开计算器
+	winWord   打开word
+	mmc       打开控制台
+	services.msc 启动本地服务操作窗口
+win+e       打开我的电脑
+win+d       返回桌面
+win+l       锁定电脑
+win+f       搜索文件
+win+x       快捷方式菜单列表
+win+tab     3D可视化切换
+win+u       打开设置
