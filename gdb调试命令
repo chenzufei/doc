@@ -1,0 +1,17 @@
+l                   显示源代码
+b                   设置断点
+delete              删除断点
+disable             暂停断点
+enable              开启断点
+clear               清除断点
+delete breakpoints  清除所有断点
+info breakpoints    显示断点信息
+i                   查看信息
+n                   执行下条语句（不会进入函数）
+s                   执行下条语句(会进入函数)
+r                   运行程序
+c                   断点后继续
+p                   打印变量值
+q                   退出gdb调试
+until               退出循环体
+finish              直到当前函数返回
