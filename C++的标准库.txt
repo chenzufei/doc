@@ -1,0 +1,10 @@
+C++的标准库分类:
+1、	C库
+2、	标准的C++库：包括C++ I/O库、String库、数值库等
+3、	标准模板库（STL）
+
+备注：
+1.stl是指的标准模板库,是Standard Template Library的简称。在C++标准中，STL被组织为下面的13个头文件：
+<algorithm>、<deque>、<functional>、<iterator>、<vector>、<list>、<map>、<memory>、<numeric>、<queue>、<set>、<stack>和<utility>。
+
+2.std是命名空间的名字,是Standard的简称。
