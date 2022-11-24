@@ -1,0 +1,26 @@
+1、c++
+Class A {
+  int x;
+}
+
+A a;             //生成a对象，在栈(stack)上分配空间
+a.x = 1;
+
+A *a = new A();  //生成a对象，在堆(heap)上分配空间
+a->x = 1;
+
+2、java
+Class A {
+  int x;
+}
+
+A a；              //只是声明，没有分配空间
+A a = new A();     //生成a对象
+a.x = 1;
+
+3、python
+class A:
+   x = 1
+
+a = A()           //生成a对象
+a.x = 2
