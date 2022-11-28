@@ -1,6 +1,6 @@
 ![image](st_mode.jpg)
 
-st_mode 主要包含了3部分信息：
+st_mode 主要包含了3部分信息：  
 a. 15bit ~ 12bit 保存文件类型  
 b. 11bit ~ 9bit  保存执行文件时设置的信息  
 c. 8bit ~ 0bit   保存文件访问权限  
