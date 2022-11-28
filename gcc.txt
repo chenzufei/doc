@@ -1,0 +1,9 @@
+gcc -c 生成.o文件
+gcc -o 输出文件
+gcc -g 产生调试信息
+gcc -O -O1 -O2 -O3   优化选项
+gcc -llibrary  连接名为library的库文件     （小写l）
+gcc -Idir      添加dir目录为头文件搜索路径 （大写i）
+gcc -Ldir      添加dir目录为库文件搜索路径 （大写l）
+gcc -static    静态连接库文件(xxx.a)
+gcc -share     动态连接库文件(xxx.so)
