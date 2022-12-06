@@ -1,0 +1,128 @@
+1、进程相关
+ps          命令显示系统中运行的进程
+ps -ef      显示系统中所有进程的全面信息
+ps -aux     终端上所有用户的有关进程的全部信息
+kill        终止进程
+free        显示可用内存
+top         显示系统的处理器活动
+
+2、文件操作
+ls          显示当前目录下文件列表
+cp          将文件从源复制到目标
+mv          把文件从一个地方移动到另外一个地方
+cat         查看文件内容
+stat        查看文件属性信息
+cd          切换到不同的目录
+pwd         显示当前目录的路径
+touch       创建文件
+rm          删除文件或目录(-r)
+mkdir       创建目录
+echo        打印字符或者回显
+echo Hello World > log.txt   覆盖写
+echo Hello World2 >> log.txt 追加写
+find        用于搜索文件、字符串和目录的查找命令
+find / -name "sharplee"
+lsof        表示所有打开的文件的列表（list open files）
+chmod       修改文件的mode
+
+
+
+打包和压缩
+tar -zcvf ab.tar.gz 1.txt 2.txt
+tar -zxvf ab.tar.gz
+
+备注
+c:打包
+z:压缩
+x:解压
+
+打包格式：.tar
+压缩格式：.gz
+打包并压缩：.tar.gz
+
+3、用户及权限
+useradd or adduser    添加用户
+userdel               删除用户
+passwd                更改使用者密码
+su                    切换登录用户
+sudo                  权限赋予
+
+4、系统
+shutdown   关机
+poweroff   关机
+reboot     重启
+history    查看历史
+du         空间统计
+du -ah --max-depth=1
+df
+
+5、网络
+ping          检测主机
+ifconfig      显示或设置网络设备（来源于net-tools）
+ip            和 ifconfig 类似（iproute2套件）
+route         显示和操作 IP 路由表
+netstat       查看当前操作系统的网络连接状态、路由表、接口统计等信息
+tcpdump       网络数据包截获分析工具（wireshark是tcpdump的图形化版本）
+traceroute    对网络进行故障排除
+
+
+6、挂在盘
+fdisk    查看磁盘情况
+mkfs        指将分区格式化成不同的文件系统
+mount       挂载
+umount      卸载
+
+7、其他
+xargs 可以将管道或标准输入（stdin）数据转换成命令行参数，比如：
+lsof | grep deleted |awk '{print $2}' |xargs kill -9
+
+Linux命令文本三剑客sed、grep、awk：
+
+grep: grep命令主要用于过滤文本
+grep [选项] PATTERN 文件1 文件2
+-n, --line-number                    在过滤出的每一行前面加上它在文件中的相对行号
+-o, --only-matching                  只显示匹配的内容
+-q, --quiet, --silent                静默模式，没有任何输出，得用$?来判断执行成功没有，即有没有过滤到想要的内容
+--color                              颜色
+-i, --ignore-case                    忽略大小写
+-A, --after-context=NUM              如果匹配成功，则将匹配行及其后n行一起打印出来
+-B, --before-context=NUM             如果匹配成功，则将匹配行及其前n行一起打印出来
+-C, --context=NUM                    如果匹配成功，则将匹配行及其前后n行一起打印出来
+-c, --count                          如果匹配成功，则将匹配到的行数打印出来
+-v, --invert-match                   反向查找，只显示不匹配的行
+-w                                   匹配单词
+-E                                   等于egrep，扩展
+-l, --files-with-matches             如果匹配成功，则只将文件名打印出来，失败则不打印
+                                     通常-rl一起用，grep -rl 'root' /etc 
+-R, -r, --recursive                  递归
+
+示例：
+grep nobody /etc/passwd
+cat xxx.txt |grep -a "xxx"
+cat xxx.txt |grep -v "xxx"        反转
+grep bash$ /etc/passwd            列出文件中以“bash”结尾的所有行
+
+
+awk
+awk 选项 '模式或条件{编辑指令}' 文件1 文件2  #过滤并输出文件中符合条件的内容
+awk 用$0 表示整个行，不同的字段之间是通过指定的字符分隔。awk 默认的分隔符是空格。awk 允许在命令行中 用“-F 分隔符”的形式来指定分隔符。
+cat /etc/passwd | awk -F ":" '{print$1,$3,$4}'
+
+sed：
+sed [选项] ‘[动作]’ 文件名
+| sed [选项] ‘[动作]’      //配合管道使用
+
+选项：
+-n: 取消默认输出，配合动作p来输出想输出的行
+-e: 允许对输入数据应用多条sed命令
+-i: 直接修改读取数据的文件，而不输出到屏幕
+
+动作：
+p: 打印。       sed -n ‘2p’ a.txt （打印第2行）
+                sed -n ‘5,8p’ a.txt （打印第5到第8行）
+                sed -n ‘1~2p’ a.txt（打印所有奇数行） 步进~（波浪形前的数字表示起始行，波浪线后的数字表示步进长度）
+a: 追加。       sed ‘2a hello’ a.txt (在第2行后边追加hello)
+i: 插入。       sed ‘2i hello’ a.txt (在第2行前边插入hello)
+d: 删除。       sed ‘2,4d’ a.txt (删除第2行到第4行的数据)
+c: 行替换。     sed ‘2c hello’ a.txt (把第2行的内容替换成hello)
+s: 字符串替换。 sed ‘5s/旧字符串/新字符串/g’ a.txt （5代表处理对象是第5行，g是全局替换）
