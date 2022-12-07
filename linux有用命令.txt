@@ -52,9 +52,7 @@ shutdown   关机
 poweroff   关机
 reboot     重启
 history    查看历史
-du         空间统计
-du -ah --max-depth=1
-df
+
 
 5、网络
 ping          检测主机
@@ -66,11 +64,18 @@ tcpdump       网络数据包截获分析工具（wireshark是tcpdump的图形�
 traceroute    对网络进行故障排除
 
 
-6、挂在盘
-fdisk    查看磁盘情况
+6、磁盘相关
+lsblk       列出所有可用块设备的信息(list block)
+fdisk       查看磁盘情况
+du          检查磁盘空间使用量（disk used）
+du -ah --max-depth=1
+df         列出文件系统的整体磁盘使用量(disk free)
 mkfs        指将分区格式化成不同的文件系统
 mount       挂载
 umount      卸载
+iostat      监视系统输入输出设备和 CPU 的使用情况
+iotop       监视磁盘 I/O 状态
+
 
 7、其他
 xargs 可以将管道或标准输入（stdin）数据转换成命令行参数，比如：
