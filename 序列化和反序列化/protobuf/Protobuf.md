@@ -1,7 +1,11 @@
 
 # 简介
-常见的序列化和反序列化的格式就是json格式、XML格式。
-Protobuf是Google开发的一种用于序列化结构化数据的语言，Protobuf编译器会将.proto文件编译生成对应的数据访问类。
+常见的序列化和反序列化的格式就是json格式、XML格式。   
+Protobuf是Google开发的一种用于序列化结构化数据的语言，Protobuf编译器会将.proto文件编译生成对应的数据访问类。   
+
+# 优缺点
+优点：性能高效   
+缺点：自解释性较差   
 
 
 # protobuf下载网址
