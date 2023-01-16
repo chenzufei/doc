@@ -1,0 +1,49 @@
+1、覆盖率工具gcov/lcov：
+gcov是gnu工具集自带的工具，用来统计代码覆盖率，不过只有文本信息；
+lcov工具可以理解成gcov工具的前端，根据gcov的数据生成可视化的报告，可以很直观的来看单元测试的代码覆盖率。
+
+lcov安装见：https://github.com/zhaoyf22/lcov/
+
+2、在CMakelists中新增
+SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fprofile-arcs -ftest-coverage")              c
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")      c++
+
+3、跑单元测试（比如gtest）
+
+4、进入build目录生成覆盖率文件
+lcov -c -d . -o name.info
+genhtml  name.info
+
+5、问题：执行lcov时，报Can’t locate IO/Uncompress/Gunzip.pm，解决方案：当前perl版本为v5.16.0,升级到v5.30.0可解决
+wget www.cpan.org/src/5.0/perl-5.30.0.tar.gz
+tar -zxvf perl-5.30.0.tar.gz
+./Configure -des -Dprefix=/usr/local/perl
+#进入解压目录
+make
+make test
+make install
+mv /usr/bin/perl /usr/bin/perl.bakshell
+ln -s /usr/local/perl/bin/perl /usr/bin/perl
+
+6、优化
+（1）加入开关：CMakelists中新增
+OPTION (COVERAGE "Use gcov" OFF)
+MESSAGE(STATUS COVERAGE=${COVERAGE})
+IF(COVERAGE)
+    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
+ENDIF()
+
+cmake .. -DCOVERAGE=ON
+
+（2）lcov集成到CMakelists中
+ADD_CUSTOM_TARGET(lcov
+    COMMAND rm -rf Coverage
+    COMMAND lcov -c -i -d ../.. -o init.info # 创建baseline coverage数据文件
+    COMMAND lcov -c -d ../.. -o tests.info # 创建coverage数据文件
+    COMMAND lcov -a init.info -a tests.info -o all.info # 合并baseline and test coverage data
+    COMMAND lcov -r all.info '/usr/include/*' -o final.info # 删除unnneeded files
+    COMMAND lcov -r final.info '*.h' -o final.info # 删除头文件
+    COMMAND genhtml --title "fs unit test" --legend -o ../../Coverage final.info # 生成html报告，目录名为Coverage
+    COMMAND rm -rf init.info tests.info all.info final.info # 删除coverage数据文件
+)
+make lcov
