@@ -1,0 +1,79 @@
+
+1、简介
+CUnit是一种C语言单元测试框架 ，CUnit以静态库的形式提供给用户使用，用户编写程序的时候直接链接此静态库就可以了。
+它提供了一个简单的单元测试框架，并且为常用的数据类型提供了丰富的断言语句支持。
+官网：https://cunit.sourceforge.net/
+
+2、框架
+CUnit的测试是单线程启动，只能注册一个Test Registry， 
+一次测试（Test Registry）可以运行多个测试包（Test Suite），
+而每个测试包可以包括多个测试用例（Test Case），
+每个测试用例又包含一个或者多个断言类的语句。
+
+3、示例：
+
+(1)testcase.c
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <CUnit/CUnit.h>
+#include <CUnit/Automated.h>
+#include <CUnit/TestDB.h>
+
+void test_1()
+{
+  xxx
+  CU_ASSERT_EQUAL(xxx，1）；
+}
+
+void test_2()
+{
+  xxx
+  CU_ASSERT_EQUAL(xxx，1）；
+}
+
+CU_TestInfo testcases[] = {
+{"test_1"， test_1}，
+{"test_2"， test_2}，
+CU_TEST_INFO_NULL
+};
+
+/* test suites*/
+CU_SuiteInfo suites[] = {
+{ "xxx"， NULL， NULL， testcases}，
+  CU_SUITE_INFO_NULL
+};
+
+void AddTests(void)
+{
+	assert(NULL != CU_get_registry());
+	assert(!CU_is_test_running());
+	CU_register_suites(suites);
+
+	return;
+}
+
+(2) main.c
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <assert.h>
+#include "Basic.h"
+
+int main(int argc， char* argv[])
+{
+    CU_BasicRunMode mode = CU_BRM_VERBOSE;
+    CU_ErrorAction error_action = CUEA_IGNORE;
+
+    CU_initialize_registry();
+    AddTests();
+    CU_basic_set_mode(mode);
+    CU_set_error_action(error_action);
+    CU_basic_run_tests();
+    CU_cleanup_registry();
+    return 0;
+}
+
+4、
