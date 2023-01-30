@@ -20,3 +20,5 @@ win+f       搜索文件
 win+x       快捷方式菜单列表
 win+tab     3D可视化切换
 win+u       打开设置
+
+
