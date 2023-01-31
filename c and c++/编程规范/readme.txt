@@ -11,7 +11,7 @@ https://github.com/isocpp/CppCoreGuidelines
 
 4、检查及格式化（clang-tidy和clang-format）
 （1）vscode需要安装clangd插件
-（2）linux上需要安装llvm（https://github.com/llvm/llvm-project）
+（2）linux上需要安装llvm（https://github.com/llvm/llvm-project  clang+llvm-15.0.6-x86_64-linux-gnu-ubuntu-18.04.tar.xz）
 
 备注：
 （1）CMakeListx.txt中加入set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
