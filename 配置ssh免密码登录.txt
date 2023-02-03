@@ -1,0 +1,5 @@
+1、使用ssh-keygen产生公钥与私钥对。
+ssh-keygen -t rsa     //生成私有密钥id_rsa和公有密钥id rsa.pub两个文件
+
+2、用ssh-copy-id将公钥复制到远程机器中
+ssh-copy-id remote_ip
