@@ -23,6 +23,7 @@ echo Hello World2 >> log.txt 追加写
 find        用于搜索文件、字符串和目录的查找命令
 find / -name "sharplee"
 lsof        表示所有打开的文件的列表（list open files）
+  lsof | grep deleted |awk '{print $2}' |xargs kill -9     文件标记为“deleted”时，关闭进程
 chmod       修改文件的mode
 
 
