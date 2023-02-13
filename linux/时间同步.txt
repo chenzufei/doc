@@ -1,0 +1,38 @@
+
+1、常见时区
+UTC：通用协调时(UTC, Universal Time Coordinated)
+GMT：格林威治标准时间 (Greenwich Mean Time)，与UTC基本相同
+CST：中国标准时间 (China Standard Time)    GMT + 8 = UTC + 8 = CST
+
+2、timedatectl
+timedatectl status                              #查看时间配置
+timedatectl set-time 15:58:30                   #只设置时间
+timedatectl set-time 20151120                   #只设置日期
+timedatectl set-time '16:10:40 2015-11-20'      #设置时间和日期
+timedatectl set-local-rtc 1                     #将RTC设置为本地时间
+timedatectl set-local-rtc 0                     #将RTC设置为UTC
+timedatectl set-ntp no                          #设置是否启用ntp
+timedatectl set-timezone America/New_York       #设置时区，比如Asia/Shanghai
+timedatectl list-timezones                      #列出所有可用的时区
+
+3、chrony
+Chrony是一个开源的自由软件，centos8中默认使用chronyd来做时间服务。
+chrony既可作时间服务器服务端，也可作客户端。
+chrony由两个程序组成，分别是chronyd和chronyc。
+
+yum install chrony -y
+
+systemctl status chronyd
+systemctl restart chronyd
+systemctl enable chronyd          设置开机自启
+systemctl is-enabled chronyd
+
+配置
+/etc/chrony.conf
+server ntp.aliyun.com iburst
+chronyc sources
+
+4、其他
+systemctl stop firewalld
+systemctl disalbe firewalld
+chrony和ntpd类似firewalld和iptables，不能共存，同时只能存在一个服务运行。
