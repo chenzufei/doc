@@ -28,3 +28,6 @@ path = getenv("PATH");
 python中引用环境变量  
 import os  
 print os.environ['PATH']
+
+4、设置环境变量
+rc = setenv("PATH", “/home/”, 1);

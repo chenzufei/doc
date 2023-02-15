@@ -1,0 +1,7 @@
+using std::system;
+
+char tmp_str[64];
+sprintf(tmp_str, "mkdir -p %s", UMDC_LOG_DIR);
+rc = system(tmp_str);
+cds_assert(rc == 0);
+
