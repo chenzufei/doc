@@ -36,3 +36,13 @@ chronyc sources
 systemctl stop firewalld
 systemctl disalbe firewalld
 chrony和ntpd类似firewalld和iptables，不能共存，同时只能存在一个服务运行。
+
+5、ubuntu
+在 Ubuntu 20.04 及之后的版本中，内置了时间同步功能。
+
+sudo apt-get install systemd-timesyncd    #安装
+sudo timedatectl set-ntp on               #启动NTP服务
+vi /etc/systemd/timesyncd.conf            #修改配置文件
+NTP=ntp.tencent.com
+FallbackNTP=ntp1.tencent.com,ntp2.tencent.com,ntp3.tencent.com
+service systemd-timesyncd restart         #重启systemd-timesyncd服务
