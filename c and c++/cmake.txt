@@ -3,7 +3,7 @@ cmake：用于项目构建，cross platform make。
        跨平台编译工具，在linux平台生成makefile，在apple平台生成xcode，在windows平台生成msvc工程文件。
        官网：www.cmake.org
        跟cmake类似的有scons
-
+       CMakeLists.txt
 
 cmake_minimum_required(VERSION 3.20)     最低版本的CMake
 option(OPEN_TEST "open test" ON)
@@ -85,6 +85,11 @@ TARGET_LINK_LIBRARIES(target library1                       为 target 添加需
  
 $ENV{NAME}指令就可以调用系统的环境变量了
  
+
+
+jenkins+cmake持续构建C++项目
+
+
 
 
 
