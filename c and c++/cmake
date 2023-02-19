@@ -12,3 +12,74 @@ target_link_libraries                添加链接库
 link_directories                     动态链接库或静态链接库的搜索路径
 add_subdirectory                     包含子目录
 aux_source_directory                 发现一个目录下所有的源代码文件
+
+cmake 语言和语法
+
+语法规则是：
+1，变量使用${}方式取值，但是在 IF 控制语句中是直接使用变量名
+2，指令(参数 1 参数 2...)    参数使用括弧括起，参数之间使用空格或分号分开。
+3，指令是大小写无关的，参数和变量是大小写相关的。但，推荐你全部使用大写指令。
+
+
+
+PROJECT 指令的语法是：
+PROJECT(projectname [CXX] [C] [Java])  令定义工程名称，比如PROJECT (HELLO)；隐式的定义了两个 cmake 变量:<projectname>_BINARY_DIR 以及<projectname>_SOURCE_DIR
+
+SET 指令的语法是：
+SET(VAR [VALUE] [CACHE TYPE DOCSTRING [FORCE]])  显式的定义变量，比如SET(SRC_LIST main.c t1.c t2.c)
+
+MESSAGE 指令的语法是：
+MESSAGE([SEND_ERROR | STATUS | FATAL_ERROR] "message to display"...)   向终端输出用户定义的信息，比如MESSAGE(STATUS "This is BINARY dir " ${HELLO_BINARY_DIR})
+
+ADD_EXECUTABLE(hello ${SRC_LIST})   定义了这个工程会生成一个文件名为 hello 的可执行文件
+
+了${}来引用变量，这是 cmake 的变量应用方式，例外在 IF 控制语句，变量是直接使用变量名引用，而不需要${}。
+
+
+ADD_SUBDIRECTORY(source_dir [binary_dir] [EXCLUDE_FROM_ALL])
+ADD_SUBDIRECTORY(src bin)
+
+
+EXECUTABLE_OUTPUT_PATH
+LIBRARY_OUTPUT_PATH
+PROJECT_BINARY_DIR
+PROJECT_SOURCE_DIR
+
+ADD_LIBRARY
+
+CMAKE_INSTALL_PREFIX
+
+INSTALL(TARGETS targets...
+ [[ARCHIVE|LIBRARY|RUNTIME]
+ [DESTINATION <dir>]
+ [PERMISSIONS permissions...]
+ [CONFIGURATIONS
+ [Debug|Release|...]]
+ [COMPONENT <component>]
+ [OPTIONAL]
+ ] [...])
+
+
+ADD_LIBRARY(libname [SHARED|STATIC|MODULE]
+ [EXCLUDE_FROM_ALL]
+ source1 source2 ... sourceN)
+ 
+SET_TARGET_PROPERTIES，其基本语法是：
+ SET_TARGET_PROPERTIES(target1 target2 ...
+ PROPERTIES prop1 value1
+ prop2 value2 ...)
+
+
+INCLUDE_DIRECTORIES([AFTER|BEFORE] [SYSTEM] dir1 dir2 ...)  引入头文件搜索路径
+LINK_DIRECTORIES(directory1 directory2 ...)                 添加非标准的共享库搜索路径
+TARGET_LINK_LIBRARIES(target library1                       为 target 添加需要链接的共享库
+ <debug | optimized> library2
+ ...)
+ 
+$ENV{NAME}指令就可以调用系统的环境变量了
+ 
+
+
+
+
+
