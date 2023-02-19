@@ -1,3 +1,10 @@
+
+cmake：用于项目构建，cross platform make。
+       跨平台编译工具，在linux平台生成makefile，在apple平台生成xcode，在windows平台生成msvc工程文件。
+       官网：www.cmake.org
+       跟cmake类似的有scons
+
+
 cmake_minimum_required(VERSION 3.20)     最低版本的CMake
 option(OPEN_TEST "open test" ON)
 set(CMAKE_VERBOSE_MAKEFILE ON)

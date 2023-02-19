@@ -1,3 +1,13 @@
+
+make:
+     官网：https://www.gnu.org/software/make/manual/make.html
+
+     小项目（源文件少）的c或cc可以直接使用gcc或g++编译，比如gcc main.c hello.c -o hello
+     但大项目（源文件很多）就需要引入make(Makefile)。
+     Makefile文件描述了工程的编译、连接规则。
+
+
+
 .PHONY    //make 或 make clean将忽略targets是否存在，直接运行commands
 $^          表示所有的依赖文件
 $@          表示目标文件
