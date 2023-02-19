@@ -1,4 +1,29 @@
-gcc -c 生成.o文件
+
+gcc: GNU Compiler Collection, GNU编译器套件。GCC原名为GNU C语言编译器（GNU C Compiler）
+     官网：https://gcc.gnu.org/
+           https://gcc.gnu.org/onlinedocs/gcc/
+     gcc编译流程分为4个步骤：
+                                 源文件
+     预处理（Pre-Processing）    gcc -E hello.c -o hello.i     比如#开头命令处理
+     编译（compiling）           gcc -S hello.i -o hello.s     生成汇编代码
+     汇编（Assembling）          gcc -c hello.s -o hello.o     生成二进制代码
+     链接（Linking）             gcc hello.o -o hello          生成可执行文件
+
+     gcc套件包含工具：
+     cpp：c预处理器
+     gcc: c编译器
+     g++：c++编译器
+     as：汇编器
+     ld：连接器
+     ar：归档器
+     nm：查看符号表
+     objdump：将二进制文件反汇编为汇编文件
+     objcopy：把一种目标文件中的内容复制到另一种类型的目标文件中
+     make：make工具
+     gdb：源代码调试器
+
+gcc常用参数：
+gcc -c 源文件
 gcc -o 输出文件
 gcc -g 产生调试信息
 gcc -O -O1 -O2 -O3   优化选项
@@ -7,3 +32,7 @@ gcc -Idir      添加dir目录为头文件搜索路径 （大写i）
 gcc -Ldir      添加dir目录为库文件搜索路径 （大写l）
 gcc -static    静态连接库文件(xxx.a)
 gcc -share     动态连接库文件(xxx.so)
+
+
+-Wall   发出gcc提供的所有有用的报警信息
+-Werror 将告警升级为编译报错
