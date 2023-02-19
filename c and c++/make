@@ -19,3 +19,7 @@ test:test.o
 	gcc test.o -o test
 clean:
 	rm -rf test test.o
+
+makefile关键字：
+wildcard
+
