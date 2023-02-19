@@ -6,6 +6,9 @@ make:
      但大项目（源文件很多）就需要引入make(Makefile)。
      Makefile文件描述了工程的编译、连接规则。
 
+     Makefile带来的好处就是——“自动化编译”，一旦写好，只需要一个make命令，整个工程完全自动编译。
+     make是一个命令工具，是一个解释makefile中指令的命令工具。
+
 
 
 .PHONY    //make 或 make clean将忽略targets是否存在，直接运行commands
@@ -33,3 +36,84 @@ clean:
 makefile关键字：
 wildcard
 
+
+
+
+INCLUDES = -I "/home/yiibai/header"
+CC = gcc
+LIBS =  -lm
+CFLAGS = -g -Wall
+OBJ =  main.o factorial.o hello.o
+
+hello: ${OBJ}
+   ${CC} ${CFLAGS} ${INCLUDES} -o $@ ${OBJS} ${LIBS}
+.cpp.o:
+   ${CC} ${CFLAGS} ${INCLUDES} -c $<
+
+
+
+LD_LIBRARY_PATH 变量中指定库文件路径
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/xxx
+
+
+
+
+#1 设定生成的目标名称(可执行文件名称)
+TARGET := helloWorld.out
+
+#2 声明伪目标
+.PHONY : clean $(TARGET)
+
+#3 目标TARGET执行流程
+$(TARGET) : helloWorld.c
+	gcc -o $@ $<
+
+#4 clean执行流程
+clean:
+	rm *.out
+
+
+
+
+
+
+
+
+一、Makefile语法规则
+目标：依赖文件列表
+	命令列表
+
+
+二、在Makefile中变量
+在Makefile中使用变量有点类似于C语言中的宏定义：
+定义变量：变量名=变量值
+引用变量：$(变量名)或{变量名}
+
+除了使用用户自定义变量，makefile中也提供了一些变量（变量名大写）供用户直接使用
+CC = gcc #arm-linux-gcc
+CPPFLAGS : C预处理的选项 如:-I
+CFLAGS: C编译器的选项 -Wall -g -c
+LDFLAGS : 链接器选项 -L -l
+
+自动变量
+$@: 表示规则中的目标
+$<: 表示规则中的第一个条件
+$^: 表示规则中的所有条件, 组成一个列表, 以空格隔开,如果这个列表中有重复的项则消除重复项。
+
+
+三、Makefile中的函数
+wildcard – 查找指定目录下的指定类型的文件
+src = $(wildcard *.c)         //找到当前目录下所有后缀为.c的文件,赋值给src
+
+patsubst – 匹配替换
+obj = $(patsubst %.c,%.o, $(src)) //把src变量里所有后缀为.c的文件替换成.o
+
+
+当工程有多个依赖的动态库、静态库；有多个目录下的依赖.h头文件；有多个目录下的.c源文件
+
+参见：多层级makefile
+
+
+CFLAGS += -Wall -Os -g
+CLIBS += -lpthread
