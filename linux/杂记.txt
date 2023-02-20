@@ -12,3 +12,12 @@ Fedora作为RedHat的试验场
 X86：非公开授权的指令集，Intel 和 AMD
 ARM：商业授权指令集（ARMv8指令集手册），高通的骁龙、联发科的天玑、华为的麒麟
 risc-v：开源的指令集（RISC-V 手册）
+
+
+dhcp    IP自动分配
+
+ifconfig enp0s3 down ; ifconfig enp0s3 up
+dhclient -r 释放ip
+dhclient    重新获取IP
+
+

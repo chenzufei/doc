@@ -1,0 +1,12 @@
+问题：
+尽管在创建/克隆了Ubuntu后更改了MAC物理地址，但系统启动后从DHCP始终得到相同的IP地址。
+
+原因：
+当虚拟机克隆的时候，他们都有一样的 /etc/machine-id；
+Ubuntu 网络组件使用 systemd-networkd ，Centos 网络组件使用 dhclient；
+systemd-networkd 默认使用 /etc/machine-id 来识别，dhclient 默认使用链路层地址来识别。
+
+方案：
+rm -f /etc/machine-id
+rm -f /var/lib/dbus/machine-id
+systemd-machine-id-setup
