@@ -1,0 +1,14 @@
+
+StarUML采用的技术框架,应该是基于H5的Electron框架
+
+准备：
+安装npm: https://nodejs.org/en/
+安装打包工具 npm install asar -g
+
+修改：
+C:\Program Files\StarUML\resources\app.asar
+asar extract app.asar app
+asar pack app app.asar
+
+src/engine/license-manager.js            checkLicenseValidity
+src/main-process/application.js          check-for-updates和install-and-restart

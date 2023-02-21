@@ -1,0 +1,6 @@
+
+mirrors.huaweicloud.com/
+mirrors.cloud.tencent.com/
+mirrors.163.com/
+mirrors.tuna.tsinghua.edu.cn/
+mirrors.ustc.edu.cn
