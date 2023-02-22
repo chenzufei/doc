@@ -21,3 +21,5 @@ dhclient -r 释放ip
 dhclient    重新获取IP
 
 
+https://www.kernel.org/doc/man-pages/
+
