@@ -1,0 +1,21 @@
+
+Linux中.service文件是某项服务对应的配置文件，可用于systemd管理和控制的服务的设置。
+systemd有系统和用户区分；系统（/usr/lib/systemd/system/）、用户（/etc/lib/systemd/user/）
+
+httpd.service 为例
+---------------------------------------------
+[Unit]
+Description=httpd        #当前配置文件的描述信息
+After=network.target     #表示当前服务是在那个服务后面启动，一般定义为网络服务启动后启动
+
+[Service]
+Type=forking                                        #定义启动类型
+ExecStart=/usr/local/apache/bin/apachectl start     #定义启动进程时执行的命令。
+ExecReload=/usr/local/apache/bin/apachectl restart  #重启服务时执行的命令
+ExecStop=/usr/local/apache/bin/apachectl stop       #定义关闭进程时执行的命令。
+PrivateTmp=true                                     #是否分配独立空间
+
+[Install]
+WantedBy=multi-user.target    #表示多用户命令行状态
+---------------------------------------------
+

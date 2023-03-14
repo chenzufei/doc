@@ -23,3 +23,5 @@ CD：Bake  Spinnaker
 CD：部署
 CD：验证
 CD：监控
+
+gitlab/Jenkins

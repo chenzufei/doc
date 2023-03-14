@@ -1,0 +1,63 @@
+UML-Unified Modeling Language 统一建模语言，又称标准建模语言。
+截止UML2.0一共有13种图形（UML1.5定义了9种，2.0增加了4种）。分别是：用例图、类图、对象图、状态图、活动图、顺序图、协作图、构件图、部署图9种，包图、组合结构图、交互概览图3种。
+目前,UML的最新版本是UML2.5.
+
+国内标准：GB/T 28174.2-2011
+
+用例图
+静态视图（类图、对象图、包图）
+行为视图（状态图、活动图）
+交互视图（序列图、协作图）
+实现视图（构件图、配置图）
+
+
+<>----    聚集
+<*>---    组成（对象之间的关系）
+<|----    泛化（继承关系）
+----->    依赖
+
+
+结构图:
+类图(Class diagram):类(Class)，接口(interface)，特性(feature)，约束(constraint)，关联(association)，泛化(generalization)，依赖(dependency)
+对象图(Object diagram):实例规范(instance specification)，对象(object)，属性(property)，关联关系(association)。
+包图(package-diagrams):包(package)，可封装的元素(packageable element)，依赖(dependency)，元素导入(element-import)，包导入(package-import)，包合并(package-merge)。
+模型图(Model diagram): 模型(model)，包(package)，可封装的元素(packageable element)，依赖(dependency)。
+内部结构图(Internal structure diagram):结构化类(structured class)，属性类(part)，端口(port)，连接器(connector)，作用关系(usage)。
+协作使用图(Collaboration use diagram):协作(collaboration)，连接器(connector)，属性类(part)，依赖(dependency)。
+组件图(Component diagram):组件(component)，接口(interface)，提供的接口(Provided Interface)，所需的接口(Required Interface)，class(类)，端口(port)，连接器(connector)，工件(artifact)，组件实现(component-realization)，作用关系(usage)。
+表现图(Manifestation diagram):表现形式(manifestation)，组件(component)，工件(artifact)。
+部署图(Deployment diagram):
+网络体系结构图(Network architecture diagram)
+配置文件图(Profile diagram)
+
+行为图:
+用例图(use case diagrams)
+信息流图(information-flow-diagrams)
+活动图(activity diagrams)
+状态机图(state machine diagrams)
+协议状态机图(protocol state machine diagrams)
+交互图(Interaction diagram): 序列图(sequence diagrams)                 复合片段(Combined Fragment)，交互使用(interaction use)
+                             通信图(communication-diagrams)
+                             时序图(timing diagrams)
+                             交互概览图(interaction overview diagrams)
+
+
+
+组合块（Combined Fragment）组合块是一系列同类交互动作的组合，分支、选择、循环或并行等动作的组合。
+alternative fragment（denoted “alt”） 与 if…else对应
+option fragment (denoted “opt”) 与 switch对应
+parallel fragment (denoted “par”) 表示并发
+loop fragment(denoted “loop”) 与 for 、while或者 foreach对应
+break fragment (“break” ) 与 for … break 或 while…break对应
+critical fragment (“critical”) 并发执行时访问临界资源
+assert fragment (“assert”) 断言，执行动作之前先进行判断，符合判定条件才继续执行
+strict fragment (“strict”) 强有序，几个动作的执行严格遵循一定的顺序（不在同一条生命线也要遵循有序性）
+seq fragment (“seq”) 弱有序，不在同一条生命线上的操作的顺序任意，在同一条生命线上的操作严格有序
+ignore fragment (“ignore{item1, item2, …}”) 忽略指定操作
+consider fragment (“consider{item1, item2, …}”) 除指定操作外，忽略其他操作
+neg fragment (“neg”) 当系统失败（超时或宕机）时的操作为negative
+
+
+
+
+

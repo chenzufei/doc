@@ -23,3 +23,56 @@ dhclient    重新获取IP
 
 https://www.kernel.org/doc/man-pages/
 
+MySQL           开源跨平台数据库
+sqlite
+MariaDB           是MySQL的一个分支
+OLTP(MySQL)       （on-line transaction processing）联机事务处理系统
+OLAP(ClickHouse)  联机分析处理（Online Analytical Processing）系统
+MongoDB           NoSQL 数据库
+PostgreSQL        关系型数据库管理系统
+
+Spark           是一种与Hadoop相似的开源集群计算环境
+Memcached       缓存系统
+zookeeper       微服务引擎
+Kafka           MQ消息队列
+nginx           web服务器   Lighttpd/Tomcat/Apache HTTP Server
+redis           键值(Key-Value)存储数据库，可基于内存亦可持久化的日志型、Key-Value数据库
+HBase           分布式、可扩展、支持海量数据存储的NoSQL数据库
+Hive            基于 Hadoop 的一个数据仓库工具
+Kerberos        计算机网络上的身份认证协议
+hadoop          分布式计算平台
+hdfs            用于存储海量数据
+jdk             // Node.js（让 JavaScript 运行在服务端的开发平台）、python
+OpenStack        云计算管理工具，可视化控制面板来管理 IaaS 云端的资源池（服务器、存储和网络）
+KVM              Kernel-based Virtual Machine，基于linux内核的采用硬件辅助虚拟化技术的全虚拟化解决方案
+Docker           开源的应用容器引擎
+k8s              Kubernetes，容器管理
+
+Gluster/Lustre/Ceph
+
+
+Mozilla、Linux基金会、Apache
+
+OpenSSH/7-ZIP/git
+tcpdump/wireshark  网络抓包工具
+
+
+常用编程语言（http://www.tiobe.com/tiobe-index/）：
+汇编
+c
+c++
+python
+java
+go
+javascript     JQuery/html/css
+c#
+php            混合了C、Java、Perl以及 PHP 自创的语法
+ruby           日本
+rust           2006，Rust在语法上和C++类似
+shell
+perl           1987年，借取了C、sed、awk、shell，第三方代码库CPAN
+Objective-C    编写iPhone应用程序的主要编程语言是Objective-C，不支持运算符重载，不支持多重继承，不包括命名空间机制；支持垃圾回收
+swift          2014年由苹果新发布的IOS开发的语言
+Lua            小巧的脚本语言,巴西
+老旧语言：Basic、Pascal
+
