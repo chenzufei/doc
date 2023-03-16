@@ -1,10 +1,12 @@
-git clone xxx              克隆仓库到本地
-git clone xxx --depth=1    只克隆最近一次commit的一个分支,加快克隆的速度
-git log                    查看git提交记录
-git log --oneline          简化显示信息，默认只展示简短的 commit id 和提交注释
-git log --stat             显示被修改文件的修改统计信息
+git clone xxx                 克隆仓库到本地
+git clone xxx --depth=1       只克隆最近一次commit的一个分支,加快克隆的速度
+git clone -b 分支名 仓库地址  克隆指定分支，比如git clone -b RELEASE.2021-06-17T00-10-46Z https://gitee.com/mirrors/minio.git
+git log                       查看git提交记录
+git log --oneline             简化显示信息，默认只展示简短的 commit id 和提交注释
+git log --stat                显示被修改文件的修改统计信息
 git log --graph --oneline --all
 git show commitid
+
 
 git remote -v          查看当前项目的远程git地址
 git branch -a          查看远程的所有分支列表
@@ -19,7 +21,23 @@ git commit -am "fix"   可以省略使用git add命令将已跟踪文件放到�
 git push
 git checkout -b xxx
 git rebase -i commitID
+
+全局配置（~/.gitconfig）
 git config --global http.sslVerify "false"
+git config --global core.quotepath false       显示中文
+git config --global user.name "xxx"            全局用户名
+git config --global user.email "xxx@gmail.com" 全局用户邮箱
+git config --global http://alias.co checkout # 别名
+git config --global core.editor "vim" # 设置Editor使用vim
+git config --global color.ui true
+git config -l
+
+
+
+git diff <$id1> <$id2> # 比较两次提交之间的差异
+git diff <branch1>..<branch2> # 在两个分支之间比较
+git diff --staged # 比较暂存区和版本库差异
+
 
 
 撤销修改：
@@ -27,10 +45,10 @@ git reset head xxx     // 文件已经添加到暂存区
 git checkout -- xxx
 
 //上库之前，先做如下步骤
-git stash
+git stash                      把当前分支所有没有commit的代码先暂存起来，git stash save “save message”
 git pull
 git stash pop
-git stash apply    与pop相似，但他不会在堆栈中删除这条缓存
+git stash apply    与pop相似，但他不会在堆栈中删除这条缓存；git stash apply stash@{0}
 
 git stash drop     删除单个缓存
 git stash clear    全清
@@ -38,9 +56,29 @@ git stash clear    全清
 git stash show     显示与当前分支差异
 git stash branch   指定或最新缓存创建分支？
 
+git stash list     显示暂存区中的记录
+git stash –keep-index   只会备份那些没有被 add 的文件
 
 git restore --staged   //从暂存区中恢复某个文件
+git reset        取消已经 add 的文件的备份
 
 配置某个项目的用户
 git config user.name chenzufei
 git config user.email chenzufei@cestc.cn
+
+日志显示
+git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+分支合并
+git merge featureA   合并后能分清除
+git rebase featureA  合并后混合
+
+这两者由什么差异
+git add   进暂存区，git add 只是把文件加到 git 版本控制里
+git stash 将所有未提交的修改（工作区和暂存区）保存至堆栈区中，用于后续恢复当前工作目录。
+
+工作区   暂存区   缓存区（不存在）  版本库
+                  堆栈区
+
+
+
