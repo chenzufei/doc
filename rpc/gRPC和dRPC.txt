@@ -15,6 +15,9 @@ gRPC使用流程如下：
 2、drpc - dRPC是在Unix域套接字上构建的通信信道，用于进程间的通信。
 源码: 参见daos中的drpc.c  drpc.pb-c.c drpc.h
 
+备注：
+Unix域套接字：套接字文件
+网络套接字
 
 接口参见：drpc.h
 
