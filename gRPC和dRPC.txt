@@ -1,5 +1,5 @@
 
-gRPC：
+1、gRPC：
 gRPC是谷歌2016年发布高性能、通用的开源RPC框架。基于ProtoBuf(Protocol Buffers)序列化协议开发，且支持众多开发语言，目前提供C、Java和Go语言版本，分别是grpc、grpc-java、grpc-go。
 
 gRPC安装
@@ -12,9 +12,33 @@ gRPC使用流程如下：
 （3）服务端实现约定的接口并提供服务。
 （4）客户端按照约定调用方法请求服务。
 
-drpc - drpc是gRPC的轻量级替代产品
-源码: https://github.com/storj/drpc
+2、drpc - dRPC是在Unix域套接字上构建的通信信道，用于进程间的通信。
+源码: 参见daos中的drpc.c  drpc.pb-c.c drpc.h
 
 
-其他：
+接口参见：drpc.h
+
+流程参见：
+client:
+drpc_connect         // socket_path="/tmp/drpc.sock"
+drpc_call_create     // create req
+drpc_call            // send req and wait rsp
+//处理rsp
+drpc_response_free   //释放rsp
+drpc_call_free
+drpc_close
+
+
+server:
+drpc_listen
+drpc_accept            //生成connection context
+drpc_recv_call
+//处理req
+drpc_response_create   //创建rsp
+drpc_send_response
+drpc_response_free
+drpc_close             //释放connection context
+
+
+3、其他：
 REST使用JSON或XML编码格式承载数据，而gRPC默认使用ProtoBuf编码格式承载数据。
