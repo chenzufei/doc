@@ -1,3 +1,10 @@
+1、gdb就是基于ptrace这个系统调用来做的。
+（1）建立调试关系：
+使用gdb启动程序：子进程在执行execve之前调用ptrace(PTRACE_TRACEME)，建立了与父进程(debugger)的跟踪关系。
+attach到现有进程：debugger可以调用ptrace(PTRACE_ATTACH，pid,…)，建立自己与进程号为pid的进程间的跟踪关系。
+（2）断点原理：在指定的位置插入断点指令（int 3），当被调试的程序运行到断点的时候，产生SIGTRAP信号。
+
+gdb命令：
 l                   显示源代码
 b                   设置断点
 delete              删除断点
@@ -15,3 +22,8 @@ p                   打印变量值
 q                   退出gdb调试
 until               退出循环体
 finish              直到当前函数返回
+set var：修改变量的值
+break(b) 行号：在某一行设置断点
+break 函数名：在某个函数开头设置断点
+bt(函数调用堆栈)
+disable breakpoints：禁用断点

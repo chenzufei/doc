@@ -76,6 +76,11 @@ swift          2014年由苹果新发布的IOS开发的语言
 Lua            小巧的脚本语言,巴西
 老旧语言：Basic、Pascal
 
+
+vmlinuz和initrd  如何理解这两个？
+vmlinuz是可引导的、压缩的内核。
+
+
 理查德 克莱德曼
    水边的阿狄丽娜
    致爱丽丝
