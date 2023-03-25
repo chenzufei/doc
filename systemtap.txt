@@ -1,0 +1,18 @@
+
+systemtap的核心是probe（探针），可以在任何一条语句上加上探针，当执行到这条语句时将控制流转移到探针的handler上。
+
+yum install systemtap
+下载kernel-devel-4.18.0-305.3.1.el8.x86_64.rpm
+yum remove kernel-devel-4.18.0-348.7.1.el8_5.x86_64
+rpm -i kernel-devel-4.18.0-305.3.1.el8.x86_64.rpm
+
+使用示例：
+stap -L 'process("/home/build_tmp/lib64/libxxx.so").function("*")' | grep delete
+stap -L 'process("/home/build_tmp/lib64/libxxx.so").function("delete_fs@/home/src/server/xxxx.cc:*)'
+
+vim delete_fs_probe.stp
+probe process("/home/build_tmp/lib64/libxxx.so").statement("delete_fs@/home/src/server/xxxx.cc:507") {
+  $rc = -1
+}
+
+stap -vg delete_fs_probe.stp
