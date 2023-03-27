@@ -45,8 +45,9 @@ hdfs            用于存储海量数据
 jdk             // Node.js（让 JavaScript 运行在服务端的开发平台）、python
 OpenStack        云计算管理工具，可视化控制面板来管理 IaaS 云端的资源池（服务器、存储和网络）
 KVM              Kernel-based Virtual Machine，基于linux内核的采用硬件辅助虚拟化技术的全虚拟化解决方案
-Docker           开源的应用容器引擎
-k8s              Kubernetes，容器管理
+Docker           开源的应用容器引擎 2013年
+k8s              Kubernetes，容器管理 2014年
+kafka            MQ
 
 Gluster/Lustre/Ceph
 
