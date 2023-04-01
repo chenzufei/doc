@@ -81,10 +81,18 @@ iotop       监视磁盘 I/O 状态
 7、其他
 xargs 可以将管道或标准输入（stdin）数据转换成命令行参数，比如：
 lsof | grep deleted |awk '{print $2}' |xargs kill -9
+screen  命令行终端切换的自由软件 http://www.gnu.org/software/screen/
+screen -S yourname //新建一个叫yourname的session
+screen -ls         //列出当前所有的session
+screen -r yourname //回到yourname这个session
+screen -d yourname // 远程detach某个session
 
-Linux命令文本三剑客sed、grep、awk：
 
-grep: grep命令主要用于过滤文本
+
+
+8、Linux命令文本三剑客sed、grep、awk：
+
+(1)grep: grep命令主要用于过滤文本
 grep [选项] PATTERN 文件1 文件2
 -n, --line-number                    在过滤出的每一行前面加上它在文件中的相对行号
 -o, --only-matching                  只显示匹配的内容
@@ -109,12 +117,12 @@ cat xxx.txt |grep -v "xxx"        反转
 grep bash$ /etc/passwd            列出文件中以“bash”结尾的所有行
 
 
-awk
+(2)awk
 awk 选项 '模式或条件{编辑指令}' 文件1 文件2  #过滤并输出文件中符合条件的内容
 awk 用$0 表示整个行，不同的字段之间是通过指定的字符分隔。awk 默认的分隔符是空格。awk 允许在命令行中 用“-F 分隔符”的形式来指定分隔符。
 cat /etc/passwd | awk -F ":" '{print$1,$3,$4}'
 
-sed：
+(3)sed：
 sed [选项] ‘[动作]’ 文件名
 | sed [选项] ‘[动作]’      //配合管道使用
 
@@ -132,3 +140,19 @@ i: 插入。       sed ‘2i hello’ a.txt (在第2行前边插入hello)
 d: 删除。       sed ‘2,4d’ a.txt (删除第2行到第4行的数据)
 c: 行替换。     sed ‘2c hello’ a.txt (把第2行的内容替换成hello)
 s: 字符串替换。 sed ‘5s/旧字符串/新字符串/g’ a.txt （5代表处理对象是第5行，g是全局替换）
+
+
+9、将正在运行的进程放到后台执行
+
+（1）ctrl+z   bg
+sh test.sh
+ctrl+z             //挂起当前任务
+ctrl+c             //结束当前任务
+jobs -l            //查看暂停的脚本
+bg %1              //将编号为1的任务转后台运行
+fg %1              //将编号为1的任务转前台运行
+disown -h %1       //设置当前jobs忽略hup信号
+
+（2）nohup ./script.sh &
+
+（3）screen

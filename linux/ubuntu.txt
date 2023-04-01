@@ -1,0 +1,28 @@
+
+https://zhuanlan.zhihu.com/p/585631429
+
+Ubuntu 4.10 : Warty Warthog（有疣疣猪）
+Ubuntu 5.04 Hoary Hedgehog（灰白刺猬）
+Ubuntu 6.06 Dapper Drake（整洁公鸭）
+Ubuntu 7.04 Feisty Fawn（活泼小鹿）
+Ubuntu 8.04 LTS Hardy Heron（坚韧苍鹭）
+Ubuntu 9.04 Jaunty Jackalope（自信鹿角兔）
+Ubuntu 10.04 LTS Lucid Lynx（清醒猞狸）                             Linux kernel 2.6.31
+Ubuntu 11.04 Natty Narwhal（聪明独角鲸）
+Ubuntu 12.04 LTS Precise Pangolin（精准穿山甲）
+Ubuntu 13.04 Raring Ringtail（热情猫熊）                            Linux kernel 3.8.8
+Ubuntu 14.04 LTS Trusty Tahr（可靠塔尔羊）
+Ubuntu 15.04 Vivid Vervet（活泼绿猴）                               Linux kernel 3.19
+Ubuntu 16.04 LTS Xenial Xerus（好客的非洲地松鼠）                   Linux kernel 4.4
+Ubuntu 17.04 Zesty Zapus（开心跳鼠）                                Linux kernel 4.10
+Ubuntu 18.04 LTS Bionic Beaver（生化水獭）                          Linux kernel 4.18，glibc 2.28, OpenJDK 11
+Ubuntu 19.04 Disco Dingo（蹦迪的野狗）                              Linux kernel 5.0
+Ubuntu 20.04 LTS Focal Fossa（凝视的狸猫）                          Linux kernel 5.4
+Ubuntu 21.04 Hirsute Hippo（多毛河马）                              Linux kernel 5.11
+Ubuntu 22.04 Jammy Jellyfish(幸运水母)                              Linux kernel 5.17
+
+
+
+
+
+lsb_release -a

@@ -1,0 +1,29 @@
+
+[root@localhost build]# cat /proc/version
+Linux version 4.18.0-305.3.1.el8.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 8.4.1 20200928 (Red Hat 8.4.1-1) (GCC)) #1 SMP Tue Jun 1 16:14:33 UTC 2021
+
+[root@localhost /]# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  mnt_tmp  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+
+[root@localhost /]# ll
+total 24
+lrwxrwxrwx.   1 root root    7 Nov  3  2020 bin -> usr/bin                 //bin是Binaries (二进制文件) 的缩写, 这个目录存放着最经常使用的命令
+dr-xr-xr-x.   5 root root 4096 Feb 15 04:21 boot                           //启动 Linux 时使用的一些核心文件
+drwxr-xr-x.  19 root root 3140 Feb 28 01:18 dev                            //dev 是 Device(设备) 的缩写, 该目录下存放的是 Linux 的外部设备
+drwxr-xr-x. 109 root root 8192 Mar 27 23:05 etc                            //etc 是 Etcetera(等等) 的缩写,配置文件
+drwxr-xr-x.   6 root root   87 Mar 25 02:03 home                           //用户的主目录
+lrwxrwxrwx.   1 root root    7 Nov  3  2020 lib -> usr/lib                 //lib 是 Library(库) 的缩写，动态共享库
+lrwxrwxrwx.   1 root root    9 Nov  3  2020 lib64 -> usr/lib64             //同上
+drwxr-xr-x.   2 root root    6 Nov  3  2020 media                          //U盘、光驱
+drwxr-xr-x.   4 root root   31 Mar 28 23:10 mnt                            //让用户临时挂载别的文件系统
+drwxr-xr-x.   2 root root    6 Feb 15 06:14 mnt_tmp
+drwxr-xr-x.   3 root root   21 Feb 15 06:23 opt                            //opt 是 optional(可选) 的缩写,额外安装软件所摆放的目录
+dr-xr-xr-x. 508 root root    0 Feb 28 01:18 proc                           //proc 是 Processes(进程) 的缩写,是系统内存的映射
+dr-xr-x---.   5 root root  257 Mar 29 02:38 root                           //超级权限者的用户主目录
+drwxr-xr-x.  35 root root  980 Mar 28 23:09 run                            //是一个临时文件系统，存储系统启动以来的信息
+lrwxrwxrwx.   1 root root    8 Nov  3  2020 sbin -> usr/sbin               //Superuser Binaries (超级用户的二进制文件) 的缩写
+drwxr-xr-x.   2 root root    6 Nov  3  2020 srv                            //存放一些服务启动之后需要提取的数据?
+dr-xr-xr-x.  13 root root    0 Feb 28 01:18 sys                            //内核设备树
+drwxrwxrwt.   7 root root 4096 Mar 29 02:41 tmp                            //tmp 是 temporary(临时) 的缩写
+drwxr-xr-x.  14 root root  169 Feb 15 06:02 usr                            //usr 是 unix shared resources(共享资源) 的缩写,类似于 windows 下的 program files 目录
+drwxr-xr-x.  21 root root 4096 Feb 15 06:31 var                            //var 是 variable(变量) 的缩写，比如日志文件

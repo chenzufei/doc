@@ -12,7 +12,7 @@ https://github.com/protobuf-c/protobuf-c
 
 
 2、protobuf
-（1）二进制存储，需要IDL，非自描述。gRPC,dRPC使用
+（1）二进制存储，需要IDL(interface define language)，非自描述。gRPC,dRPC使用
 （2）Protobuf对于不同的字段类型采用不同的编码方式，以确保得到高效紧凑的数据压缩。
 （3）Protocol Buffer将消息中的每个字段进行编码后，利用T-L-V存储方式进行数据的存储，最终得到一个二进制字节流。
 
