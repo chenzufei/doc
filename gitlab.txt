@@ -1,0 +1,25 @@
+
+1、下载docker镜像
+docker pull gitlab/gitlab-ce:latest
+
+2、创建docker容器并运行
+sudo docker run --detach \
+  --hostname localhost \
+  --publish 443:443 --publish 80:80 \
+  --name gitlab \
+  --restart always \
+  --volume /srv/gitlab/config:/etc/gitlab \
+  --volume /srv/gitlab/logs:/var/log/gitlab \
+  --volume /srv/gitlab/data:/var/opt/gitlab \
+  gitlab/gitlab-ce:latest
+
+
+3、获取root的密码
+sudo docker exec -it gitlab grep 'Password:' /etc/gitlab/initial_root_password
+Password: IAgt8tWJzXo6Ti/6F7U5Vly4An5r3a8QK5YYKn1Ir5g=
+
+5、访问
+http://192.168.1.15
+
+
+
