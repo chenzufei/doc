@@ -1,0 +1,78 @@
+Checks: 'clang-analyzer-*,
+         readability-*,
+         cppcoreguidelines-*,
+         google-*,
+         performance-*,
+         bugprone-*,
+         modernize-*,
+         -modernize-use-trailing-return-type,
+         -bugprone-easily-swappable-parameters,
+         -bugprone-implicit-widening-of-multiplication-result,
+         -modernize-use-nodiscard,'
+         
+
+WarningsAsErrors: ''
+HeaderFilterRegex: ''
+AnalyzeTemporaryDtors: false
+FormatStyle:     google
+User:            root
+CheckOptions:
+  
+  readability-identifier-naming.VariableCase: 'lower_case'
+  readability-identifier-naming.ClassCase: 'CamelCase'
+
+  readability-identifier-naming.ClassConstantCase: 'CamelCase'
+  readability-identifier-naming.ClassConstantPrefix: 'k'
+  readability-identifier-naming.ClassConstantSuffix: '_'
+
+  readability-identifier-naming.GlobalConstantCase: 'CamelCase'
+  readability-identifier-naming.GlobalConstantPrefix: 'k'
+
+  # readability-identifier-naming.ClassMemberCase: 'CamelCase'
+  # readability-identifier-naming.ClassMemberSuffix: '_'
+
+  readability-identifier-naming.ClassMethodCase: 'CamelCase'
+
+  readability-identifier-naming.FunctionCase: 'CamelCase'
+  readability-identifier-naming.GlobalFunctionCase: 'CamelCase'
+  readability-identifier-naming.ConstexprFunctionCase: 'CamelCase'
+
+  readability-identifier-naming.EnumCase: 'CamelCase'
+
+  readability-identifier-naming.MemberCase: 'lower_case'
+
+  readability-identifier-naming.PrivateMemberCase: 'lower_case'
+  readability-identifier-naming.PrivateMemberSuffix: '_'
+
+  readability-identifier-naming.PublicMemberCase: 'lower_case'
+
+  readability-identifier-naming.ClassMemberCase: 'lower_case'
+  readability-identifier-naming.ClassMemberSuffix: '_'
+
+  readability-identifier-naming.MethodCase: 'CamelCase'
+  readability-identifier-naming.ClassMethodCase: 'CamelCase'
+  readability-identifier-naming.ConstexprMethodCase: 'CamelCase'
+  readability-identifier-naming.PrivateMethodCase: 'CamelCase'
+  readability-identifier-naming.ProtectedMethodCase: 'CamelCase'
+  readability-identifier-naming.PublicMethodCase: 'CamelCase'
+  readability-identifier-naming.VirtualMethodCase: 'CamelCase'
+
+  readability-identifier-naming.ConstantMemberCase: 'CamelCase'
+  readability-identifier-naming.ConstantMemberPrefix: 'k'
+  readability-identifier-naming.ConstantMemberSuffix: '_'
+
+  readability-identifier-naming.EnumConstantCase: UPPER_CASE
+  cppcoreguidelines-special-member-functions.AllowMissingMoveFunctions: true
+
+  readability-identifier-length.MinimumVariableNameLength: 2
+  
+  llvm-header-guard.HeaderFileExtensions: ',h,hh,hpp,hxx'
+
+  readability-function-size.LineThreshold: 100
+  readability-identifier-length.MinimumVariableNameLength: 2
+  readability-identifier-length.MinimumParameterNameLength: 2
+
+  readability-implicit-bool-conversion.AllowIntegerConditions: true
+  readability-implicit-bool-conversion.AllowPointerConditions: true
+
+  readability-function-cognitive-complexity.IgnoreMacros: true 

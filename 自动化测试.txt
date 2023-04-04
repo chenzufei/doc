@@ -1,0 +1,6 @@
+
+1、h公司采用uniauto测试框架，该框架基于python开发。
+（1）框架本身包含读配置文件（mianConfig,testBed,testSet），根据获取的信息循环执行测试用例，最终通过html方式展示测试结果。
+（2）框架读取配置文件（类型为xml）是基于xml.etree.ElementTree，ssh是基于paramiko。
+
+2、z公司采用robotframework测试框架
