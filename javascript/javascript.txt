@@ -1,0 +1,68 @@
+
+JavaScript诞生于1995年，并在1997年成为ECMA标准。
+ECMAScript是JavaScript的官方名称。
+参考资料：
+
+官方rfc：https://github.com/tc39/proposals
+已完成：https://github.com/tc39/proposals/blob/master/finished-proposals.md
+官网介绍：https://www.ecma-international.org/technical-committees/tc39/
+MDN：https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_Resources
+
+
+1.JavaScript诞生于1995年，由Netscape（网景公司）创造，9月更名为LiveScript。
+2.JavaScript的版本有ES1、ES2、ES3、ES5、ES6、ES7...等等（主要是ES3、5、6、7）。
+3.JavaScript是脚本语言，轻量级的语言，他是单线程的语言（一个线程解析），他是一个弱语言（没有固定的类型划分，给什么就是什么）他是怎么被解析的（有浏览器的地方就能解析对应的JavaScript（v8引擎））
+4.JavaScript有三部分组成：
+ 　　1. 核心(ECMAScript)        基础（语法、类型、语句、关键字、保留字、操作符、对象等）    
+　　 2. 浏览器对象模型(BOM)      浏览器对象模型 提供与浏览器交互的方法和接口(API) 操作浏览器
+　　 3. 文档对象模型(DOM)        文档对象模型，提供访问和操作网页HTML内容的方法和接口
+
+　　书写方式：
+　　　　　　5.1 书写在script标签里面（一般会用到的）<script>  </script>
+　　　　　　5.2 书写在js文件里面（推荐）
+　　　　　　　　先定义一个js文件(index.js)再引入这个js文件<script src="./index.js"></script>
+
+历史：
+1994年netscape推出netscape navigator。
+1995年，netscape推出livescript（Brendan Eich 花了十天实现了世界上第一个 JS 引擎）。
+1997年7月，ECMA组织发布ECMAScript1.0版。
+1998年6月，发布ECMAScript2.0版。
+1999年12月，发布ECMAScript3.0版，简称ES3。严格相等，正则表达式，Literal Expressions，Constructor Expressions，Switch Statement，Try/Catch Handling
+2009，ES5。引入了许多新的功能，如严格模式、数组方法、JSON对象等
+2015年，ES6。引入了许多新的功能，如箭头函数、模板字面量、解构赋值、类和模块等。
+2016年，ES7。Array.prototype.includes，指数操作符
+2017年，ES8。异步/等待，Object.values，Object.entries，字符串填充，函数参数列表允许结尾，Object.getOwnPropertyDescriptors，SharedArrayBuffer对象，原子对象
+2018年，ES9。徒劳，Promise.finally，Rest/Spread，正则导演组，正则表达式相反声明，正则表达式dotAll模式
+2019年，ES10。Array.flat()和Array.flatMap，String.trimStart()和String.trimEnd()，String.prototype.matchAll
+2020年，ES11。空值合并操作符，可选链，Promise.allSettled，globalThis
+2021年，ES12。全部替换，弱引用
+2022年，ES13。类字段声明，私有方法和字段，顶层等待操作符，静态类字段和静态私有方法
+
+
+ES1（1997.6）规定的直接量有四种：Null、Boolean、Numeric、String
+到了ES3（1999.12），则加入了正则表达式直接量（Regular Expression Literals），有5种直接量
+实际在ES3，ES5中，对象和数组被归纳到第十一章（表达式）里，有一个新名词称为 初始器（Initialiser）。
+
+
+ES5时代
+var
+function
+
+
+ES6时代
+var
+function
+let
+const
+class
+
+
+
+学习资料：
+https://zh.javascript.info/
+
+2023.4.5： 类型转换
+
+
+jQuery
+VUE
