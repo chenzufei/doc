@@ -23,6 +23,38 @@ Ubuntu 22.04 Jammy Jellyfish(幸运水母)                              Linux ke
 
 
 
+main：官方支持的免费开源的软件。
+universe：社区维护的免费开源的软件。
+multiverse：有版权和合法性问题的软件。
+restricted：设备的专有驱动。
 
 
 lsb_release -a
+
+
+sudo bash -c "cat << EOF > /etc/apt/sources.list && apt update 
+deb http://mirrors.163.com/ubuntu/ jammy main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ jammy-security main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ jammy-updates main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ jammy-proposed main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ jammy-backports main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ jammy main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ jammy-security main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ jammy-updates main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ jammy-proposed main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ jammy-backports main restricted universe multiverse
+EOF"
+
+
+安装、卸载、更新、查询软件包                       apt-get                                                  yum
+普通安装                                    apt-get install PackageName                                     yum install 包名
+安装指定包的指定版本                        apt-get install PackageName=VersionName
+下载软件包的源码                            apt-get source PackageName
+删除软件包, 保留配置文件                    apt-get remove PackageName                                      yum remove 包名
+删除软件包, 同时删除配置文件                apt-get --purge remove PackageName
+更新安装源（Source）                        apt-get update                                                  yum update
+更新已安装的软件包                          apt-get upgrade
+列出已安装的所有软件包                      dpkg -l                                                         yum list
+搜索软件包                                  apt-cache search PackageName                                    yum search 关键字
+获取软件包的相关信息(说明、大小、版本)      apt-cache show PackageName                                      yum info 包名
+
