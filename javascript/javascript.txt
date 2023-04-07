@@ -66,3 +66,8 @@ https://zh.javascript.info/
 
 jQuery
 VUE
+
+
+
+
+ES6中不再像ES5一样使用原型链实现继承，而是引入Class这个概。   如何理解？
