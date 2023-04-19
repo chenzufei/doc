@@ -1,2 +1,18 @@
 
-原型工具Axure
+需求梳理：xmind
+原型工具：Axure
+UI设计：iconfont
+WEB桌面程序：Electron
+
+
+数据库：mysql
+        mongodb
+
+IOS:swift、object-c
+android: java、kotlin
+
+layui
+bootstrap
+jquery
+element ui
+ant design

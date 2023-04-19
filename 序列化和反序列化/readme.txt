@@ -35,6 +35,10 @@ message Request {
 
 通过proto工具自动生成对应语言的代码
 protoc --java_out=. demo.proto   //生成Demo.java
+protoc --go_out=. demo.proto
+protoc --cpp_out=. demo.proto
+
+protoc-c --c_out=. demon.proto
 
 
 客户端：

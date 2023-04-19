@@ -1,0 +1,24 @@
+
+环境：centos 8
+默认生成的core文件在/var/lib/systemd/coredump/目录中
+
+修改为当前目录
+ulimit -c unlimited
+echo "core-%e-%p-%t" > /proc/sys/kernel/core_pattern
+
+
+demo.c
+-------------------
+#include <stdio.h>
+
+int main()
+{
+  char* bad_point=NULL;
+  *bad_point = 99;
+  return 0;
+}
+-------------------
+
+gcc -g demo.c -o demo
+gdb demo core-demo-3193716-1681897652
+
