@@ -1,0 +1,19 @@
+
+
+cn.vuejs.org/v2/guide/reactivity.huml
+
+vue拦截原理：
+ES5
+Object.defineProperty   对象属性访问或修改的拦截
+Watcher
+Component Render Function
+Virtual DOM Tree
+
+ES6 Proxy
+
+
+预留给vue的特殊符号
+
+{{}} 插值语法，标签内部变量定义，表达式（+/-/*/,与，或等）
+@    属性上事件绑定
+:    属性上变量绑定
