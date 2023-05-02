@@ -1,0 +1,79 @@
+
+需求梳理：xmind
+原型工具：Axure
+UI设计：iconfont
+WEB桌面程序：Electron
+
+
+数据库：mysql
+        mongodb
+
+IOS:swift、object-c
+android: java、kotlin
+
+layui
+bootstrap
+jquery
+element ui
+ant design
+
+前端三大框架：Angular,React和Vue
+
+
+mv  : model, view
+Model层是数据模型，用来存储数据；View层是视图
+
+
+mvc : controller
+MVC是单向通信，必须通过Controller来承上启下
+View层的数据是通过监听Model层数据变化自动更新的，与Controller层无关。
+MVC框架大部分逻辑都集中在Controller层，代码量也集中在Controller层
+
+          controller
+
+
+
+view                                model
+
+
+
+mvp : presenter
+在MVP框架中，View层不能再直接访问Model层，必须通过Presenter层提供的接口，然后Presenter层再去访问Model层。
+mvp的核心在于presenter层，该层的核心是对于dom元素的操作，
+以jquery实现列表页为例，presenter主要是通过循环将Model中的数据与html的标签进行组合，添加到View中去。
+View层和Model层互不干涉,View层可以抽离出来做成组件，在复用性上就比MVC框架好很多。
+
+
+mvvm: viewmodel
+
+
+1、模型-->视图     ——实现方式：数据绑定
+                                       数据劫持
+                                       发布-订阅模式
+                                       脏值检查
+2、视图-->模型     ——实现方式：DOM事件监听
+
+vue就是viewModel的一个典型的示例。Vue.js使用的就是数据劫持和发布-订阅模式两种方法。
+
+
+
+
+
+
+<div id="app-5">
+  <p>{{ message }}</p>
+  <button v-on:click="reverseMessage">逆转消息</button>
+</div>
+var app5 = new Vue({
+  el: '#app-5',
+  data: {
+    message: 'Hello Vue.js!'
+  },
+  methods: {
+    reverseMessage: function () {
+      this.message = this.message.split('').reverse().join('')
+    }
+  }
+})
+
+

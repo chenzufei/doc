@@ -1,0 +1,17 @@
+#!/bin/bash
+
+pid=$(ps -ef | grep mon | grep -v grep | awk 'NR==1 {print $2}')
+
+
+for 变量名 in 取值列表
+do
+  命令
+done
+
+for i in {1..5};do echo $i;done
+for i in `ls`;do echo $i;done
+
+
+oids=$(daos cont list-objects -p 165a5020-8d57-4dd5-9bcf-43f24977cb67  -c 3b1bc6a3-524e-439c-87f1-af54f08de67f)
+for oid in $oids; do daos obj delete  -p 165a5020-8d57-4dd5-9bcf-43f24977cb67  -c 3b1bc6a3-524e-439c-87f1-af54f08de67f --oid=$oid ; done
+
