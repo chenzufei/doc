@@ -10,3 +10,7 @@ c11
 <threads.h> – multithreading support
 Bounds-checking functions – e.g., strcat_s() and strncpy_s()
 
+
+【C语言】可变参数列表
+在C中，当我们无法列出传递函数的所有实参的类型和数目时,可以用省略号指定参数表
+
