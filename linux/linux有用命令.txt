@@ -33,9 +33,14 @@ tar -zcvf ab.tar.gz 1.txt 2.txt
 tar -zxvf ab.tar.gz
 
 备注
-c:打包
-z:压缩
-x:解压
+-c:打包
+-x:解压
+
+-v:显示正在处理的文件名或目录
+-f:指定文件
+-j:采用bzip2指令，格式*.bz2
+-z:采用gzip指令，格式*.gz
+-C:指定目录
 
 打包格式：.tar
 压缩格式：.gz
