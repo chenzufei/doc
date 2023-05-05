@@ -64,7 +64,7 @@ git reset        取消已经 add 的文件的备份
 
 配置某个项目的用户
 git config user.name chenzufei
-git config user.email chenzufei@cestc.cn
+git config user.email chenzufei@163.com
 
 日志显示
 git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative

@@ -1,0 +1,19 @@
+1、java
+public class Animal {
+    // 接受可变参数的方法
+    void eat(String... Objects) {
+        for (String x : Objects) {
+            System.out.println("我吃了一个" + x + "!");
+        }
+    }
+    // 调用示例
+    public static void main(String[] args) {
+        Animal dada = new Animal();
+        dada.eat("苹果", "南瓜饼", "土豆");
+    }
+    /* outputs:
+        我吃了一个苹果!
+        我吃了一个南瓜饼!
+        我吃了一个土豆!
+     */
+}
