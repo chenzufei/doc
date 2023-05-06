@@ -1,0 +1,19 @@
+
+
+PDF阅读器:edge,SumatraPDF,极光pdf阅读器
+画图软件：draw.io
+uml画图：staruml
+录屏：    FastStone Capture
+屏幕录制和视频直播软件： OBS
+视频播放： PotPlayer
+文件搜索： everythin
+解压缩:7-Zip
+代码编辑器: VSCode
+文本编辑器:Notpad++
+比较软件: winmerge
+vpn: clash
+ssh客户端：mobaxterm
+思维导图：mindmaster
+便利贴：SimpleStickyNotes
+窗口管理：Qdir
+会议：腾讯会议
