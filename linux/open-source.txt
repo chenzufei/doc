@@ -19,6 +19,36 @@ Gluster/Lustre/Ceph/FreeNAS   存储软件
 4、web服务器
 nginx           web服务器   Lighttpd/Tomcat/Apache HTTP Server
 
+
+Web框架:
+go语言：
+（1）GoFrame : https://github.com/gogf/gf
+     beego：github.com/beego/beego
+	 gin：github.com/gin-gonic/gin
+java:Spring MVC(spring boot),Struts 2
+python: djangoh,Flask
+
+
+WEB前端UI框架:
+elementui
+Bootstrap
+Navie UI
+layui
+
+
+
+
+cgi/fastcgi: common gateway interface
+
+
+web服务：
+Web server: 比如Nginx
+WSGI（Web Server Gateway Interface）：gunicorn
+web app：比如django
+
+
+
+
 5、云相关
 OpenStack        云计算管理工具，可视化控制面板来管理 IaaS 云端的资源池（服务器、存储和网络），类似CloudStack
 KVM              Kernel-based Virtual Machine，基于linux内核的采用硬件辅助虚拟化技术的全虚拟化解决方案

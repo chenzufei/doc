@@ -14,3 +14,96 @@ https://www.bilibili.com/video/BV1GL4y1v79M/?p=25&spm_id_from=pageDriver&vd_sour
 transition   动画效果
 
 2023.5.7： p54
+
+
+购物车：模板语法
+轮播：组件（传递，slot，生命周期）
+
+vue框架和原理
+响应式渲染
+fetch & axios
+组件： 组件，slot，过渡效果，生命周期，swiper（轮播）
+指令
+过滤器
+单文件组件
+
+
+
+
+视频大纲：
+本课程分为四大部分讲解了运用Vue.js 进行项目实战开发。
+1. 沙漠风暴
+初识vue.js、模板语法、计算属性、class与style绑定、条件渲染、列表渲染、fetch&axios、事件处理器、表单控件、组件化开发、过渡动画效果、自定义指令、单文件组件
+2.  联盟力量
+路由vue-router、better-scroll、组件库vant、Vuex
+3. 砺剑行动
+git管理、Nginx以及发布
+4. 优化战略
+Vue3 composition Api 、Vue3+vue router、Vue3+vuex
+
+
+
+
+HTML5+CSS3
+JavaScript
+vue2.0+3.0
+webpack		
+node.js
+uniApp
+jQuery
+AJAX
+Promise  异步编程
+
+seajs
+
+swiper
+bootstrap
+
+
+
+
+常用的指令有哪些?
+v-model:一般用在表达输入，很轻松的实现表单控件和数据的双向绑定
+v-html：更新元素的innerHTML
+v-show与v-if：条件渲染，注意二者区别
+v-on:click:可以简写为@click,@绑定一个事件。如果事件触发了，就可以指定事件的处理函数
+v-for：基于源数据多次渲染元素或模板
+v-bind:当表达式的值改变时，将其产生的连带影响，响应式地作用于DOM语法
+v-bind:title=”msg”简写：title="msg"
+
+
+
+
+2023.5.13: p61
+
+
+<div v-hello="'yellow'">{{data1}}</div>
+
+//自定义指令
+Vue.directive(“hello”,{
+   inserted(el,binding){
+     el.style.background=binding.value
+   }
+}            
+)
+
+
+Vue.component            //组件
+
+
+
+var vm = new Vue({
+   el:"#box",
+   data:{
+     data1:11111
+   }
+}
+)
+
+
+
+
+组件的生命周期
+指令的生命周期
+
+
