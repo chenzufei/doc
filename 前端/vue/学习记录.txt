@@ -29,6 +29,16 @@ fetch & axios
 
 
 
+xhr
+ajax
+fetch   标准支持
+axios   第三方请求库，基于promise封装，vue也推荐大家用这个
+
+
+
+vant
+ant design
+
 
 视频大纲：
 本课程分为四大部分讲解了运用Vue.js 进行项目实战开发。
@@ -47,7 +57,7 @@ Vue3 composition Api 、Vue3+vue router、Vue3+vuex
 HTML5+CSS3
 JavaScript
 vue2.0+3.0
-webpack		
+webpack		 代码编译工具
 node.js
 uniApp
 jQuery
@@ -105,5 +115,11 @@ var vm = new Vue({
 
 组件的生命周期
 指令的生命周期
+
+
+
+2023.5.13   23:54  P65  062-指令应用
+
+
 
 
