@@ -1,5 +1,5 @@
 1、进程相关
-ps          命令显示系统中运行的进程
+ps          process status, 命令显示系统中运行的进程,只显示当前用户会话中打开的进程
 ps -ef      显示系统中所有进程的全面信息
 ps -aux     终端上所有用户的有关进程的全部信息
 kill        终止进程
@@ -25,8 +25,8 @@ find / -name "sharplee"
 lsof        表示所有打开的文件的列表（list open files）
   lsof | grep deleted |awk '{print $2}' |xargs kill -9     文件标记为“deleted”时，关闭进程
 chmod       修改文件的mode
-
-
+split      进行大文件切割，比如split -d -b 100m file
+cat        文件合并，比如cat /data/file_* file
 
 打包和压缩
 tar -zcvf ab.tar.gz 1.txt 2.txt
