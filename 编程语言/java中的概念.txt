@@ -1,0 +1,28 @@
+
+
+SpringMVC
+Spring boot
+Spring cloud
+
+
+
+js:
+ECMAScript 6 新增了正式的 Promise
+async 和 await
+ 
+let x = 3; 
+setTimeout(() => x = x + 4, 1000);
+
+
+异步场景：
+fs文件操作
+数据库操作
+ajax
+定时器
+
+
+异步编程传统的解决方案是回调函数，这种传统的方式容易导致“回调地狱”，即函数多层嵌套，让代码难以阅读，维护困难，空间复杂度大大增加
+Promise属于ES6规范， 是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理和更强大。
+
+
+
