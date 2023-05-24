@@ -57,7 +57,7 @@ sudo                  权限赋予
 shutdown   关机
 poweroff   关机
 reboot     重启
-history    查看历史
+history    查看历史  对应文件bash_history
 who        列出当前登录到系统的用户
 fuser -k /dev/pts/8    关闭某一登录到系统的用户（pts/8）
 

@@ -58,6 +58,24 @@ consider fragment (“consider{item1, item2, …}”) 除指定操作外，忽�
 neg fragment (“neg”) 当系统失败（超时或宕机）时的操作为negative
 
 
+类图六种关系
+1. 泛化（Generalization）　
+大白话就是继承
+带三角箭头的实线，箭头指向父类或者父接口　
+
+2. 实现（Realization）
+带三角箭头的虚线线，箭头指向接口
+
+3. 关联（Association)
+带普通箭头的实线，双向的关联可以有两个箭头或者没有箭头，单向的只有一个箭头，表示关联的方向。
+
+4. 聚合（Aggregation）
+带空心菱形的实线，菱形指向整体。
+
+5. 组合/合成(Composition)
+带实心菱形的实线，菱形指向整体。
 
 
+6. 依赖(Dependency)
+带箭头的虚线，指向被使用者
 
