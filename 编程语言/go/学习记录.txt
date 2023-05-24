@@ -237,3 +237,7 @@ go test
 c++：array（数组），vector（向量，动态），queue（队列），list(链表)，set（集合），multiset，map（映射，红黑树），multimap，unordered_map，unordered_multimap，unordered_set，unordered_multiset
 Go语言内置容器(数组(array)、切片(slice)和映射(map))
 Python常用的容器有四种，分别是：元组(tupe)、列表(list)，集合(set)、字典(dict)
+js: JS中的唯一容器：数组 在JS中，[]表示数组，{}表示对象
+
+
+
