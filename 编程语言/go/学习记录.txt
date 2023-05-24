@@ -206,5 +206,31 @@ sync 包
 
 
 
+Go 语言的官方网站是 http://golang.org
+中国专属的官方网站：http://golang.google.cn 
+2019 年 2 月，Go 团队又注册了一个新的域名：go.dev
+
+Go 程序包档案集散地的 http://godoc.org
+                      pkg.go.dev
+					  
+
+2007年：Go 语言在 Google 内部孵化。
+2009年11月10日，开源
+2012年：Go 正式版本1.0 发布。
+2015年：Go 1.5 正式版本发布。  优化 GC 实现    从 Go 1.5 版本后，完全使用 Go 语言自身进行编写。
+2016年：Go 1.6 和 Go 1.7 正式版本发布。在2016年流行起来
+2020年：Go 1.14 和 Go 1.15 正式版本发布。
+2021年：Go 1.16             Go 官方对 go install 命令进行了改进，使它可以接受一种版本后
+        Go 1.17
+2022年：Go 1.18  泛型
+        Go 1.19
+2023年：Go 1.20
+
+云原生：DevOps+持续交付+微服务+容器
+go install example.com/cmd/pkg@v1.0.0    go get
+go module 机制
+
+go build
+go test
 
 
