@@ -17,3 +17,67 @@ public class Animal {
         我吃了一个土豆!
      */
 }
+
+2、python
+def f(*args, **kw):
+	print(args)
+	print(kw)
+
+f(1, 2, 3, name = 'dada', age = 5)
+
+(1, 2, 3)
+{'age': 5, 'name': 'dada'}
+
+将位置参数收集为一个叫做args的tuple，将关键字参数收集为一个叫做kw的dict
+
+
+3、c++
+#include <iostream>
+#include <initializer_list>
+using namespace std;
+int sum(initializer_list<int> il)
+{
+    int sum = 0;
+    for (auto &x : il) {
+        sum += x;
+    }
+    return sum;
+}
+int main()
+{
+    cout << sum({1, 2, 3, 4, 5}) << endl; // output=15
+    return 0;
+}
+
+4、js
+const ilike = (...foods) => {
+    for (let x of foods) {
+        console.log(`i like eat ${x}`);
+    }
+};
+ilike('apple', 'chicken');
+=> i like eat apple
+=> i like eat chicken
+
+5、c
+
+C 语言中最常用的可变参数函数例子是 printf（）和 scanf（）
+参数列表的格式是强制性参数在前，后面跟着一个逗号和省略号（...），这个省略号代表可选参数。
+
+// 函数add() 计算可选参数之和
+// 参数：第一个强制参数指定了可选参数的数量，可选参数为double类型
+// 返回值：和值，double类型
+double add( int n, ... )
+{
+  int i = 0;
+  double sum = 0.0;
+  va_list argptr;
+  va_start( argptr, n );             // 初始化argptr
+  for ( i = 0; i < n; ++i )       // 对每个可选参数，读取类型为double的参数，
+    sum += va_arg( argptr, double ); // 然后累加到sum中
+  va_end( argptr );
+  return sum;
+}
+
+
+
