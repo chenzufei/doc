@@ -1,0 +1,8 @@
+
+
+oids=$(daos cont list-objects -p p1  -c c1)
+for oid in $oids; do daos obj delete  -p p1  -c c1 --oid=$oid ; done
+
+dir_id=1999999999999
+echo $((dir_id>>44))
+
