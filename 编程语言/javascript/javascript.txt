@@ -80,6 +80,16 @@ WebAssembly：目标是为C/C++等语言编写的程序经过编译，在确保�
 
 
 
+nodejs
+
+https://nodejs.org/zh-cn/download
+
+sudo apt-get install nodejs
+sudo apt-get install npm
+
+
+var fs = require("fs")    Node 导入文件系统模块(fs)语法
+
 
 
 
