@@ -1,0 +1,18 @@
+常用编程语言（http://www.tiobe.com/tiobe-index/）：
+汇编
+c
+c++
+python
+java
+go
+javascript     JQuery/html/css
+c#             微软
+php            混合了C、Java、Perl以及 PHP 自创的语法
+ruby           日本
+rust           2006，Rust在语法上和C++类似
+shell          比如bash
+perl           1987年，借取了C、sed、awk、shell，第三方代码库CPAN
+Objective-C    编写iPhone应用程序的主要编程语言是Objective-C，不支持运算符重载，不支持多重继承，不包括命名空间机制；支持垃圾回收
+swift          2014年由苹果新发布的IOS开发的语言
+Lua            小巧的脚本语言,巴西
+老旧语言：Basic、Pascal
