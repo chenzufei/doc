@@ -6,3 +6,53 @@ for oid in $oids; do daos obj delete  -p p1  -c c1 --oid=$oid ; done
 dir_id=1999999999999
 echo $((dir_id>>44))
 
+
+oids=$(daos cont list-objects -p p1  -c c1)
+for oid in $oids
+do
+  hi_oid=$(echo $oid |awk -F "." '{print$1}')
+  hi_oid=$(($hi_oid >> 8))
+  hi_oid=$(($hi_oid & 0xFFFFFF))
+  if (($hi_oid == 10))
+  then
+  echo "delete journal data obj $oid"
+  daos obj delete  -p p1  -c c1 --oid=$oid
+  fi
+done
+
+
+
+
+原理：
+
+
+
+字符串比较：
+==
+!=
+
+整数比较：
+-gt 大于
+-lt 小于
+-eq 等于
+-ne 不等
+-le 小于等于
+-ge 大于等于
+
+#!/bin/bash
+read -p " Enter number : " number
+if [ $number -gt 100 ]
+then
+echo "Value is greater than 100"
+fi
+
+
+内部命令（builtin）
+[]
+[[ ]]    bash从2.02开始支持
+
+()
+(())     数字的比较
+let
+{}
+
