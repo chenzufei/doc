@@ -80,5 +80,31 @@ git stash 将所有未提交的修改（工作区和暂存区）保存至堆栈�
 工作区   暂存区   缓存区（不存在）  版本库
                   堆栈区
 
+submodule: 当前项目与子模块之间的依赖关系：子模块路径、子模块的远程仓库、子模块的版本号。
+
+git submodule add <submodule_url>    //项目仓库中会多出两个文件：.gitmodules 和 project-sub-1
+git submodule add https://github.com/miracleyoo/someSubmodule  src/submodulePath      //指定目录
+
+git submodule init
+git submodule update
+
+git submodule foreach 'git pull origin master'
 
 
+git submodule deinit <submodule_name>
+git rm <submodule_name>
+git commit -m "delete submodule_name"
+
+
+git submodule update --init --recursive
+
+在.gitsubm..中设置branch = dev就是拉去dev分支
+
+通过软链接/硬链接到submodule
+mklink /d/j sub-module ..\sub-module\       window
+ln -s /path/to/src /path/to/dst             linux
+
+# Clone a project with submodules
+git clone --recursive
+
+git checkout -b some_branch origin/some_branch
