@@ -1,0 +1,33 @@
+
+
+
+使用淘宝镜像
+npm install -g cnpm --registry=https://registry.npmmirror.com
+cnpm install [name]
+
+npm -v
+npm install express       本地安装
+npm install express -g    全家安装
+npm list -g
+npm list express
+npm uninstall express
+npm ls
+npm update express
+npm search express
+
+
+
+变量声明需要使用 var 关键字
+Node.js 是单进程单线程应用程序
+
+JavaScript 语言自身只有字符串数据类型，没有二进制数据类型。
+
+express是基于http的封装
+
+
+大多数 web 服务器都支持服务端的脚本语言（php、python、ruby）等
+
+
+
+
+

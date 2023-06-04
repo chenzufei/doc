@@ -1,0 +1,53 @@
+
+PHP 是服务器端脚本语言。
+PHP：Hypertext Preprocessor
+
+www.php.net
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+echo "Hello World!";
+?>
+
+</body>
+</html>
+
+
+
+Web 服务器:Apache,nginx, lighttpd
+PHP解析器
+MySQL
+CGI
+
+
+PHP需要依赖Web服务器和Web服务器中的PHP解析器。
+
+nginx本身不支持对外部程序的直接调用或者解析，所有的外部程序包括php必须通过FastCGI接口来调用(FastCGI接口在Linux下是socket)
+
+为了调用CGI程序，还需要FastCGI的wrapper，当nginx将cgi请求发送给这个socket的时候，通过fastcgi接口，wrapper接收到请求，然后派生出一个线程，这个线程调用外部程序处理并返回数据；
+接着，wrapper再将返回的数据通过fastcgi接口，socket传递给nginx;
+最后，nginx将返回的数据发送给客户端
+
+
+如何配置nginx支持php
+./configure --prefix=/usr/local/php/  …… --enable-fpm
+
+
+
+变量：
+<?php
+$x=5;
+$y=6;
+$z=$x+$y;
+echo $z;
+?>
+
+
+
+
+
+
