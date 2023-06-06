@@ -163,3 +163,20 @@ disown -h %1       //设置当前jobs忽略hup信号
 （2）nohup ./script.sh &
 
 （3）screen
+
+
+10、重要文件
+
+/etc/passwd     所有账号
+/etc/shasow     密码
+/etc/group      组名
+/etc/gshadow    是group的加密信息文件
+
+
+/etc/profile   环境变量配置文件
+/etc/fstab     挂载
+
+/etc/sudoers    sudo命令的配置文件
+
+
+

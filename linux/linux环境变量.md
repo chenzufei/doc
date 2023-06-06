@@ -34,4 +34,14 @@ print os.environ['PATH']
 4、设置环境变量
 rc = setenv("PATH", “/home/”, 1);
 
+5、其他
 unsetenv 取消环境变量
+env      查看系统中的环境变量
+export   使环境变量全局化
+
+ubuntu保持环境变量的几个文件
+/etc/profile
+/etc/environment
+~/.profile
+/etc/bashrc
+~/.bashrc
