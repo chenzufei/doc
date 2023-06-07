@@ -1,43 +1,24 @@
 1、Ubuntu 22.04 默认使用 systemd-resolved 管理 dns
 
 2、国内国外都有很多的厂商提供了免费的公共DNS，比如：
+电信：114.114.114.114，114.114.115.115
 DNSPod Public DNS：119.29.29.29
 阿里云公共DNS：223.5.5.5/223.6.6.6
 Google Public DNS：8.8.8.8/8.8.4.4
 
 3、设置dns的方案
-（1）方案一（未验证）
-在/run/systemd/resolve/resolv.conf中添加
-nameserver 223.5.5.5
+在/etc/systemd/resolved.conf 中添加
+DNS=114.114.114.114 223.5.5.5
 
 重启systemd-resolved服务
-systemctl restart systemd-resolved
-systemctl status systemd-resolved
+systemctl restart systemd-resolved.service
+systemctl status systemd-resolved.service
 
-其他
+如下配置文件都不支持修改（会自动同步）
 /etc/resolv.conf
 /run/systemd/resolve/stub-resolv.conf
-/etc/systemd/resolved.conf
+/run/systemd/resolve/resolv.conf
 
-（2）方案二（通过netplan修改）
-修改配置文件/etc/netplan/00-installer-config.yaml
-network:
-  ethernets:
-    enp0s3:
-      dhcp4: false
-      addresses:
-        - 10.32.179.141/22
-      routes:
-        - to: default
-          via: 10.32.179.254
-      nameservers:
-        addresses: [223.5.5.5]
-    enp0s8:
-      dhcp4: true
-  version: 2
-
-重启netplan服务
-netplan apply
 
 4、其他
 测试：ping www.baidu.com

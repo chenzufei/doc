@@ -46,3 +46,9 @@ vi /etc/systemd/timesyncd.conf            #修改配置文件
 NTP=ntp.tencent.com
 FallbackNTP=ntp1.tencent.com,ntp2.tencent.com,ntp3.tencent.com
 service systemd-timesyncd restart         #重启systemd-timesyncd服务
+
+
+
+6、安装ntp服务器
+apt install ntp
+systemctl status ntp
