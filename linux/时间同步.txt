@@ -1,4 +1,16 @@
 
+
+NTP，网络时间协议，使用 123/udp 端口进行网络时钟同步
+
+NTP客户端：
+以前Linux时间同步基本是使用 ntpdate 和 ntpd 这两个工具实现的
+现在：RHEL/CentOS 7.x 已经将 chrony 作为默认时间同步工具了
+      ubuntu使用 systemd-timesyncd 服务(断点式更新时间)。
+
+
+NTP服务端，可以安装chrony、ntpd，或者open-ntp，推荐chrony。
+
+
 1、常见时区
 UTC：通用协调时(UTC, Universal Time Coordinated)
 GMT：格林威治标准时间 (Greenwich Mean Time)，与UTC基本相同
@@ -11,7 +23,7 @@ timedatectl set-time 20151120                   #只设置日期
 timedatectl set-time '16:10:40 2015-11-20'      #设置时间和日期
 timedatectl set-local-rtc 1                     #将RTC设置为本地时间
 timedatectl set-local-rtc 0                     #将RTC设置为UTC
-timedatectl set-ntp no                          #设置是否启用ntp
+timedatectl set-ntp no                          #设置是否启用ntp    sudo timedatectl set-ntp on
 timedatectl set-timezone America/New_York       #设置时区，比如Asia/Shanghai
 timedatectl list-timezones                      #列出所有可用的时区
 
@@ -37,18 +49,31 @@ systemctl stop firewalld
 systemctl disalbe firewalld
 chrony和ntpd类似firewalld和iptables，不能共存，同时只能存在一个服务运行。
 
-5、ubuntu
-在 Ubuntu 20.04 及之后的版本中，内置了时间同步功能。
+5、ubuntu 
+
+systemd-timesyncd 客户端
+在 Ubuntu 20.04 及之后的版本中，内置了timesyncd时间同步功能。
 
 sudo apt-get install systemd-timesyncd    #安装
-sudo timedatectl set-ntp on               #启动NTP服务
+
 vi /etc/systemd/timesyncd.conf            #修改配置文件
 NTP=ntp.tencent.com
 FallbackNTP=ntp1.tencent.com,ntp2.tencent.com,ntp3.tencent.com
-service systemd-timesyncd restart         #重启systemd-timesyncd服务
+
+systemctl restart systemd-timesyncd       #重启systemd-timesyncd服务   
 
 
-
-6、安装ntp服务器
+6、ubuntu也可以使用ntp做时间同步（渐进式更新时间）
 apt install ntp
 systemctl status ntp
+
+
+vim /etc/ntp.conf
+systemctl reload ntp.service
+systemctl enable ntp.service
+
+netstat -anup | grep 123
+
+
+
+
