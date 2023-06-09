@@ -28,6 +28,10 @@ chmod       修改文件的mode
 split      进行大文件切割，比如split -d -b 100m file
 cat        文件合并，比如cat /data/file_* file
 
+chattr/lsattr   文件特殊属性
+
+
+
 打包和压缩
 tar -zcvf ab.tar.gz 1.txt 2.txt
 tar -zxvf ab.tar.gz
