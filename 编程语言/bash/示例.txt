@@ -23,6 +23,42 @@ done
 
 
 
+
+#!/bin/bash
+
+for i in {1..50}; do
+    mkdir -p "level_$i"
+    if [ $? -eq 0 ]; then
+        echo "level_$i created"
+    else
+        echo "Error creating level_$i"
+    fi
+    cd "level_$i"
+done
+
+
+
+
+#!/bin/bash
+for i in 1 2 3 4 5
+do
+echo “Welcome $i times”
+done
+
+
+for i in {1..5}
+do
+echo “Welcome $i times”
+done
+
+for (( c=1; c<=5; c++ ))
+do
+echo “Welcome $c times…”
+done
+
+
+
+
 原理：
 
 
