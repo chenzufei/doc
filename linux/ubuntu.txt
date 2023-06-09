@@ -69,3 +69,5 @@ service     老命令，去/etc/init.d中执行相关程序。
 systemctl   新一代命令管理，功能强大，但非常复杂，现在也有人反对使用systemd。 /etc/systemd/system
 
 systemctl list-unit-files --type=service
+
+dhclient    //如果网卡不可见，可以尝试这个命令
