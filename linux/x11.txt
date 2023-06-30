@@ -1,0 +1,62 @@
+
+X Window
+x11
+xserver
+
+
+
+X窗口系统（X Window System，也常称为X11或X）是一种以位图方式显示的软件窗口系统。
+知名的桌面环境——GNOME和KDE也都是以X窗口系统为基础建构成的。
+X.Org所用的协议版本，X11，是在1987年9月所发布。
+X.Org基金会是负责X Window System开发的社团
+X11R6 实际上是X Protocol version 11 Release 6（X协议第11版第六次发行）
+X服务器软件和X应用程序都遵循X11R6
+
+
+X是协议，就像HTTP协议，IP协议一样。
+一个基于X的应用程序需要运行并显示内容时他就联接到X服务器，开始用X协议和服务器交谈。
+
+比如一个X应用程序要在屏幕 上输出一个圆，X应用程序只负责告诉X服务器在屏幕的什么地方用什么颜色画一个多大的圆，
+而具体的"画"的动作，比如这个圆如何生成，用什么显卡的驱动程 序去指挥显卡完成等等工作是由X服务器来完成的。
+
+X服务器还负责捕捉键盘和鼠标的动作，假设X服务器捕捉到鼠标的左键被按下了，
+他就告诉X应用程序：亲爱 的应用程序先生，我发现鼠标被按下了，您有什么指示吗？
+
+linux图形界面层次关系总结: linux本身-->X服务器<-[通过X协议交谈]->窗口管理器（综合桌面环境）-->X应用程序
+
+协议是需要具体的软件来实现的，有了协议就需要具体的软件来实现这个协议，很多X开头的软件就是由此而来。
+xmanager就是X server
+
+KDE和GNOME是LINUX里最常用的图形界面操作环境，他们不仅仅是一个窗口管理器那么简单，kDE是K Desktop Environment的缩写。
+他不仅是一个窗口管理器，还有很多配套的应用软件和方便使用的桌面环境，比如任务栏，开始菜单，桌面图标等等。
+
+其它的小型窗口管理器有: window maker，after step，blackbox，fvwm，fvwm2
+
+
+Xfree86、Xorg，Xming和Xnest
+Linux的桌面环境是通过X Server(XFree86、Xorg)，X Client(libX11)，Window Manager(KDE、xfce、wm2)等服务提供的。
+
+
+
+ubuntu:
+apt-get install xorg            x-server
+apt-get install openbox         window manager
+
+Full Desktop Environments
+apt-get install gnome-desktop-environment
+
+
+centos
+yum groupinstall "Server with GUI" -y
+systemctl set-default graphical
+yum install tigervnc-server tigervnc-server-module -y      vnc服务器
+vncpasswd       
+vncserver
+ps -aux | grep vnc
+
+
+systemctl get-default
+命令行模式   :multi-user.target
+图形界面模式:graphical.target
+systemctl set-default graphical.target    设置为图形界面模式
+systemctl set-default multi-user.target   设置为命令行模式

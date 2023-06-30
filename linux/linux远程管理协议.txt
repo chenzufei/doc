@@ -1,0 +1,15 @@
+Linux远程管理协议（RFB、RDP、Telnet和SSH）
+
+常用的远程管理协议有以下 4 种：
+
+RDP（remote desktop protocol）协议：远程桌面协议，大部分 Windows 系统都默认支持此协议，Windows 系统中的远程桌面管理就基于该协议。
+RFB（Remote FrameBuffer）协议：图形化远程管理协议，VNC 远程管理工具就基于此协议。
+Telnet：命令行界面远程管理协议，在进行数据传送时使用明文传输的方式，也就是不对数据进行加密。
+SSH（Secure Shell）协议：命令行界面远程管理协议，该协议在数据传输时会对数据进行加密并压缩，因此使用此协议传输数据既安全速度又快。
+
+Linux 远程管理服务器的软件：
+类似于 VNC（基于 RFB 协议）的图形远程管理软件，如 Xmanager、VNC VIEWER 以及 TightVNC 等；
+基于 SSH 协议的命令行操作管理；
+类似 Webmin 的基于浏览器的远程管理，此种管理方式只提供简单的管理窗口，可用的管理功能有限；
+
+
