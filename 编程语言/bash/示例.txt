@@ -59,6 +59,206 @@ done
 
 
 
+
+while 条件
+do
+    循环体
+done
+
+
+#!/bin/bash
+n=1
+while [ $n -le 10 ]
+do
+    echo $n
+    let n++    #或者写作n=$(( $n + 1 ))
+done
+
+
+#!/bin/bash
+while :
+do
+    echo I love you forever
+done
+
+while true ; do echo "This is infinite loop."; done
+
+
+
+echo $((100/10))
+
+
+
+i=1000;j=$(($i/100));echo $j
+
+
+${#变量名}得到字符串长度
+test='I love china'
+echo ${#test}
+
+${变量名:起始:长度}得到子字符串
+test='I love china'
+echo ${test:5:10}
+
+${变量/查找/替换值}
+
+
+
+
+数学运算
+
+expr $n1 operator $n2
+$(($n1 operator $n2))
+
+
+\  &  <  <=  =  !=  >   >=
++  -  *  /   %
+
+
+
+参数
+$#表示命令行参数的个数
+0表示程序名，1表示第1个参数，2表示第2个参数，9表示第9个参数，多于9个，必须如下表示变量10,{11}
+$@将命令行中以空格间隔的参数单独存储
+
+
+
+
+read命令接受从键盘或文件描述符中的输入数据，将其存储到一个指定变量中。
+read -p "Please enter your name: " name
+echo "Hello $name."
+
+
+关系运算符
+-eq：检测两个数是否相等，相等返回 true。
+-ne：检测两个数是否不相等，相等返回 true。
+-gt：检测左边的数是否大于右边的，如果是返回 true。
+-lt：检测左边的数是否小于右边的，如果是返回 true。
+-ge：检测左边的数是否大于等于右边的，如果是返回 true。
+-le：检测左边的数是否小于等于右边的，如果是返回 true。
+
+
+
+shell文件及目录常用操作的几个实例
+
+dirname $path      提取目录
+basename $path     提取文件名
+
+
+
+
+
+
+一、变量：
+your_name="http://itcast.cn"
+echo $your_name
+readonly 变量名=值
+unset variable_name    删除变量
+
+局部变量
+全局变量(环境变量)：所有的程序，包括shell启动的程序，都能访问环境变量       set命令可以查看当前环境变量
+
+
+数组：Bash Shell 只支持一维数组（不支持多维数组）
+my_array=(A B "C" D)
+echo "第一个元素为: ${my_array[0]}"
+
+
+二、参数：
+传递参数的方式：./shell程序 [空格] 参数1 [空格] 参数2 ….
+$0 表示当前脚本名称
+$# 参数个数
+$* 以一个单字符串显示所有参数
+$$ 当前进程id
+$! 后台运行的最后一个进程id
+$@ 与$*同
+$? 退出状态
+
+三、运算符  算术、关系、布尔、字符串
+原生/bin/bash不支持简单的数学运算，但是可以通过其他命令来实现，例如：expr
+还可以通过(()) 、 $[] 进行算术运算
+
+val=`expr 2 + 2` //千万注意不是单引号，是键盘上的~键符号
+count=1
+((count++))
+val=$((1+1))
+val=$[1+2]
+
+
+四、流程控制
+
+if [];then
+...
+else
+...
+fi
+
+for N in 1 2 3; do echo $N; done
+
+while [ expression ]
+do
+command
+…
+done
+
+
+case $1 in
+ "hello")
+    echo "Hello World!"
+    ;; 
+ "test")
+    echo "testting..."
+    ;;
+ "")
+    echo "$0 没有参数"
+    ;;
+ *)
+    echo "默认"
+    ;;
+esac
+
+
+五、函数
+
+funWithParam()
+{ 
+echo "第一个参数为 $1" 
+echo "第二个参数为 $2" 
+echo "第十个参数为 $10" 
+echo "第十个参数为 ${10}"
+echo "第十一个参数为 ${11}" 
+echo "参数总数有 $# 个" 
+echo "作为一个字符串输出所有参数 $*" 
+} 
+
+##调用函数，并传递参数
+
+funWithParam 1 2 3 4 5 6 7 8 9 34 73
+
+
+
+
+function getMax()
+{
+  if [ $1 -lt $2 ]; then
+    return $2
+  else
+    return $1;
+  fi
+}
+
+getMax $1 $2
+
+echo "最大值：：$?" ##$?表示返回值
+
+
+
+
+其他
+let i++
+
+
+
 原理：
 
 
@@ -91,4 +291,70 @@ fi
 (())     数字的比较
 let
 {}
+
+
+
+
+() 
+
+在子shell中运行    (cd $path, do something) 可以让不切换当前目录而在其它目录干点别的事儿
+数组的赋值         a=(1 3 5)，那么${a[0]}=1;${a[1]}=3;${a[2]}=5
+
+
+(()) 表达式计算
+a=1;((a++));echo $a
+
+$(cmd) 执行cmd的结果
+
+$(()) 表达式扩展,和(())很相似
+
+[]和[[]]都是条件表达式,不过[[]]有比[]高的容错性
+
+$[] 是 $(()) 的过去形式，现在已经不建议使用。
+
+
+{1..30} 就是1-30
+
+
+一句话说清楚：只有单中括号 [ ] 是兼容 posix shell 标准的，比如 Bourne shell（/bin/sh）, ash, dash 这些，
+而其他一切双方括号，双圆括号都不兼容 posix shell 标准，而是 bash 特有的语法扩展。
+
+
+Bourne shell（/bin/sh）, ash, dash 这些都是遵从 posix shell 标准的最小 shell 实现，可执行只有100KB左右，
+比起 1MB 的 Bash来讲，sh, ash, dash 更偏向于快速启动，更小资源占用，所以更多的被用于执行各种系统管理脚本（比如 init 系统开关机等）。
+而 Bash 更多的用于提供更好的交互式操作，供用户直接操作那种。
+
+
+Linux 一开始用的 shell 其实是 Bourne，后来 Linux 发布了 Bash（Bourne-again shell），一个增强版的 Bourne，
+现在绝大部分 Linux 默认情况下用的就是 Bash。
+
+第一个shell:Bourne shell (Steven Bourne 史蒂夫·伯恩 发明)，1977年创作。
+
+shell 是一个命令语言解释器（command-language interpreter）
+Bourne shell 最大的缺点在于它处理用户的输入方面，在 Bourne shell 里键入命令会很麻烦。
+Bourne Again shell ( bash), bash 与 Bourne shell 完全向后兼容，bash 准备了几种特性使命令的输入变得更容易
+
+命令补齐（Command-Line Completion）  tab键
+通配符：  *     任何字符
+          ?     单字符
+          [...] 包含
+命令历史记录   history
+输入重定向     <
+输出重定向     >
+管道           |
+提示符
+作业控制       ctrl-z   bg   fg
+用户化配置bash   /etc/.profile  or .bash_profile
+bash变量
+
+
+
+
+sh：  POSIX（Portable Operating System Interface）标准的shell解释器
+bash: IEEE POISIX P10003.2/ISO 9945.2 shell and tools 
+
+
+下载bash：
+http://ftp.gnu.org/gnu/bash/
+
 

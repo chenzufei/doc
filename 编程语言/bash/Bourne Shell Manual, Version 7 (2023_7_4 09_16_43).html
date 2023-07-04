@@ -1,0 +1,502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"> <html style><!--
+ Page saved with SingleFile 
+ url: https://www.in-ulm.de/~mascheck/bourne/v7/ 
+ saved date: Tue Jul 04 2023 09:16:43 GMT+0800 (中国标准时间)
+--><meta charset=utf-8>
+<title>Bourne Shell Manual, Version 7</title>
+<link type=image/x-icon rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAArCAYAAADczxCmAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAASRSURBVGiBzZpdbBRVGIaf72wpLFAJSEgMMf70Br1oF8EgiQlgILuLi9UYEhO98sI7JFXoD4FMJkhabAVNNAS8NN7Qm/7BloaUqtgYIiLERAx/aqxEuVDLz25LZz4vNpjSdrazbOfEN9ls5pz3fO+8u+d8Z+abkZbWng8JATV6snnnlt57x7Upt1OgBhgrMmxZfm78sYtdDTcnNiZS7k1gOIxuGRipQNgehilKHuid2OYrmy+ccC4GjUmk3PZ5o7k0cHRS1/D3fc6Kkk+3RJhIowudCnWRahRBpObOP8eQwLOrVx+ZE6VOECqiDK6O4ydS7ml/6fV1wMmw49rastU+3lvqU42hUpVKA5Ua8s8QZXtjY+Z8pOYABOny0TpCmmtt63kVlY7CUEC59xUaqiyGqNccEH+oqh/YFIa770DXo6h8SsFP2Yjc3NDR+pzCxcTmvStn4sbGY29C4VefDURuDgpTE99/eWae1symbuRrDsCYOb2+P9YHOMV4ivxnTpTXjTEDvl+ZK1Xvyeq/boElc98db76RSLm3V6bdx89lnZ8DiSpjSCF1KLztqb8B8rdL1btyZe7HwGUr5gBU6VakDvgokCN6QeBpAIQ1wJoHSi1qOoHLVtYcQIXQKYUtIRCCfjWbmtbMne1zLgs8XJNpDcyG1U/kDwOzZtCaOQCUY2Z8LBPUvXXrVs/gvwZ8DnjlyllbcwA+pkvwdxbjNDS89DvwRktLtt6Y8WUissATjYsnoVefyLxzYNnchf49Z2qTbg0hrkCam9M3gBvl6Fk1p4omkgwgpKbrb32/pxWksWwhnw1NTZlBu2sO8JEuW1rWzeViiwdUZb8NLavTEuDS8W2jwCEbWtbNFYWYq6h+UW4YP2b+hv+ZuaadLx4BjsxWvEjN1abcg94oe3445dwKw29p68mILxsfRGs0v3CH46wfn9gWqTmBV2LzOAV0h+Irz4ctNU6DJuA+c5FnS1HSUWsEIWpzdxXWRawRiKjNeSjXVm1676lwdMkB/5TwgcJUHFuyJDelQGajtNfnVXhp4MeZuE0NGRdww8Zu2d/7jgh7RU1627b06OT+yM3FRLPjyiHgwEzc0NlSNA6mSkTWgs5X8btdd3Cp1WwJhZvURMp9pDbZvuD8iR1F6yHhs+WUMu2iePzWM8CZiY12ri2FAbjzQpQSXsybspdaMef7kjWiUW4JPzW/WzdlTVu5/Fq4qGrw9sjIByGoN4E/ZmQpcYQqQFCGjcQ2Ms3jBCvmho7W5xIp95eapLui2MPKpoYt+4B9YWJ2dHTErlyL70bY48v4GuC3yRx7dUsha1TSQKC50rJlfDGwFoih8pnrDh5znPX5iTRr5owXy6rxPgEOBnFKy5b3IV45f2QV8PV9mqWf5oPhXP/uS8Dy2mT7ggjCq96de3Vyo+0yQ1Rbwpe7diWvT260erMqQlbQDNATQAmXLQuZcQT4E+XsaJ5d05GsmovNYfDuGO1B/aVkyzCwOi2/7XbuCPxak3QjfwcFoEJFDodiKt9MbjLC8UTKLfYG0fKpYSRr0JOJlBuq9FAO/gV1k4wpcEYTawAAAABJRU5ErkJggg=="><link rel=canonical href=https://www.in-ulm.de/~mascheck/bourne/v7/><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:; frame-src 'self' data:;"><style>img[src="data:,"],source[src="data:,"]{display:none!important}</style></head>
+<body>
+<a href=https://www.in-ulm.de/~mascheck/bourne/index.html>Bourne</a>
+| Ash
+| &nbsp;#!&nbsp;
+| find
+| <code>ARG_MAX</code>
+| Shells
+| portability
+| permissions
+| UUOC
+| -
+| ../Various
+| HOME
+<br>
+ "$@"
+| echo/printf
+| set -e
+| test
+| tty defs
+| tty chars
+| <code>$()</code> vs <code>)</code>
+| IFS
+| using siginfo
+| nanosleep
+| line charset
+| locale
+<p><hr>
+<h1>Manual of the Bourne Shell on Version 7</h1>
+<p> released under the license of
+<a href=https://www.in-ulm.de/~mascheck/various/Caldera-license.txt>Caldera</a>
+<p> original <a href=https://www.in-ulm.de/~mascheck/bourne/v7/sh.1>sh.1</a> massaged, nroffed and htmlized.
+<p><hr>
+<pre>SH(1)               UNIX Programmer's Manual                SH(1)
+
+
+<b>NAME</b>
+     sh, for, case, if,	while, :, ., break, continue,  cd,  eval,
+     exec,  exit,  export,  login,  newgrp,  read, readonly, set,
+     shift, times, trap, umask,	wait - command language
+
+<b>SYNOPSIS</b>
+     <b>sh</b>	[ <b>-ceiknrstuvx</b> ] [ arg ] ...
+
+<b>DESCRIPTION</b>
+     <u>Sh</u>	is a command programming language that executes	 commands
+     read  from	 a  terminal  or  a file.  See <b>invocation</b> for the
+     meaning of	arguments to the shell.
+
+     <b>Commands</b>.
+     A <u>simple</u>-<u>command</u> is a sequence of non blank <u>words</u>	separated
+     by	 blanks	 (a  blank  is a <b>tab</b> or	a <b>space</b>).  The first word
+     specifies the name	of the command to be executed.	Except as
+     specified	below the remaining words are passed as	arguments
+     to	the invoked command.  The command name is passed as argu-
+     ment  0 (see <u>exec</u>(2)).  The <u>value</u> of a simple-command is its
+     exit status if it terminates normally or  200+<u>status</u>  if  it
+     terminates	 abnormally  (see  <u>signal</u>(2) for a list	of status
+     values).
+
+     A <u>pipeline</u>	is a sequence of one or	more  <u>commands</u>	separated
+     by	 <b>|</b>.  The  standard output of each command but the last is
+     connected by a <u>pipe</u>(2) to the standard  input  of	the  next
+     command.	Each  command  is  run as a separate process; the
+     shell waits for the last command to terminate.
+
+     A <u>list</u> is a sequence of one or more <u>pipelines</u>  separated  by
+     <b>;,</b>	<b>&amp;</b>, <b>&amp;&amp;</b> or <b>||</b> and	optionally terminated by <b>;</b> or <b>&amp;</b>.  <b>;</b> and	<b>&amp;</b>
+     have equal	precedence which is lower than that of <b>&amp;&amp;</b> and <b>||</b>,
+     <b>&amp;&amp;</b>	 and  <b>||</b>  also have equal precedence.  A semicolon causes
+     sequential	execution;  an	ampersand  causes  the	preceding
+     <u>pipeline</u>  to  be  executed	without	waiting	for it to finish.
+     The symbol	<b>&amp;&amp;</b> (<b>||</b>)	causes the <u>list</u>	following to be	 executed
+     only  if  the  preceding  <u>pipeline</u>	returns	a zero (non zero)
+     value.  Newlines may appear in  a	<u>list</u>,  instead	of  semi-
+     colons, to	delimit	commands.
+
+     A <u>command</u> is either a simple-command or one of  the  follow-
+     ing.   The	 value	returned by a command is that of the last
+     simple-command executed in	the command.
+
+     <b>for</b> <u>name</u> [<b>in</b> <u>word</u> ...] <b>do</b> <u>list</u> <b>done</b>
+	  Each time a <b>for</b> command is executed <u>name</u> is set to  the
+	  next word in the <b>for</b> word list If <b>in</b> <u>word</u> ...	 is omit-
+	  ted then <b>in</b> <b>"$@"</b> is assumed.	Execution ends when there
+	  are no more words in the list.
+
+     <b>case</b> <u>word</u> <b>in</b> [<u>pattern</u> [ | <u>pattern</u> ] ... ) <u>list</u> ;;]	... <b>esac</b>
+	  A <b>case</b> command executes the <u>list</u>  associated	with  the
+	  first	 pattern  that matches <u>word</u>. The form of the pat-
+	  terns	is the same as that used for  file  name  genera-
+	  tion.
+
+     <b>if</b>	<u>list</u> <b>then</b> <u>list</u> [<b>elif</b> <u>list</u> <b>then</b> <u>list</u>] ... [<b>else</b> <u>list</u>] <b>fi</b>
+	  The <u>list</u> following <b>if</b>	is executed  and  if  it  returns
+	  zero	the  <u>list</u> following <b>then</b> is executed.  Otherwise,
+	  the <u>list</u> following <b>elif</b> is executed and if its value is
+	  zero the <u>list</u>	following <b>then</b> is executed.  Failing that
+	  the <b>else</b> <u>list</u>	is executed.
+
+     <b>while</b> <u>list</u>	[<b>do</b> <u>list</u>] <b>done</b>
+	  A <b>while</b> command repeatedly executes the <b>while</b>	<u>list</u>  and
+	  if  its  value  is zero executes the <b>do</b> <u>list</u>;	otherwise
+	  the loop terminates.	The value  returned  by	 a  <b>while</b>
+	  command  is that of the last executed	command	in the <b>do</b>
+	  <u>list</u>.	<b>until</b> may be used in place of <b>while</b> to negate the
+	  loop termination test.
+
+     <b>(</b> <u>list</u> <b>)</b>
+	  Execute <u>list</u> in a subshell.
+
+     <b>{</b> <u>list</u> <b>}</b>
+	  <u>list</u> is simply executed.
+
+     The following words are only recognized as	the first word of
+     a command and when	not quoted.
+
+	  <b>if</b> <b>then</b> <b>else</b> <b>elif</b> <b>fi</b> <b>case</b> <b>in</b> <b>esac</b> <b>for</b>	 <b>while</b>	<b>until</b>  <b>do</b>
+	  <b>done</b> <b>{</b> <b>}</b>
+
+     <b>Command</b> <b>substitution</b>.
+     The standard output from a	command	enclosed  in  a	 pair  of
+     grave  accents  (``)  may	be used	as part	or all of a word;
+     trailing newlines are removed.
+
+     <b>Parameter</b> <b>substitution</b>.
+     The character <b>$</b> is	used to	introduce  substitutable  parame-
+     ters.   Positional	parameters may be assigned values by set.
+     Variables may be set by writing
+
+	  <u>name</u>=<u>value</u> [ <u>name</u>=<u>value</u> ] ...
+
+     ${<u>parameter</u>}
+	  A <u>parameter</u> is a sequence of letters,	digits or  under-
+	  scores  (a <u>name</u>), a digit, or	any of the characters <b>*	@
+	  # ? -	$ !</b>.  The value, if any, of the	parameter is sub-
+	  stituted.   The braces are required only when	<u>parameter</u>
+	  is followed by a letter, digit, or underscore	 that  is
+	  not  to be interpreted as part of its	name.  If <u>parame-</u>
+	  <u>ter</u> is a digit then it is a positional  parameter.   If
+	  <u>parameter</u> is <b>*</b> or <b>@</b> then all the positional parameters,
+	  starting with	<b>$1</b>, are	substituted separated by  spaces.
+	  <b>$0</b> is	set from argument zero when the	shell is invoked.
+
+     ${<u>parameter</u>-<u>word</u>}
+	  If <u>parameter</u> is set then substitute its  value;  other-
+	  wise substitute <u>word</u>.
+
+     ${<u>parameter</u>=<u>word</u>}
+	  If <u>parameter</u> is not set then set it to <u>word</u>; the  value
+	  of  the  parameter  is  then	substituted.   Positional
+	  parameters may not be	assigned to in this way.
+
+     ${<u>parameter</u>?<u>word</u>}
+	  If <u>parameter</u> is set then substitute its  value;  other-
+	  wise,	 print	<u>word</u> and exit from the shell.  If <u>word</u> is
+	  omitted then a standard message is printed.
+
+     ${<u>parameter</u>+<u>word</u>}
+	  If <u>parameter</u> is set  then  substitute	 <u>word</u>;	otherwise
+	  substitute nothing.
+
+     In	the above <u>word</u> is not evaluated	unless it is to	 be  used
+     as	 the  substituted  string.   (So  that,	for example, echo
+     ${d-`pwd`}	will only execute <u>pwd</u> if <u>d</u> is unset.)
+
+     The following <u>parameters</u> are automatically	set by the shell.
+
+	  <b>#</b>    The number of positional	parameters in decimal.
+	  <b>-</b>    Options supplied	to the shell on	invocation or  by
+	       <b>set</b>.
+	  <b>?</b>    The value returned by the last executed command in
+	       decimal.
+	  <b>$</b>    The process number of this shell.
+	  <b>!</b>    The process number of the last background  command
+	       invoked.
+
+     The following <u>parameters</u> are used but not set by the shell.
+
+	  <b>HOME</b> The default argument (home directory) for  the  <b>cd</b>
+	       command.
+	  <b>PATH</b> The search path for commands (see <b>execution</b>).
+	  <b>MAIL</b> If this variable	is set to the name of a	mail file
+	       then  the shell informs the user	of the arrival of
+	       mail in the specified file.
+	  <b>PS1</b>  Primary prompt string, by default `$ '.
+	  <b>PS2</b>  Secondary prompt	string,	by default `&gt; '.
+	  <b>IFS</b>  Internal	field separators,  normally  <b>space</b>,  <b>tab</b>,
+	       and <b>newline</b>.
+
+     <b>Blank</b> <b>interpretation</b>.
+     After parameter and command  substitution,	 any  results  of
+     substitution  are scanned for internal field separator char-
+     acters (those found in <b>$IFS</b>) and split into  distinct  argu-
+     ments  where such characters are found.  Explicit null argu-
+     ments ("" or '')  are  retained.	Implicit  null	arguments
+     (those  resulting	from  <u>parameters</u> that have no values) are
+     removed.
+
+     <b>File</b> <b>name</b> <b>generation</b>.
+     Following substitution, each command word is scanned for the
+     characters	 <b>*,</b>  <b>?</b>	and <b>[.</b> If one of these characters appears
+     then the word  is	regarded  as  a	 pattern.   The	 word  is
+     replaced  with  alphabetically  sorted file names that match
+     the pattern.  If no file name is found that matches the pat-
+     tern  then	 the  word is left unchanged.  The character <b>.</b> at
+     the start of a file name or immediately following a  <b>/</b>,  and
+     the character <b>/</b>, must be matched explicitly.
+
+     <b>*</b>	  Matches any string, including	the null string.
+     <b>?</b>	  Matches any single character.
+     <b>[...]</b>
+	  Matches any one of the characters enclosed.  A pair  of
+	  characters  separated	 by - matches any character lexi-
+	  cally	between	the pair.
+
+     <b>Quoting</b>.
+     The following characters have a special meaning to	the shell
+     and cause termination of a	word unless quoted.
+
+	  <b>;</b>   <b>&amp;</b>	  <b>(</b>   <b>)</b>	  <b>|</b>   <b>&lt;</b>	  <b>&gt;</b>   <b>newline</b>	<b>space</b>	<b>tab</b>
+
+     A character may be	<u>quoted</u> by preceding it with a  <b>\.</b>   <b>\new-
+     line</b>  is ignored.	All characters enclosed	between	a pair of
+     quote marks (<b>''</b>), except a	single quote, are quoted.  Inside
+     double quotes (<b>""</b>)	parameter and command substitution occurs
+     and \ quotes the characters <b>\ ` "</b> and <b>$</b>.
+
+     <b>"$*"</b> is equivalent	to <b>"$1 $2 ..."</b>	whereas
+     <b>"$@"</b> is equivalent	to <b>"$1"	"$2" ...</b> .
+
+     <b>Prompting</b>.
+     When used interactively, the shell	prompts	with the value of
+     PS1  before  reading a command.  If at any	time a newline is
+     typed and further input is	needed to complete a command then
+     the secondary prompt (<b>$PS2</b>) is issued.
+
+     <b>Input</b> <b>output</b>.
+     Before a command is executed its input  and  output  may  be
+     redirected	 using	a  special  notation  interpreted  by the
+     shell.  The following  may	 appear	 anywhere  in  a  simple-
+     command  or  may  precede	or  follow  a <u>command</u> and are not
+     passed on	to  the	 invoked  command.   Substitution  occurs
+     before <u>word</u> or <u>digit</u> is used.
+
+     &lt;<u>word</u>
+	  Use file <u>word</u>	as standard input (file	descriptor 0).
+
+     &gt;<u>word</u>
+	  Use file <u>word</u>	as standard output (file  descriptor  1).
+	  If  the  file	does not exist then it is created; other-
+	  wise it is truncated to zero length.
+
+     &gt;&gt;<u>word</u>
+	  Use file <u>word</u>	as standard output.  If	the  file  exists
+	  then output is appended (by seeking to the end); other-
+	  wise the file	is created.
+
+     &lt;&lt;<u>word</u>
+	  The shell input is read up to	a line the same	as  <u>word</u>,
+	  or  end  of  file.   The resulting document becomes the
+	  standard input.  If any character  of	 <u>word</u>  is  quoted
+	  then no interpretation is placed upon	the characters of
+	  the document;	otherwise, parameter and command  substi-
+	  tution  occurs,  <b>\newline</b>  is	ignored, and <b>\</b> is used to
+	  quote	the characters <b>\ $ `</b> and the first  character  of
+	  <u>word</u>.
+
+     &lt;&amp;<u>digit</u>
+	  The standard input is	duplicated from	 file  descriptor
+	  <u>digit</u>;  see  <u>dup</u>(2).	Similarly for the standard output
+	  using	&gt;.
+
+     &lt;&amp;-  The standard input is	closed.	 Similarly for the  stan-
+	  dard output using &gt;.
+
+     If	one of the above is preceded by	a  digit  then	the  file
+     descriptor	 created  is that specified by the digit (instead
+     of	the default 0 or 1).  For example,
+
+	  ... 2&gt;&amp;1
+
+     creates file descriptor 2 to be a duplicate of file descrip-
+     tor 1.
+
+     If	a command is followed by  <b>&amp;</b>  then  the	default	 standard
+     input for the command is the empty	file (/dev/null).  Other-
+     wise, the environment for the execution of	 a  command  con-
+     tains the file descriptors	of the invoking	shell as modified
+     by	input output specifications.
+
+     <b>Environment</b>.
+     The environment is	a list of name-value pairs that	is passed
+     to	 an executed program in	the same way as	a normal argument
+     list; see <u>exec</u>(2) and <u>environ</u>(5).	The shell interacts  with
+     the  environment  in several ways.	 On invocation,	the shell
+     scans the environment and creates a <u>parameter</u> for each  name
+     found, giving it the corresponding	value.	Executed commands
+     inherit the same environment.   If	 the  user  modifies  the
+     values  of	 these	<u>parameters</u>  or	creates	new ones, none of
+     these affects the environment unless the <b>export</b>  command  is
+     used  to bind the shell's <u>parameter</u> to the	environment.  The
+     environment seen by any executed command is thus composed of
+     any  unmodified name-value	pairs originally inherited by the
+     shell, plus any modifications or  additions,  all	of  which
+     must be noted in <b>export</b> commands.
+
+     The environment for any <u>simple</u>-<u>command</u> may	be  augmented  by
+     prefixing	it  with  one  or more assignments to <u>parameters</u>.
+     Thus these	two lines are equivalent
+
+	  TERM=450 cmd args
+	  (export TERM;	TERM=450; cmd args)
+
+     If	the <b>-k</b> flag is set, <u>all</u>	keyword	arguments are  placed  in
+     the  environment,	even if	the occur after	the command name.
+     The following prints `a=b c' and `c':
+     echo a=b c
+     set -k
+     echo a=b c
+
+     <b>Signals</b>.
+     The INTERRUPT and QUIT signals for	an  invoked  command  are
+     ignored  if  the command is followed by &amp;;	otherwise signals
+     have the values inherited by  the	shell  from  its  parent.
+     (But see also <b>trap</b>.)
+
+     <b>Execution</b>.
+     Each time a command is executed the above substitutions  are
+     carried out.  Except for the `special commands' listed below
+     a new process is created and an attempt is	made  to  execute
+     the command via an	<u>exec</u>(2).
+
+     The shell parameter <b>$PATH</b> defines the search  path	 for  the
+     directory	containing  the	command.  Each alternative direc-
+     tory name is separated by a colon (<b>:</b>).  The default path  is
+     <b>:/bin:/usr/bin</b>.   If  the command name contains a / then the
+     search path is not	used.  Otherwise, each directory  in  the
+     path  is  searched	 for an	executable file.  If the file has
+     execute permission	but is not an <u>a</u>.<u>out</u> file, it  is  assumed
+     to	be a file containing shell commands.  A	subshell (i.e.,	a
+     separate process) is spawned to read  it.	 A  parenthesized
+     command is	also executed in a subshell.
+
+     <b>Special</b> <b>commands</b>.
+     The following commands are	executed in the	shell process and
+     except  where  specified no input output redirection is per-
+     mitted for	such commands.
+
+     <b>:</b>	  No effect; the command does nothing.
+     <b>.</b> <u>file</u>
+	  Read and execute commands from <u>file</u>  and  return.   The
+	  search  path	<b>$PATH</b>  is used to find the directory con-
+	  taining <u>file</u>.
+     <b>break</b> [<u>n</u>]
+	  Exit from the	enclosing <b>for</b> or <b>while</b> loop, if	any.   If
+	  n is specified then break <u>n</u> levels.
+     <b>continue</b> [<u>n</u>]
+	  Resume the next iteration of the enclosing <b>for</b> or <b>while</b>
+	  loop.	  If  <u>n</u>	 is  specified	then  resume  at the <u>n</u>-th
+	  enclosing loop.
+     <b>cd</b>	[<u>arg</u>]
+	  Change the current directory to <u>arg</u>. The shell  parame-
+	  ter <b>$HOME</b> is the default <u>arg</u>.
+     <b>eval</b> [<u>arg</u> ...]
+	  The arguments	are read as input to the  shell	 and  the
+	  resulting command(s) executed.
+     <b>exec</b> [<u>arg</u> ...]
+	  The command specified	by the arguments is  executed  in
+	  place	 of  this  shell  without creating a new process.
+	  Input	output arguments may appear and	if no other argu-
+	  ments	 are  given  cause  the	 shell input output to be
+	  modified.
+     <b>exit</b> [<u>n</u>]
+	  Causes a non interactive shell to exit  with	the  exit
+	  status  specified  by	 <u>n</u>. If <u>n</u> is omitted then the exit
+	  status is that of the	last command executed.	 (An  end
+	  of file will also exit from the shell.)
+     <b>export</b> [<u>name</u> ...]
+	  The given names are marked for automatic export to  the
+	  <u>environment</u>  of  subsequently-executed commands.  If no
+	  arguments are	given then a list of exportable	names  is
+	  printed.
+     <b>login</b> [<u>arg</u>	...]
+	  Equivalent to	`exec login arg	...'.
+     <b>newgrp</b> [<u>arg</u> ...]
+	  Equivalent to	`exec newgrp arg ...'.
+     <b>read</b> <u>name</u> ...
+	  One line is read from	the  standard  input;  successive
+	  words	 of  the input are assigned to the variables <u>name</u>
+	  in order, with leftover words	 to  the  last	variable.
+	  The  return code is 0	unless the end-of-file is encoun-
+	  tered.
+     <b>readonly</b> [<u>name</u> ...]
+	  The given names are marked readonly and the  values  of
+	  the  these  names  may  not  be  changed  by subsequent
+	  assignment.  If no arguments are given then a	 list  of
+	  all readonly names is	printed.
+     <b>set</b> [<b>-eknptuvx</b> [arg ...]]
+	  <b>-e</b> If	non interactive	then exit immediately if  a  com-
+	     mand fails.
+	  <b>-k</b> All keyword arguments are placed in the  environment
+	     for  a command, not just those that precede the com-
+	     mand name.
+	  <b>-n</b> Read commands but do not execute them.
+	  <b>-t</b> Exit after	reading	and executing one command.
+	  <b>-u</b> Treat unset variables as an error when substituting.
+	  <b>-v</b> Print shell input lines as	they are read.
+	  <b>-x</b> Print commands and	their arguments	as they	are  exe-
+	     cuted.
+	  <b>-</b>  Turn off the <b>-x</b> and <b>-v</b> options.
+
+	  These	flags can also be used	upon  invocation  of  the
+	  shell.  The current set of flags may be found	in $-.
+
+	  Remaining arguments are positional parameters	 and  are
+	  assigned,  in	 order,	 to <b>$1</b>,	<b>$2</b>, etc.  If no	arguments
+	  are given then the values of all names are printed.
+
+     <b>shift</b>
+	  The positional parameters from <b>$2</b>...	are renamed <b>$1</b>...
+
+     <b>times</b>
+	  Print	 the  accumulated  user	 and  system  times   for
+	  processes run	from the shell.
+
+     <b>trap</b> [<u>arg</u>]	[<u>n</u>] ...
+	  <u>Arg</u> is a command to be read and executed when	the shell
+	  receives  signal(s)  <u>n</u>.  (Note that <u>arg</u> is scanned once
+	  when the trap	is set and once	when the trap is  taken.)
+	  Trap	commands  are executed in order	of signal number.
+	  If <u>arg</u> is absent then	all trap(s) <u>n</u> are reset	to  their
+	  original  values.   If <u>arg</u> is	the null string	then this
+	  signal is ignored by the shell and by	invoked	commands.
+	  If <u>n</u> is 0 then the command <u>arg</u> is executed on	exit from
+	  the shell, otherwise upon receipt of signal <u>n</u>	 as  num-
+	  bered	 in  <u>signal</u>(2).	  <u>Trap</u> with no arguments prints	a
+	  list of commands associated with each	signal number.
+
+     <b>umask</b> [ <u>nnn</u> ]
+	  The user file	creation mask is set to	the  octal  value
+	  <u>nnn</u>  (see  <u>umask</u>(2)).	  If  <u>nnn</u> is omitted, the current
+	  value	of the mask is printed.
+
+     <b>wait</b> [<u>n</u>]
+	  Wait for the specified process and report its	 termina-
+	  tion	status.	  If  <u>n</u>	 is  not given then all	currently
+	  active child processes are waited for.  The return code
+	  from this command is that of the process waited for.
+
+     <b>Invocation</b>.
+     If	the first character of argument	zero is	-,  commands  are
+     read  from	 <b>$HOME/.profile</b>, if such a file	exists.	 Commands
+     are then read as described	below.	The following  flags  are
+     interpreted by the	shell when it is invoked.
+     <b>-c</b>	<u>string</u>	If the <b>-c</b> flag is present then commands	are  read
+		from <u>string</u>.
+     <b>-s</b>		If the <b>-s</b> flag is  present  or	if  no	arguments
+		remain	then  commands are read	from the standard
+		input.	Shell output is	written	to file	 descrip-
+		tor 2.
+     <b>-i</b>		If the <b>-i</b> flag is present or if	the  shell  input
+		and output are attached	to a terminal (as told by
+		<u>gtty</u>) then this	shell  is  <u>interactive</u>.	 In  this
+		case the terminate signal SIGTERM (see <u>signal</u>(2))
+		is ignored (so that `kill 0'  does  not	 kill  an
+		interactive  shell) and	the interrupt signal SIG-
+		INT is caught and ignored (so that <b>wait</b>	is inter-
+		ruptable).   In	 all  cases SIGQUIT is ignored by
+		the shell.
+
+     The remaining flags and arguments are  described  under  the
+     set command.
+
+<b>FILES</b>
+     $HOME/.profile
+     /tmp/sh*
+     /dev/null
+
+<b>SEE ALSO</b>
+     test(1), exec(2),
+
+<b>DIAGNOSTICS</b>
+     Errors detected by	the shell, such	as  syntax  errors  cause
+     the shell to return a non zero exit status.  If the shell is
+     being used	non interactively then	execution  of  the  shell
+     file  is  abandoned.   Otherwise, the shell returns the exit
+     status of the last	command	executed (see also <b>exit</b>).
+
+<b>BUGS</b>
+     If	&lt;&lt; is used to provide standard input to	 an  asynchronous
+     process  invoked  by &amp;, the shell gets mixed up about naming
+     the input document.  A garbage file /tmp/sh* is created, and
+     the shell complains about not being able to find the file by
+     another name.
+</pre>
