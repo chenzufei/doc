@@ -358,3 +358,4 @@ bash: IEEE POISIX P10003.2/ISO 9945.2 shell and tools
 http://ftp.gnu.org/gnu/bash/
 
 
+https://brennan.io/2015/01/16/write-a-shell-in-c/
