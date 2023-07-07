@@ -129,3 +129,67 @@ obj = $(patsubst %.c,%.o, $(src)) //把src变量里所有后缀为.c的文件替
 
 
 
+
+
+
+第一个Makefile
+ALL:calc
+add.o:add.c
+	gcc -c add.c -o add.o
+sub.o:sub.c
+	gcc -c sub.c -o sub.o
+calc:add.o sub.o
+	gcc add.o sub.o -o calc
+
+
+第二个Makefile:
+src = $(wildcard *.c)               找到当前目录下所有后缀为.c的文件，赋值给src
+obj = $(patsubst %.c,%.o, $(src))   把src变量里所有后缀为.c的文件替换成.o
+$@ ：在规则命令中，表示规则的中的目标
+$< ：在规则命令中，表示规则中的第一个条件
+$^ ：在规则命令中，表示规则中的所有条件
+
+
+src = $(wildcard *.c)
+obj = $(patsubst %.c,%.o, $(src))
+
+ALL:calc
+add.o:add.c
+	gcc -c $< -o $@
+sub.o:sub.c
+	gcc -c $< -o $@
+calc:$(obj)
+	gcc $^ -o $@
+clean:
+	rm -rf $(obj) calc
+
+
+第三个Makefile: 新增.c文件无须修改Makefile
+
+src = $(wildcard *.c)
+obj = $(patsubst %.c,%.o, $(src))
+
+ALL:calc
+%.o:%.c
+	gcc -c $< -o $@
+calc:$(obj)
+	gcc $^ -o $@
+clean:
+	rm -rf $(obj) calc
+
+
+
+第四个Makefile: 使用静态模式规则，伪目标，添加编译参数
+
+src = $(wildcard *.c)
+obj = $(patsubst %.c,%.o, $(src))
+my_flags = -Wall -g
+
+ALL:calc
+$(obj):%.o:%.c
+	gcc -c $< -o $@ $(my_flags)
+calc:$(obj)
+	gcc $^ -o $@ $(my_flags)
+clean:
+	rm -rf $(obj) calc
+.PHONY:clean ALL

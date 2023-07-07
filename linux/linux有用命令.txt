@@ -29,7 +29,7 @@ split      进行大文件切割，比如split -d -b 100m file
 cat        文件合并，比如cat /data/file_* file
 
 chattr/lsattr   文件特殊属性
-
+find . -type f -name Makefile |xargs cat | grep -a 'MAKESILENT'
 
 
 打包和压缩

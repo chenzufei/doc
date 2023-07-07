@@ -46,3 +46,8 @@ make : 根据Makefile中的相关命令编译、连接，最终生成可执行�
 gcc  ：GNU编译器套件，通过gcc编译文件，输出汇编文件
                       通过as将汇编文件输出为二进制文件
                       通过ld将二进制文件生成可执行文件
+
+
+CFLAGS += -std=c++11
+cmake -DCMAKE_CXX_STANDARD=11
+set(CMAKE_CXX_STANDARD 11)
