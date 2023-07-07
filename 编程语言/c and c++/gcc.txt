@@ -32,7 +32,7 @@ gcc -Idir      添加dir目录为头文件搜索路径 （大写i）
 gcc -Ldir      添加dir目录为库文件搜索路径 （大写l）
 gcc -static    静态连接库文件(xxx.a)
 gcc -share     动态连接库文件(xxx.so)
-
+gcc -std=c99
 
 -Wall   发出gcc提供的所有有用的报警信息
 -Werror 将告警升级为编译报错
