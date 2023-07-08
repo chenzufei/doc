@@ -100,6 +100,11 @@ https://mirrors.tuna.tsinghua.edu.cn/help/linux.git/
 
 
 
+gnu
+
+https://ftp.gnu.org/gnu/
+http://prep.ai.mit.edu/pub/gnu/
+
 
 
 
