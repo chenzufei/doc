@@ -1,0 +1,159 @@
+<html><!--
+ Page saved with SingleFile 
+ url: https://www.krsaborio.net/linux-kernel/research/1992/0929.html 
+ saved date: Sat Jul 08 2023 17:27:39 GMT+0800 (中国标准时间)
+--><meta charset=utf-8>
+<meta http-equiv=Content-Language content=en-us>
+<title>Finally: 0.98</title>
+<link rel=canonical href=https://www.krsaborio.net/linux-kernel/research/1992/0929.html><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:; frame-src 'self' data:;"><style>img[src="data:,"],source[src="data:,"]{display:none!important}</style></head>
+<body bgcolor=#FFFFFF>
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+ <tbody><tr>
+ <td>
+ <table align=left bgcolor=#ffffff border=0 cellpadding=0 cellspacing=0 style=font-family:helvetica,sans-serif width=100%>
+ <tbody><tr>
+ <td>
+ <table border=0 cellpadding=0 cellspacing=0 width=100%>
+ <tbody><tr>
+ <td valign=top width=20>&nbsp;</td>
+ <td>
+ <table border=0 cellpadding=0 cellspacing=0 width=100%>
+ <tbody><tr>
+ <td>
+ <div style=border:0px;padding-top:0px;position:relative>
+ <table border=0 cellpadding=0 cellspacing=0 width=100%>
+ <tbody><tr>
+ <td height=15></td>
+ </tr>
+ <tr>
+ <td>
+ <pre>		    <a href=http://www.krsaborio.net/ style=color:#000;text-decoration:none target=_blank>The Internet, Unix, BSD, and Linux</a></pre>
+ </td>
+ </tr>
+ <tr>
+ <td height=20></td>
+ </tr>
+ <tr>
+ <td><hr></td>
+ </tr>
+ </table>
+ </div>
+ <div style=border:0px;padding-top:0px;position:relative>
+ <table border=0 cellpadding=0 cellspacing=0 width=100%>
+ <tbody><tr>
+ <td height=20></td>
+ </tr>
+ <tr>
+ <td valign=top width=100%>
+<pre>Path: sparky!uunet!charon.amdahl.com!pacbell.com!ames!agate!doc.ic.ac.uk!
+uknet!mcsun!news.funet.fi!hydra!klaava!torvalds
+From: torva...@klaava.Helsinki.FI (Linus Torvalds)
+Newsgroups: comp.os.linux
+Subject: Finally: 0.98
+Message-ID: &lt;1992Sep29.211121.15619@klaava.Helsinki.FI&gt;
+Date: 29 Sep 92 21:11:21 GMT
+Organization: University of Helsinki
+Lines: 35
+
+Sorry for being late - I can't even show any great new features in 0.98,
+but at least it's out now, and available at the normal place (ie at
+nic.funet.fi, pub/OS/Linux/testing/Linus).  So far there is only a
+full-source version available, although I'll probably make it available
+as a patch too tomorrow or so (but the patch won't contain the tcp/ip
+stuff). 
+
+0.98 is essentially the same as 0.97.pl6 - the changes are mostly:
+ - tcp/ip (0.8.1) is in.  It's not compiled into the standard bootimage,
+   and you'd better be on the tcpip mailing-list to use it, but it's
+   there. I've been unable to test it further than just watch it
+   compile...
+ - extfs patch to correct the problem with big directories with holes.
+ - mouse patches (ie improved detection-routines)
+ - minor scsi patches (ultrastor driver change)
+ - swiss keyboard
+ - some serial driver patches
+ - the 32mb patches are in, so if you aren't using a DMA-SCSI driver,
+   and have more than 16MB physical memory, you can get it recognized.
+ - edited hd.c
+ - corrected core-dumping routines
+
+I didn't get my mm patches working yet, so they'll have to wait.  The
+above are almost 100% by others - I have edited some of the patches, but
+there is nothing major new by me.  Most of it is minor bug-fixes, and
+the only thing that might be a bit of a problem are the hd.c changes:
+but I hope they'll solve more problems than they cause.  Knock wood. 
+
+At nic.funet.fi you can currently find (a) the full sources (b) a
+bootimage (US keyboard, floppy root, no tcp/ip) and (c) the protocols.h
+file needed for compiling the tcp/ip directory (which should go into
+/usr/include/netinet/).  I hope people try it out, and that there are no
+new problems with this release. 
+
+		Linus</pre>
+ </td>
+ </tr>
+ </table>
+ </div>
+ <div style=border:0px;padding-top:0px;position:relative>
+ <table border=0 cellpadding=0 cellspacing=0 width=100%>
+ <tbody><tr>
+ <td height=20></td>
+ </tr>
+ <tr>
+ <td><hr></td>
+ </tr>
+ <tr>
+ <td height=20></td>
+ </tr>
+ <tr>
+ <td>
+ <pre>			  SCO's Case Against IBM
+
+November 12, 2003 - Jed Boal from Eyewitness News KSL 5 TV provides an
+overview on SCO's case against IBM. Darl McBride, SCO's president and CEO,
+talks about the lawsuit's impact and attacks. Jason Holt, student and 
+Linux user, talks about the benefits of code availability and the merits 
+of the SCO vs IBM lawsuit. See <a href=https://www.itreview.org/ style=color:#000;text-decoration:underline target=_blank>SCO vs IBM</a>.</pre>
+ </td>
+ </tr>
+ <tr>
+ <td height=5></td>
+ </tr>
+ </table>
+ </div>
+ <div style=border:0px;padding-top:0px;position:relative>
+ <table border=0 cellpadding=0 cellspacing=0 width=100%>
+ <tbody><tr>
+ <td height=20></td>
+ </tr>
+ <tr>
+ <td><hr></td>
+ </tr>
+ <tr>
+ <td height=20></td>
+ </tr>
+ <tr>
+ <td>
+ <pre>Note: The materials and information included in these Web pages are not to
+be used for any other purpose other than private study, research, review
+or criticism.</pre>
+ </td>
+ </tr>
+ <tr>
+ <td height=15></td>
+ </tr>
+ </table>
+ </div>
+ </td>
+ </tr>
+ </table>
+ </td>
+ <td valign=top width=20>&nbsp;</td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+</table>

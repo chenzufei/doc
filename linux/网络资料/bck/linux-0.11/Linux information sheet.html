@@ -1,0 +1,276 @@
+<html style><!--
+ Page saved with SingleFile 
+ url: https://www.krsaborio.net/linux-kernel/research/1992/0109.html 
+ saved date: Sat Jul 08 2023 17:00:14 GMT+0800 (中国标准时间)
+--><meta charset=utf-8>
+<meta http-equiv=Content-Language content=en-us>
+<title>Linux information sheet</title>
+<link rel=canonical href=https://www.krsaborio.net/linux-kernel/research/1992/0109.html><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:; frame-src 'self' data:;"><style>img[src="data:,"],source[src="data:,"]{display:none!important}</style></head>
+<body bgcolor=#FFFFFF>
+<table border=0 cellpadding=0 cellspacing=0 width=100%>
+ <tbody><tr>
+ <td>
+ <table align=left bgcolor=#ffffff border=0 cellpadding=0 cellspacing=0 style=font-family:helvetica,sans-serif width=100%>
+ <tbody><tr>
+ <td>
+ <table border=0 cellpadding=0 cellspacing=0 width=100%>
+ <tbody><tr>
+ <td valign=top width=20>&nbsp;</td>
+ <td>
+ <table border=0 cellpadding=0 cellspacing=0 width=100%>
+ <tbody><tr>
+ <td>
+ <div style=border:0px;padding-top:0px;position:relative>
+ <table border=0 cellpadding=0 cellspacing=0 width=100%>
+ <tbody><tr>
+ <td height=15></td>
+ </tr>
+ <tr>
+ <td>
+ <pre>		    <a href=http://www.krsaborio.net/ style=color:#000;text-decoration:none target=_blank>The Internet, Unix, BSD, and Linux</a></pre>
+ </td>
+ </tr>
+ <tr>
+ <td height=20></td>
+ </tr>
+ <tr>
+ <td><hr></td>
+ </tr>
+ </table>
+ </div>
+ <div style=border:0px;padding-top:0px;position:relative>
+ <table border=0 cellpadding=0 cellspacing=0 width=100%>
+ <tbody><tr>
+ <td height=20></td>
+ </tr>
+ <tr>
+ <td valign=top width=100%>
+<pre>From: torvalds@klaava.Helsinki.FI (Linus Benedict Torvalds)
+Newsgroups: comp.os.minix,comp.binaries.ibm.pc.d,comp.os.coherent,comp.os.mach,
+comp.os.misc,comp.unix.sysv386,comp.unix.programmers,gnu.misc.discuss
+Subject: Linux information sheet (non-monthly posting)
+Summary: free unix in beta
+Keywords: i386 unix
+Message-ID: &lt;1992Jan9.121044.18825@klaava.Helsinki.FI&gt;
+Date: 9 Jan 92 12:10:44 GMT
+Organization: University of Helsinki
+Lines: 150
+
+
+
+	This is a blatant plug for my own unix-like kernel, as I'm
+always interested in more beta-testers.  It should be self-explanatory,
+although interested persons should note that version 0.12 (still beta)
+will be out in a week or so.  0.12 will have some additional features,
+most notably:
+
+ - real paging to/from disk (but gcc is /slow/ on a 2M machine)
+ - POSIX job control
+ - virtual consoles &amp; pty's
+ - some 387-emulation
+
+but no, it doesn't do X yet. It looks a lot like minix, if you are
+familiar with that (but much better, of course :).
+
+	LINUX IS STILL IN BETA!! You are probably not interested in this
+if you only know DOS - it helps /a lot/ if you have managed unix even a
+little: used minix or similar.  Reading C-source and understanding what
+happens is another nice ability.  Being beta also means it has many
+potential bugs, so watch out (although 0.11 seems to have been
+relatively stable).
+
+	This information sheet has been compiled by Robert Blum
+(blum@cip-s01.informatik.rwth-aachen.de), but he has problems posting
+it.  Questions/suggestions about the SHEET should go to him, about Linux
+either to me or to the mailing-list.
+
+		Linus (torvalds@kruuna.helsinki.fi)
+
+PS. Sorry about the 100+ newsgroups (well, 8 I think) - I'm not certain
+which groups would be best.
+
+--------------------------------------------------
+
+LINUX INFORMATION SHEET
+(last updated 13 Dec 1991)
+
+1. WHAT IS LINUX 0.11
+    LINUX 0.11 is a freely distributable UNIX clone.  It implements a
+subset of System V and POSIX functionality.  LINUX has been written
+from scratch, and therefore does not contain any AT&amp;T or MINIX
+code--not in the kernel, the compiler, the utilities, or the libraries.
+For this reason it can be made available with the complete source code
+via anonymous FTP.  LINUX runs only on 386/486 AT-bus machines; porting
+to non-Intel architectures is likely to be difficult, as the kernel
+makes extensive use of 386 memory management and task primitives.
+
+     Version 0.11 is still a beta release, but it already provides much
+of the functionality of a System V.3 kernel.  For example, various
+users have been able to port programs such as bison/flex without having
+to modify code at all.  Another indication of its maturity is that
+it is now possible to do LINUX kernel development using LINUX itself 
+and freely-available programming tools.
+
+2. LINUX features
+  - System call compatible with a subset of System V and POSIX
+  - Full multiprogramming (multiple programs can run at once)
+  - Memory paging with copy-on-write
+  - Demand loading of executables
+  - Page sharing of executables
+  - ANSI compliant C compiler (gcc)
+  - A complete set of compiler writing tools
+    (bison as yacc-replacement, flex as lex replacement)
+  - The GNU 'Bourne again' shell (bash)
+  - Micro emacs
+  - most utilities you need for development
+    (cat, cp, kermit, ls, make, etc.)
+  - Over 200 library procedures (atoi, fork, malloc, read, stdio, etc.)
+  - Currently 4 national keyboards: Finnish/US/German/French
+  - Full source code (in C) for the OS is freely distributable
+  - Full source code of the tools can be gotten from many anonymous ftp sites
+    (Almost the entire suite of GNU programs has been ported to Linux.)
+  - Runs in protected mode on 386 and above
+  - Support for extended memory up to 16M on 386 and above
+  - RS-232 serial line support with terminal emulation, kermit, zmodem, etc.
+  - Supports the real time clock
+
+
+3. HARDWARE REQUIRED
+   - A 386 or 486 machine with an AT-bus.  (EISA will probably work, also,
+     but you will need an AT-bus hard disk controller.)
+     Both DX and SX processors will work.
+   - A hard disk implementing the standard AT hard disk interface--
+     for example, an IDE drive.  SCSI drives are not supported yet.
+   - A high-density disk drive--either 5.25" (1.2MB) or 3.5" (1.44MB).
+   - At least 2 megabytes of RAM.  (LINUX will boot in 2 Mb.  To use
+     gcc at least 4 MB are required.)
+   - Any video card of the following: Hercules,CGA,EGA,VGA
+
+In addition, LINUX supports
+   - Up to two serial lines
+   - A real time clock 
+
+4. PARTIAL LIST OF UTILITIES INCLUDED IN OR AVAILABLE FOR LINUX 0.11 
+   - The MTOOLS package (reading/writing to DOS filesystems)
+   - The complete GNU filetools (ls, cat, cp, mv, ...)
+   - The GNU C compiler with GNU assembler, linker, ar, ...
+   - bison
+   - flex
+   - rcs
+   - pmake (BSD 4.3 Reno/BSD 4.4  make)
+   - kermit
+   - Micro emacs
+   - less
+   - mkfs
+   - fsck
+   - mount/umount
+
+
+5. LINUX BINARIES
+    The LINUX binaries and sources are available at three
+    anonymous FTP sites. These are:
+
+    nic.funet.fi:/pub/OS/Linux
+    tsx-11.mit.edu:/pub/linux
+    tupac-amaru.informatik.rwth-aachen.de:/pub/msdos/replace
+
+
+6. LEGAL STATUS OF LINUX
+     Although LINUX is  supplied with the  complete source  code, it is
+copyrighted software.  Unlike MINIX, however, it is available for free,
+provided  you obey  to the  rules specified  in  the  LINUX  copyright.
+
+
+7. NEWS ABOUT LINUX
+     Since LINUX's  introduction to the public there has been a rapidly
+growing mailing list, "linux-activists@niksula.hut.fi". To subscribe to 
+this  list,  mail to "linux-activists-requests@niksula.hut.fi".  If the
+traffic in this lists increases  further, there are  plans to swap ( at 
+least partially ) over  to comp.os.misc, so  watch out  for  any  LINUX 
+articles in  this group.  For the current status of LINUX, do "finger
+torvalds@kruuna.helsinki.fi".
+
+
+8. FUTURE PLANS
+     Work is underway on LINUX version 1.0, which will close some of the
+gaps in the present implementation.  Various people are currently working
+on:
+     - Math support/fp emulation in the kernel
+     - Page swapping (since paging is already implemented)
+     - A virtual filesystem layer 
+     - STREAMS 
+     - POSIX job control (This is already alpha and will probably be 
+       out with Version 0.12.)
+     - init/getty/login
+     - symbolic links
+     - Interprocess communication
+     - IEEE POSIX P1003.1 / P1003.2 compatibility
+     - SCSI support
+If you want to help, join the mailing list.</pre>
+ </td>
+ </tr>
+ </table>
+ </div>
+ <div style=border:0px;padding-top:0px;position:relative>
+ <table border=0 cellpadding=0 cellspacing=0 width=100%>
+ <tbody><tr>
+ <td height=20></td>
+ </tr>
+ <tr>
+ <td><hr></td>
+ </tr>
+ <tr>
+ <td height=20></td>
+ </tr>
+ <tr>
+ <td>
+ <pre>			  SCO's Case Against IBM
+
+November 12, 2003 - Jed Boal from Eyewitness News KSL 5 TV provides an
+overview on SCO's case against IBM. Darl McBride, SCO's president and CEO,
+talks about the lawsuit's impact and attacks. Jason Holt, student and 
+Linux user, talks about the benefits of code availability and the merits 
+of the SCO vs IBM lawsuit. See <a href=https://www.itreview.org/ style=color:#000;text-decoration:underline target=_blank>SCO vs IBM</a>.</pre>
+ </td>
+ </tr>
+ <tr>
+ <td height=5></td>
+ </tr>
+ </table>
+ </div>
+ <div style=border:0px;padding-top:0px;position:relative>
+ <table border=0 cellpadding=0 cellspacing=0 width=100%>
+ <tbody><tr>
+ <td height=20></td>
+ </tr>
+ <tr>
+ <td><hr></td>
+ </tr>
+ <tr>
+ <td height=20></td>
+ </tr>
+ <tr>
+ <td>
+ <pre>Note: The materials and information included in these Web pages are not to
+be used for any other purpose other than private study, research, review
+or criticism.</pre>
+ </td>
+ </tr>
+ <tr>
+ <td height=15></td>
+ </tr>
+ </table>
+ </div>
+ </td>
+ </tr>
+ </table>
+ </td>
+ <td valign=top width=20>&nbsp;</td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+</table>

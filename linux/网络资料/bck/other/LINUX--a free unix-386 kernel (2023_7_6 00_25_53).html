@@ -1,0 +1,464 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"> <html style><!--
+ Page saved with SingleFile 
+ url: http://www.oldlinux.org/Linus/index.html 
+ saved date: Thu Jul 06 2023 00:25:53 GMT+0800 (中国标准时间)
+--><meta charset=utf-8>
+<title>LINUX--a free unix-386 kernel</title>
+<meta name=description content="LINUX--a free unix-386 kernel">
+<meta name=keywords content=Linux>
+<meta name=resource-type content=document>
+<meta name=distribution content=global>
+<meta name=Generator content="jLaTeX2HTML v2002 JA patch-1.4">
+<meta http-equiv=Content-Style-Type content=text/css>
+<style>:root{--sf-img-1: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFEAAAAYCAAAAAHQtH7YAAAAAnRSTlMAvy1NYyUAAAE7SURBVHictZTZbcQwEEOfDbXF/rYcdbAfbMIduI186LStTQZIQkCGMOacorSddCSOts0JAMvANjjpsOp2H47befBAToABXczpYeGaYqIuova0rmsYPczGjWlABllgtvci5rL+FfI+kg/YflJHSbiUBJY0SmzfnVriNBgBRribFKzTAvJ2vmIdrSe/wqSOb5H3nzkF+32QAJ9meTdbTxWx00Y3HAT1CMrGjVhYrqMfUKWqi0iARJO+V3U3tcnl3Iruiout0pcVF1t8jokcI4bPOopXIqiKIDLhrsOoJ9Pv4g3dYq8JnyJOwrHdROEmsS5R0e97eSlaHo+XI9FDFsWo+FtY5e26FKyyKm362Yw9IpoIGhm4OYW77p2r9mJdbpBGj5073ZzqAsB2/ol6en//p55fY5p5Ivo2R/EFOhGH59sdF5cAAAAASUVORK5CYII=");--sf-img-2: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAYCAAAAAG27oKPAAAAAnRSTlMAvy1NYyUAAACgSURBVHicfZHBDcUgDEMfKGtlv47DBv/gJdiANf4BaENLa4kECzuxRGqAUSkZQWpgVZ5xUqsAJQNCZMBxUgPAKgCZWxMi/QDmhI4yJFoMg5/M0cm8H6NcU+b2AWOzgZAlMp5MaHnzndIlQAJsaHrJwfWdM+IwYuqActu9iSxiW54uCGko7DHHQUv6110uGGJNU/ybs/g+xkdCv67G8eb6A4TALQ4AolIRAAAAAElFTkSuQmCC");--sf-img-3: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAAYCAAAAAEfmkobAAAAAnRSTlMAvy1NYyUAAAEASURBVHiczZTBdcQgDEQ/frQ1/W057mAP00Q6cBs5gABjx+RtLpkDwkJCYiQ5HRRkvmIDYEjtqJ6wVUk6QnU6senOk0W7LZAng32bDNgA47LYQ3wsA6T3dMcl7IR9Axx5RrJzUKmqPZpUr5KEqMIuoiuXOWT2R4MrVxNarX4IcGHy4o/bE25QOPDjOdTi1DUE7hRpbAl1OeQnFbv2zanOsgv9spHB1pLhX7z/uQAr/hd4ZZ4L9IydVf4r1GmEzv8H/kBpklpmRy3OmjYpbnNVfiHDTAgswJJjH5qI1Hfhf21QgSzfdq56U9/xp0i1ucs9aHmZ6lc6/kP9Pkfm9Sf/b+WyaT1RKcIYAAAAAElFTkSuQmCC")}</style>
+<link type=image/x-icon rel="shortcut icon" href=data:image/x-icon;base64,AAABAAEAEBAAAAEAGABoAwAAFgAAACgAAAAQAAAAIAAAAAEAGAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAD////+/v7z8/OquMVCXnY5UGNaX2NTYnA4XX08Vmt2en6Yl5i5uLnS0dPj4+Tx8fL////////O5vkHedkActIAY7cOQGsBXasAdtoAbck0ebPm5ufp6ens7Ozw8PD29vf+/v64wskmlvEAgewAgOsAd9wvWoICdtcAf+kAfucAfOR8n7329vbLy8v////////z8/MPJywhxvgAjvMAl/ICj+p1go4Pp+sAmfQAjfEOkOBaiaZLS0t1dXX////////h4eEmJibl+PtY3vaFyOSUzN+/x85zpbFXnbA7v9h7j56OkJENDQ2Dg4P////////7+/szMzPe3+Dh5+vIztS5v8OYnJ+NkpaZn6WzuL2vsrRxcnINDQ2xsbH////////////Kyspqa2vc3t+MkpdQeJA0X4lDYHpqdH6Zmpusra4lJSV1dXX9/f3////////////Q0NCJiYnO8foRp8oCdo0CVasBUIMCa65Rms/IzM88PT2IiIj///////////////+bm5vy8vL+/v7O6Okt0t0A6v4Xre17rsrg5urc3+GjpaZLS0v///////////////+dnZ3+/v7///+cnJx4eXm++v6qsbRPUFD9/f7t7+/HyMk7Ozv///////////////+lpaXv7+/////+/v7+/v7////+/v7+/v7////9/f21t7dWVlb////////////////j4+OLi4v+/v7////+/v7h4OH+/v7////////8/PxUVFSenp7////////////////+/v58fHx6enq/v7+VlZUgICBnZ2e/v7+4uLhUVFQ4ODj39/f////////////////////4+PheXl4YGBgWFhYVFRUXFxcYGBgZGRkzMzPb29v////////////////////////////9/f2lpaVHR0ccHBwaGhozMzODg4Pv7+/////////////////////////////////////////+/v75+fn19fX+/v7///////////////////////////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA><link rel=canonical href=http://www.oldlinux.org/Linus/index.html><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:; frame-src 'self' data:;"><style>img[src="data:,"],source[src="data:,"]{display:none!important}</style></head>
+<body>
+<img width=81 height=24 align=BOTTOM border=0 alt=next_inactive src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="81" height="24"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-1)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important"> 
+<img width=26 height=24 align=BOTTOM border=0 alt=up src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="26" height="24"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-2)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important"> 
+<img width=63 height=24 align=BOTTOM border=0 alt=previous src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="63" height="24"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-3)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important"> 
+<br>
+<br>
+<br>
+<h1 align=CENTER>L<small>INUX</small>--a free unix-386 kernel</h1>
+<p align=CENTER><strong>Linus Torvalds (torvalds@kruuna.helsinki.fi)</strong></p>
+<p align=CENTER><strong>October 10, 1991</strong></p>
+<p>
+<h1><a name=SECTION00010000000000000000>
+Introduction to L<small>INUX</small></a>
+</h1>
+<p>
+<h2><a name=SECTION00011000000000000000>
+What is L<small>INUX</small>?</a>
+</h2>
+<p>
+L<small>INUX</small> is a free unix-like kernel for 386-AT computers, coming with
+full source code. It is meant for hackers/computer science students to
+use, learn and enjoy. It is written mostly in <tt><b>C</b></tt>, but parts of
+it are in gnu-format assembler, and the boot-sequence is in intel 086
+assembly language. The <tt><b>C</b></tt>-code is relatively ANSI, with a few
+GNU enhancements (mostly <tt>__asm__</tt> and <tt>inline</tt>).
+<p>
+While there are a number of unices available for 386 computers, most of
+them cost a lot of money, and come with no source. Thus, they are ideal
+for actually <i>using</i> your computer, but if you want to learn how
+they work, you are f- -ked.
+<p>
+There are also a few unices available with source. Minix, the learning
+tool written by Andrew S.&nbsp;Tanenbaum, has been used in universities as a
+teaching tool for years. The BSD-386 system comes with source, but has a
+restrictive copyright and costs a lot of money ($995 is the starting
+price, I think). The GNU kernel (Hurd) will be free, but is currently
+not ready, and will be too big to understand and learn.
+<p>
+L<small>INUX</small> most closely resembles Minix, in that it is small and not very
+sophisticated, and thus easy (well...) to understand. L<small>INUX</small> was
+also written under Minix, so there are quite a bit of similarities, and
+any Minix hacker will feel relatively at home with L<small>INUX</small>. None of the
+Minix code was used in the project though, so the Minix copyright
+doesn't cover the new system. It also is <i>completely free</i>, and has
+a very loose copyright. Thus there is no need for megabytes of diffs
+like under Minix. 
+<p>
+<h2><a name=SECTION00012000000000000000>
+The L<small>INUX</small> copyright</a>
+</h2>
+<p>
+While being freely distributable, I do restrict the use of L<small>INUX</small> in a
+few ways:
+<ul>
+<li>You may freely copy and redistribute the source and binaries, <b>as long as:</b>
+<ul>
+<li>complete source is available. Thus binaries may not be distributed
+by themselves, even if you have made changes to them.
+</li>
+<li>you do not profit from the distribution. In fact even ``handling
+costs'' are not acceptable.
+</li>
+<li>you keep the appropriate copyrights intact.
+</li>
+</ul>
+</li>
+<li>You may change the source to your liking, but if you distribute
+parts of the new system (or just binaries), all the new code must be
+included.
+</li>
+<li>You may make small excepts from the code without including
+copyrights. This is up to you, but a reference to me or the code would
+be appreciated.
+</li>
+</ul>
+This should be loose enough not to cause any worry in anybody using or
+expanding the system. If you have a friend who really doesn't want the
+source, but just a working binary, you may of course give it to him
+without worrying whether I will sue you. Keep it between friends, though.
+<p>
+<h2><a name=SECTION00013000000000000000>
+Hardware/software needed to get L<small>INUX</small> running</a>
+</h2>
+<p>
+L<small>INUX</small> was written on a 386-AT running Minix. As L<small>INUX</small> is a real
+operating system, and goes directly to the hardware to do things, you
+have to have a very similar system to get it going without problems:
+<ul>
+<li>386-AT (PS/2's are different enough that things won't work)
+</li>
+<li>VGA or EGA screen hardware.
+</li>
+<li>Standard AT hard-disk interface, IDE disks work fine (in fact
+that's what I use).
+</li>
+<li>Normal real-mode BIOS. Some machines seem to use virtual-86 mode
+to run the bootup program, and on such machines L<small>INUX</small> won't boot up
+and run correctly.
+</li>
+</ul>
+<p>
+While L<small>INUX</small> will be expanded to be a self-sufficient system, Minix-386
+is currently needed to get the ball rolling. You need Minix to make the
+initial root file system, and to compile the OS binary. After that
+L<small>INUX</small> is a self-sufficient system, but Minix is recommended in order
+to make file system checking (<tt>fsck</tt>) and to recompile the system
+after making changes.
+<p>
+<h2><a name=SECTION00014000000000000000>
+Getting L<small>INUX</small></a>
+</h2>
+<p>
+L<small>INUX</small> can currently be gotten by anonymous <tt>ftp</tt> from <tt>`nic.funet.fi'</tt> in the
+directory <tt>'/pub/OS/Linux'</tt>. This directory contains the full source to the operating
+system, as well as a couple of binaries so that you can actually use the
+system.
+<p>
+<br><b>NOTE! The binaries are mostly GNU software,
+and are under a stricter copyright (the GNU copyleft) than the </b>L<small>INUX</small><b> sources. Thus you may not redistribute them without distributing their
+source, found in <tt>/pub/GNU</tt>. See any GNU software package for more
+information on the GNU copyleft.
+<br></b>
+<p>
+The various files found in this directory are:
+<ul>
+<li><tt>linux-0.03.tar.Z</tt>--complete source to the operating system,
+in a 16-bit compressed tar archive.
+</li>
+<li><tt>Linux.tex</tt>--L<sup><small>A</small></sup>T<small>E</small>X source for this file.
+</li>
+<li><tt>bash.Z</tt>--bash binary to run under L<small>INUX</small>. This binary should
+be put under tha name <tt>/bin/sh</tt> in the file system reserved for
+L<small>INUX</small> (see installation).
+</li>
+<li><tt>update.Z</tt>--update binary, to be put in <tt>/bin/update</tt>.
+</li>
+<li><tt>gccbin.tar.Z</tt>--GNU cc binaries needed to get a working
+compiler. This tarred archive contains the compiler, loader, assembler
+and support programs (nm, strip etc). It also contains a small library
+sufficient for most programs.
+</li>
+<li><tt>include.tar.Z</tt>--include-files necessary to get gcc working.
+</li>
+<li><tt>unistd.tar.Z</tt>--source to the unistd library routines (ie
+system call interface). With this you can build a bigger library by
+using system-independent library sources.
+</li>
+<li><tt>utilbin.tar.Z</tt>--binaries to various GNU utilities, including
+GNU fileutils, make and tar. Also contains the emacs-clone <tt>uemacs</tt>.
+</li>
+<li><tt>README, RELNOTES-0.01, INSTALLATION</tt>--ascii files containing
+some (somewhat out-of-date) information about L<small>INUX</small>.
+</li>
+</ul>
+<p>
+The absolute minimum needed to get a system going is the OS source and
+the bash and update binaries. You won't be doing much with just these
+though.
+<p>
+<h1><a name=SECTION00020000000000000000>
+Installation</a>
+</h1>
+<p>
+After you have gotten the necessary L<small>INUX</small> files, you need to compile
+the system and make a root directory. The necessary binaries need to be
+put in the root file system.
+Do this:
+<ol>
+<li>Back up your software. While L<small>INUX</small> never has destroyed any of my
+files, nothing is certain. Better safe than sorry.
+</li>
+<li>Choose/make a standard Minix HD-partition to be the new L<small>INUX</small> root
+file system.
+</li>
+<li>Make the necessary device nodes on the new root. L<small>INUX</small> uses the
+same type of nodes as Minix, so use the Minix <tt>mknod</tt> command to
+make the following devices:
+<ul>
+<li><tt>/dev/tty</tt>
+</li>
+<li><tt>/dev/tty[0-2]</tt>
+</li>
+<li><tt>/dev/hd[0-9]</tt>
+</li>
+</ul>
+Node numbers are the same as in Minix.
+</li>
+<li>Move the necessary files to the new root partition. The files
+should be in the following directories:
+<ul>
+<li><tt>/bin:</tt>
+<ul>
+<li><tt>sh</tt>, ie <tt>bash.Z</tt>.
+</li>
+<li><tt>update</tt>
+</li>
+</ul>
+</li>
+<li><tt>/usr/bin:</tt>
+<ul>
+<li>Contents of <tt>utilbin.tar.Z</tt>
+</li>
+</ul>
+</li>
+<li><tt>/usr/include:</tt>
+<ul>
+<li>Contents of <tt>include.tar.Z</tt>
+</li>
+</ul>
+</li>
+<li><tt>/usr/local/lib:</tt>
+<ul>
+<li>Contents of <tt>gccbin.tar.Z</tt>, excepting <tt>gcc</tt>
+</li>
+</ul>
+</li>
+<li><tt>/usr/local/bin:</tt>
+<ul>
+<li><tt>gcc</tt>
+</li>
+<li>links to files in <tt>/usr/local/lib</tt> of your choice. I link
+<tt>ld</tt>, <tt>as</tt>, <tt>nm</tt>, <tt>strip</tt> and <tt>size</tt> to their
+counterparts in <tt>/usr/local/lib/gcc-XXX</tt>.
+</li>
+</ul>
+</li>
+<li>Edit the <tt>linux/include/linux/config.h</tt> file for your system. 
+This file contains the system-specific information: memory space, disk
+types, root partition number (again the numbering is the same as in
+Minix), keyboard type (currently just US and Finnish) etc. 
+</li>
+<li>Compile the L<small>INUX</small> sources. A simple <tt>make</tt> should do the
+trick, after you have edited the <tt>makefile</tt>s to suit your system
+(ie, removed the <tt>-mstring-insns</tt> flag and changed the paths to suit
+you.) Users of <tt>gcc</tt> versions earlier than 1.40 will probably have
+to add <tt>gnulib</tt> to the `<tt>LIBS =</tt>'-line in the <tt>makefile</tt>. 
+</li>
+<li>Copy the resultant <tt>Image</tt>-file to a floppy (ie, <tt>cp Image
+/dev/PS0</tt> or similar.)
+</li>
+<li>Reboot with the new floppy. The startup screen should tell you
+that the system is booting (<tt>Loading system ...</tt>), then some vital
+root file system information (<tt>xxx/XXX inodes/blocks free</tt>),
+followed by a <tt>Ok.</tt> and the bash prompt (initially <tt>bash#</tt> if
+you have no <tt>.bashrc</tt> file).
+</li>
+</ul>
+<p>
+Hopefully you now have a functioning unix, and you are logged in as
+<tt>root</tt>. L<small>INUX</small> currently has no <tt>'init'</tt> process, and as soon
+as you log out, the system will <tt>sync</tt> and just wait. Use the
+three-finger-salute to reboot your machine.
+<p>
+</p></li>
+</ol>
+<p>
+<h1><a name=SECTION00030000000000000000>
+Things missing/incomplete in L<small>INUX</small></a>
+</h1>
+<p>
+While L<small>INUX</small> is meant to be a fully selfsufficient kernel, this is
+currently not the case. As already mentioned, you need Minix to set
+things up, and to check the file system once it's running. There are a
+number of other deficiencies:
+<ul>
+<li>Incomplete hardware-support. Some of the standard features of an
+AT are not currently supported. Most notably are floppy disk drives,
+making using L<small>INUX</small> for real work (backing up etc) currently not
+possible. Also some of the features of the serial lines aren't yet
+implemented (hard-wired to 2400bps, no hang-up notification etc).
+</li>
+<li>Incomplete standard C library. The <tt>libc.a</tt> found in the gcc
+distribution package is not complete, and I'm very much interested in
+freely distributable library functions.
+</li>
+<li>Some of the system calls are not fully implemented. This concerns
+mostly ``seldom-used'' features like debugging (yeah, who needs it
+anyway, don't all your programs work the first time <tt>:-)</tt> and some
+other features. 
+</li>
+<li>As mentioned, no <tt>login</tt> and <tt>init</tt> processes. Currently
+L<small>INUX</small> boots up in single-user mode, with the root as console-user.
+This is enough for some porting work, but not really practical.
+</li>
+<li>387-support is not yet implemented, although some skeleton
+routines are present. The gcc-binary found on <tt>`nic.funet.fi'</tt> will correctly use
+soft-float (ie emulation function calls) for the four basic math
+operations. 387-support will materialize as soon as a 387 finds its way
+into my computer. Hopefully in a month or two.
+</li>
+<li>None of the important system-administration commands has yet been
+written for L<small>INUX</small>. These include things like <tt>mkfs</tt>, <tt>format</tt>,
+<tt>fsck</tt>, <tt>mknod</tt> etc. Some of these need kernel features not yet
+implemented (<tt>format</tt>, <tt>mknod</tt>), some just need to be written.
+As with the library, I'd welcome any freely distributable files.
+</li>
+</ul>
+<p>
+As you can see, L<small>INUX</small> is as yet not a complete system. Your help is
+appreciated to make it better. I'm not interested in Minix-commands
+rewritten for L<small>INUX</small>, unless you have written them yourself from
+scratch. You are of course free (and encouraged) to use everything you
+have in your Minix-distribution for your own L<small>INUX</small>-system, but due to
+the Minix copyrights, they cannot be distributed to a wider audience.
+<p>
+Some of the probelms mentioned here will be fixed by me (ie serial
+lines/387/floppy support) as soon as possible, but I'm hoping to get
+help with the libraries etc. Bug-reports/patches and wish-lists will be
+appreciated, and if you actually have the patch to the problem, I'll try
+to implement it right away. Small changes will be sent out as patches to
+the mailing list and be set up on <tt>`nic.funet.fi'</tt>, but after heavy rewrites or
+bigger patches, the whole system will be updated at <tt>`nic.funet.fi'</tt>.
+<p>
+<h1><a name=SECTION00040000000000000000>
+Porting software for L<small>INUX</small></a>
+</h1>
+<p>
+L<small>INUX</small> was designed to make porting relatively easy. Thus the full
+<tt>termios</tt>-implementation, and the somewhat <tt>POSIX</tt> library. The
+(admittedly relativly few) programs I've ported posed no problems.
+<p>
+Even though L<small>INUX</small> resembles Minix a great deal, Minix programs are not
+generally easier to port than programs designed for some other unix.
+Thus I wouldn't recommend starting from a Minix-version of a particular
+program, but instead trying to port the ``virgin'' program from scratch.
+Being closer to SYSV than BSD means that most programs port easily when
+given a <tt>-DUSG</tt> or <tt>-DSYSV</tt> flag.
+<p>
+One of the more difficult problem in porting can be missing library
+functions. These must be written by you, or copied from some other
+source (Minix being one possibility for those that have it).
+Alternatively, some programs (notably GNU) have various flags making it
+possible to define which functions aren't available (the GNU fileutils
+will compile quite nicely, once a sufficient number of
+<tt>-DXXX_MISSING</tt> flags are added to the <tt>Makefile</tt>.)
+<p>
+<h2><a name=SECTION00041000000000000000>
+Programs already ported</a>
+</h2>
+<p>
+These programs have already been ported to L<small>INUX</small>:
+<ul>
+<li>GNU cc (gcc, cc1, cpp)
+</li>
+<li>GNU assembler (as386)
+</li>
+<li>GNU binutils (ld, ar, nm, size, strip, ranlib)
+</li>
+<li>GNU compress (16-bit)
+</li>
+<li>GNU tar
+</li>
+<li>GNU make
+</li>
+<li>GNU bash (Bourne Again SHell)
+</li>
+<li>GNU sed
+</li>
+<li>GNU bison (yacc-lookalike)
+</li>
+<li>GNU awk
+</li>
+<li>GNU fileutils (ls, cp, rm, mkdir, rmdir, tail etc)
+</li>
+<li>less
+</li>
+<li>uemacs
+</li>
+</ul>
+<p>
+All of the above sources can be found on <tt>`nic.funet.fi'</tt> (mostly in
+<tt>`/pub/gnu'</tt>), and most of the L<small>INUX</small>-binaries can be found in the
+directory <tt>'/pub/OS/Linux'</tt>. All of these programs compiled without changes, even
+though gcc (cc1) has some enhancements of my own. Mail me for
+diffs/sources, but try first to compile them yourself.
+<p>
+Additionally I have reports that GNU diff compiles cleanly and works.
+<p>
+<h1><a name=SECTION00050000000000000000>
+Technical help</a>
+</h1>
+<p>
+L<small>INUX</small> currently has a mailing-list, which you can subscribe to by
+mailing to the address: <tt><b>Linux-activists-request@niksula.hut.fi</b></tt>
+and asking to be included into the list. You can then ask questions by
+mailing them to <tt><b>Linux-activists@niksula.hut.fi</b></tt>, which will
+duplicate your question/answer/whatever and send them to all persons on
+the list. 
+<p>
+Note the difference between <tt>Linux-activists</tt> and
+<tt>Linux-activists-request</tt> -- the first sends mail to all persons on
+the list, the second is used only to subscribe and unsubscribe from the
+list.
+<p>
+Naturally, you can also mail me directly at <tt><b>torvalds@kruuna.helsinki.fi</b></tt>. I'll try to answer all questions within a
+day or two.
+<p>
+Although <tt>`nic.funet.fi'</tt> will probably be kept reasonably up-to-date, there are a
+few problems with it (ie, I cannot personally get to the files, but have
+to go through a couple of persons). Thus people on the mailing-list will
+get patches/binaries faster if they ask for them.
+<p>
+<h1><a name=SECTION00060000000000000000>
+Thanks</a>
+</h1>
+<p>
+I'd like to thank the academy ...
+<p>
+Seriously, this system never would have seen the light of day or would
+have been much worse without the help of some others. Bruce Evans
+helped me find the places needed to be changed in order for <tt>gcc</tt> to
+correctly handle floating point, and came with a lot of useful
+ideas/suggestions (and his Minix-386 was used to build the system). 
+Also, Earl Chew's <tt>estdio</tt> package was used for the standard
+IO-library. More freely distributable packages like this!
+<p>
+Alain W Black and Richard Tobin made the gcc for Minix, without which I
+couldn't have compiled the thing. GNU made most of the programs I use
+under L<small>INUX</small>. Alfred Leung sent the US keyboard patches. 
+<p>
+PS. ``Thanks'' to <tt>wirzeniu@kruuna.helsinki.fi</tt> for his
+``constructive'' criticism and ``witty'' comments. He was also my first
+<img width=14 height=14 align=BOTTOM border=0 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOBAMAAAGaYQB0AAAALVBMVEX///+ZmZl3d3fu7u4zMzPMzMwRERGqqqqIiIhmZmYAAABERETd3d0iIiK7u7sJGZgRAAAAAXRSTlMAQObYZgAAAFVJREFUeJxjYACDBBDBosMABQoMfBegTBaFAwwMF1gYMMDzCQwMzAqbGBiYGDYDuUqdmEqAgC8ATIkFsBUWMDAwLmXgBupgYLzAYKtsAGTwPGA4wwAArJINGm8ubMUAAAAASUVORK5CYII=" alt=$\alpha$>-tester, and should be given a medal for courage.
+<p>
+<h1><a name=SECTION00070000000000000000>
+About this document ...</a>
+</h1>
+ <strong>L<small>INUX</small>--a free unix-386 kernel</strong><p>
+This document was generated using the
+<a href=http://www.latex2html.org/><strong>LaTeX</strong>2<tt>HTML</tt></a> translator Version 2002 (1.62)
+<p>
+Copyright © 1993, 1994, 1995, 1996,
+<a href=http://cbl.leeds.ac.uk/nikos/personal.html>Nikos Drakos</a>, 
+Computer Based Learning Unit, University of Leeds.
+<br>
+Copyright © 1997, 1998, 1999,
+<a href=http://www.maths.mq.edu.au/~ross/>Ross Moore</a>, 
+Mathematics Department, Macquarie University, Sydney.
+<p>
+The command line arguments were: <br>
+ <strong>latex2html</strong> <tt>-local_icons -address gohigh@sh163.net -split 1 Linux.tex</tt>
+<p>
+The translation was initiated by root on 2004-05-08<hr>
+<img width=81 height=24 align=BOTTOM border=0 alt=next_inactive src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="81" height="24"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-1)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important"> 
+<img width=26 height=24 align=BOTTOM border=0 alt=up src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="26" height="24"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-2)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important"> 
+<img width=63 height=24 align=BOTTOM border=0 alt=previous src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="63" height="24"><rect fill-opacity="0"/></svg>' style="background-blend-mode:normal!important;background-clip:content-box!important;background-position:50% 50%!important;background-color:rgba(0,0,0,0)!important;background-image:var(--sf-img-3)!important;background-size:100% 100%!important;background-origin:content-box!important;background-repeat:no-repeat!important"> 
+<br>
+<address>
+jiong.zhao@tongji.edu.cn 
+</address>
