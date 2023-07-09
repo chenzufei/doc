@@ -1,0 +1,17 @@
+
+
+linux下glibc和libc是什么关系，我们平时在linux下编程用到的库函数是glibc还是libc?unistd.h 这个头文件是glibc的还是libc的？
+
+|
+我的理解，不一定正确，供参考：
+libc是ANSI C的标准头文件，提供了posix类型的头文件，比如stdio.h等
+glibc是GNU在linux下的C语言运行库，比libc有所扩展，unistd.h就是glibc的，C在windows下也需要运行库支持
+
+|
+libc实际上是一个泛指。凡是符合实现了C标准规定的内容，都是一种libc。
+C标准定义了很多头文件，数据结构，和一些接口。你花一晚上时间自己写代码实现了这些要求，也就是一个libc。
+
+glibc是GNU组织对libc的一种实现。它是unix/linux的根基之一。
+微软也有自己的libc实现，叫msvcrt。
+嵌入式行业里还常用uClibc，是一个迷你版的libc。
+
