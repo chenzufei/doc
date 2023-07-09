@@ -44,4 +44,12 @@ mkfs   mkfs.c
 ps     ps-0.97.tar.Z
 unistd.tar.Z  unistd是unix standard的简称,主要封装了一些glibc函数和系统调用相关的定义, 这个和glibc的区别是什么
 
+
+
+
+我个人理解：glibc是c语言库，里面部分封装了系统调用，比如内存申请和释放
+            unistd主要封装了系统调用，有的给glibc调用，有的给其他shell程序调用。
+
+
+
  
