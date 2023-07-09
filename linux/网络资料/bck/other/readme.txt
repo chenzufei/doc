@@ -21,3 +21,10 @@ libc           目前不清楚采用哪个版本， 目前找到两个： lib-0.
  
 ld,ar,nm      目前不清楚采用的是哪个软件，目前找到   binutils-1.9.tar.bz2
                                                      gas（GNU assembler）：gas-1.38.1.tar.bz2
+													 
+													 
+
+
+
+gnu coreutils 是原来的gnu shellutils, fileutils, textutils三部分合成的
+
