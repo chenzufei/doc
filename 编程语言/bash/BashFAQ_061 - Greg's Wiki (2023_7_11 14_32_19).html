@@ -1,0 +1,605 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> <html><!--
+ Page saved with SingleFile 
+ url: https://mywiki.wooledge.org/BashFAQ/061 
+ saved date: Tue Jul 11 2023 14:32:19 GMT+0800 (中国标准时间)
+--><meta charset=utf-8>
+<meta http-equiv=X-UA-Compatible content="IE=Edge">
+<meta name=viewport content="width=device-width, initial-scale=1">
+<style>:root{--sf-img-0: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH1QQaBywH5hnejwAAADV0RVh0Q29tbWVudAAoYykgMjAwNCBKYWt1YiBTdGVpbmVyCgpDcmVhdGVkIHdpdGggVGhlIEdJTVCQ2YtvAAAC7ElEQVQ4y62TXWhbZRyHn/ec95xjkzRpm+ajjW3W0KIsuHWyyMSrKagwFG+UKd1FZTgQb4ShoLdSEMX7XYgVR0HE6Y1MhjezMLWzlo12K67rXD+znCwfTXKSc5Kc1wvZxO3W5/r/ey7+/H6CBzj+3uwp4C1dyv0KLOX7DaVY0HTt7NzM1BcP3ov7wfe/nDR17ceJsWTiyIE0Y6koAcuiXG+ytmmzuLLJjY3CZSHEybmZqav/Ebz27ue5YLjnt1eOHhQHJ+KU603snQ1kKA49/eDYpBJRFla2OT+/chchnr0nkQDRaOin55/JiicyA5SKeQZHs0QGh3BabfKb60jfQ+s2eS6Xoeur6IVL188ATwNob3741UfJeH/4aG4cQ/PpyBBoAkNKTEMSsCSJaC9D8RixviC57KOkhweOvPHB2WkALRwJnDycHaVSLnLHDRAf3odS4CtAaAjfY7fU4PuLy1yYXyRiKfaPDwO8CiBrTjuWTvazcKNAZiKOr/79bL1S4qnJLEIIlFJs796h1WwyFIsAHAbQWl5HsywTLRSnUm9h1zwct0vN8fDqNkL8oxNCkIhFubp6E8uQAAMAUtc1v9poacHWDiFpUWgMUjRMOl2fVqnDZLuN63r0hoI4jsO+VIxC0wMoAUhD0/K3torDh8aTZEaGuL25zfzaHh4mTS/Ip99ewRJd3n75ALVajaVrN6E3DfA7gKa63XNLq1t4vgQgPZLi2KEYu4USd6sNqq7gdtnHtm2q1SqP9KdYXc8DfAOgL/187vx47qXTQtfNSNCgx9T5ZXGZ5byi1nDZa7jsOS65EZ3CnsdW2efa2s6vczNT79wvUqVQPHHxsv+d78OTjyX44UqVsmfidbq4XgfLEGxUFH8V2lz6Y60shDj10BaOTX/8+mhmZDYc6TMfzyRJDoaxLAOn1WbXrvDnrTxbO8XrQpfHH9rCPfoGxswXTpye1a3Ai+iyD4RQyu+oTntdCe2zrz+ZPsP/zd9wbDf3MdodlQAAAABJRU5ErkJggg==")}</style>
+<meta name=robots content=index,nofollow>
+<title>BashFAQ/061 - Greg's Wiki</title>
+<style>html{background-color:white;color:black;font-family:sans-serif;font-size:1em}body{margin:0}a{color:#0044B3}a:visited{color:#FF7BB3}a.nonexistent:visited,a.nonexistent{color:gray}a.http:before{content:var(--sf-img-0);margin:0 0.2em}a.https:before{content:var(--sf-img-0);margin:0 0.2em}li p{margin:.25em 0}a,img{border:0}table{margin:0.5em 0 0 0.5em;border-collapse:collapse}td{padding:0.25em 0.5em 0.25em 0.5em;border:1pt solid #ADB9CC}td p{margin:0;padding:0}.info{float:right;font-size:0.7em;color:gray}#pageinfo{margin-top:2em}#pagebottom{clear:both}hr{height:1pt;background-color:#9C9C9C;border:0}</style>
+<style media=screen>body{padding:0;border:0}a:link{color:#47f;text-decoration:none}a:link:hover,a:link:active{text-decoration:underline;color:green}a:visited{text-decoration:none;color:#04a}a:visited:hover{text-decoration:none;color:red}a.nonexistent:link{color:#666}a.nonexistent:hover{color:black;text-decoration:underline}.disabled{color:gray}#header{margin:1px;padding:1px;background:#e6eaf0;line-height:1.1em}#logo{float:left;margin:5px 10px;padding:0;font-size:1.4em;line-height:1em;font-weight:bold}#logo img{vertical-align:middle}#logo a{color:black;text-decoration:none}#username{display:block;margin:8px 12px 4px 12px;padding:0;font-size:0.82em}#searchform{margin:4px 0.5em 8px 0.5em;padding:0;font-size:0.82em;float:right;clear:right;text-align:right}#searchform input{font-size:100%;vertical-align:middle}#locationline{padding:0;font-size:100%;font-weight:normal;margin:0.25em 12px 5px 12px;clear:right}#pagelocation{font-size:1.5em;letter-spacing:0.05em}#navibar{clear:both;display:block;margin:0;padding:0 10px;font-size:0.82em;zoom:1}#navibar li{float:left;display:inline;margin:0 2px;padding:2px 5px;border:1px solid #acd;border-bottom:none;white-space:nowrap}#navibar li.wikilink{background:white}#navibar a,#navibar a:visited{color:black;text-decoration:none}#navibar li.current a{font-weight:bold}#navibar li:hover{background:#d6e4f9}#navibar li.current,#navibar li.current:hover{background:#81BBF2;border:1px solid #4d7da9;border-bottom:1px solid #81bbf2;margin-bottom:-1px}#pageline{clear:both;margin:0;padding:0;width:100%;height:4px;line-height:4px;border-bottom:1px solid #4d7da9;border-top:1px solid #4d7da9;background:#81BBF2}.editbar{clear:both;display:block;margin:0;padding:2px 8px;background:#d6e4f9;font-size:0.8em;border-bottom:1px solid #4d7da9;border-top:1px solid #4d7da9;margin-top:-1px}.editbar form,.editbar form div{display:inline;margin:0}.editbar select{font-size:100%;vertical-align:middle}.editbar li{display:inline;padding:0;margin:4px 6px}.editbar a,.editbar a:visited{color:#0044B3}#page{background-color:white;margin:0;padding:2px 20px 20px 20px}#footer{clear:both;margin:0;padding:0}#credits{margin:5px 10px;padding:0;text-align:center;font-size:0.88em;color:#6C7680}#credits li{display:inline;padding:0 2px;margin:0 4px}</style>
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/moin_static1911/modernized/css/msie.css">
+<![endif]-->
+<link rel=alternate title="Greg's Wiki: BashFAQ/061" href="https://mywiki.wooledge.org/BashFAQ/061?diffs=1&amp;show_att=1&amp;action=rss_rc&amp;unique=0&amp;page=BashFAQ%2F061&amp;ddiffs=1" type=application/rss+xml>
+<link rel=alternate type=application/wiki title=编辑 href="https://mywiki.wooledge.org/BashFAQ/061?action=edit">
+<link rel=Start href=https://mywiki.wooledge.org/EnglishFrontPage>
+<link rel=Alternate title=维基标记 href="https://mywiki.wooledge.org/BashFAQ/061?action=raw">
+<link rel=Alternate media=print title=打印视图 href="https://mywiki.wooledge.org/BashFAQ/061?action=print">
+<link rel=Up href=https://mywiki.wooledge.org/BashFAQ>
+<link rel=Search href=https://mywiki.wooledge.org/FindPage>
+<link rel=Index href=https://mywiki.wooledge.org/TitleIndex>
+<link rel=Glossary href=https://mywiki.wooledge.org/WordIndex>
+<link rel=Help href=https://mywiki.wooledge.org/HelpOnFormatting>
+<link type=image/x-icon rel="shortcut icon" href=data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAACtVBMVEUAAAAABAAICAgICAgIDAgQEBAQFBAQFBAQFBAYGBgYGBgYGBgYHBgYHBgYHBgYHBggICAgICAgICAgICAgJCAgJCAgJCAgJCAoKCgoKCgoLCgoLCgoLCgwMDAwMDAwMDAwNDA4ODg4ODg4ODg4PDg4PDg4PDg4PDhAQEBAQEBAQEBAQEBAREBAREBAREBISEhISEhISEhISEhITEhITEhITEhITEhQUFBQUFBQUFBQUFBQVFBQVFBQVFBQVFBYWFhYWFhYWFhYWFhYXFhYXFhYXFhYXFhgYGBgYGBgYGBgYGBgZGBgZGBgZGBgZGBoaGhoaGhoaGhoaGhobGhobGhobGhobGhwcHBwcHBwcHBwcHBwdHBwdHBwdHBwdHB4eHh4eHh4eHh4eHh4fHh4fHh4fHh4fHiAgICAgICAgICAgICAhICAhICAhICAhICIiIiIiIiIiIiIiIiIjIiIjIiIjIiIjIiQkJCQkJCQkJCQkJCQlJCQlJCQlJCQlJCYmJiYmJiYmJiYmJiYnJiYnJiYnJiYnJigoKCgoKCgoKCgoKCgpKCgpKCgpKCgpKCoqKioqKioqKioqKiorKiorKiorKiorKiwsLCwsLCwsLCwsLCwtLCwtLCwtLCwtLC4uLi4uLi4uLi4uLi4vLi4vLi4vLi4vLjAwMDAwMDAwMDAwMDAxMDAxMDAxMDAxMDIyMjIyMjIyMjIyMjIzMjIzMjIzMjIzMjQ0NDQ0NDQ0NDQ0NDQ1NDQ1NDQ1NDQ1NDY2NjY2NjY2NjY2NjY3NjY3NjY3NjY3Njg4ODg4ODg4ODg4ODg5ODg5ODg5ODg5ODo6Ojo6Ojo6Ojo6Ojo7Ojo7Ojo7Ojo7Ojw8PDw8PDw8PDw8PDw9PDw9PDw9PDw9PD4+Pj4+Pj4+Pj4+Pj4/Pj4/Pj4/Pj4/PjQfp2yAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB9IMEgInKTcxm/YAAAEbSURBVHicARAB7/4A2tvf0Nrj3t/i3+Hh5uDm4wDa29ncY93X3d3f4eLl5reKAN/d49V8TNLg1djm5toVZ3UA3Nvf5ZGdS7XApNm/sIN8fADe29zgbG6gn57GpLqYmXfQANzf2+SYj5aXirCbsqKDp74A3t7g5rPm4rmstcCtyOWtlQDf3ebXhqQAgI/GmAJ55bKVANve5sqHwbKtnr6mkZyEuZIA3Nzevpqpr7xnz8mAxYFHuADa3NWocJO5mXVHeLajhWy8AN7drp5wgmdWN2+9lE+TpOIA26mhl2eZiVt7ln9TSoiD5gDfn5KvbWhvZ1hTTsJsoX7UAMubnmWRrpFZrsKshsnOkOQA2M6ovJOnmsKTjqe4kbO95nFoq+DNY6ihAAAAAElFTkSuQmCC><link rel=canonical href=https://mywiki.wooledge.org/BashFAQ/061><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:; frame-src 'self' data:;"><style>img[src="data:,"],source[src="data:,"]{display:none!important}</style></head>
+<body lang=zh dir=ltr>
+<div id=header>
+<form id=searchform action=/BashFAQ/061>
+<div>
+<label for=searchinput style=display:none>搜索：</label>
+<input id=searchinput type=text name=value value=搜索 size=20 alt=Search class=disabled>
+<input id=titlesearch name=titlesearch type=submit value=标题 alt="Search Titles" disabled>
+<input id=fullsearch name=fullsearch type=submit value=正文 alt="Search Full Text" disabled>
+</div>
+</form>
+<div id=logo><a href=https://mywiki.wooledge.org/EnglishFrontPage><img src="data:image/png;base64,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/GMzLdsAAAAEZ0FNQQAAsY58+1GTAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAMAUExURQAAAP///7W3u4G78qinqKOjpaysrmJiY/7+/8PDxJ6en6SlqbW2uoKDhq6vsr/Bxry+w8TGy9PW3Lm7v7e5vbS2urO1ucHDx7u9wXx9f3+AgqCho8THzMLFys7R1srN0sfKz5OVmK+xtLK0t6eqrr3AxIG89oG79Hqs3XOdxnmhyHaZvHaZu3SVtWSAnFdqfmh+lFNkdW+BlFlmc15oclRcZFBXXmpzfFxiaGFnbVBUWFdbX3d5e05PUF9gYVhZWmZnaITD/4TF/4PD/oPD/YPB/IPB+4LA+oPA+YK/+IK+94TC+oK99oK99YG89IG884G783+58H227XWq3YPA9oK+9IC58Hy06Hqx5YG68YC573mu4YC47HOl1Xyy5IC36n+153Ghznan1oC15n2w4Hmq2WyYwn2u3Xus2nys2Huq1Xqn0Xqmz2yTuHagx2iNsGaKrHObwGWIqHigxnKWuGSEonaZuW+Qrm6OrF54kWyKpmqHoVhvhFtyiGiCmnOPqVtsfGN1hW6AkFFeal9temp0fWpze4XI/4XG/4bH/4bJ/3uz44O97XGTsIXK/4bK/4fM/4jL/4fP/4nU/1tdXjY3N7W1s/r6+ejo5+Dg38/PzktKSPTz8VFPTGFfXMLAvayppeHe2ldSTHx3cc3IwtLOyWVeVnZvZ4B5cWFXTWpgVm5kWlpTTG5mXnFpYUZBPKKYjmNdV4eAeaefl66noLqzrIyHgqCblpiTjrOuqW1qZ9rW0nFvbX99e9TRzubj4Li2tGVkY/v59+fl42loZ/38+/r5+PDv7u3s61tOQl5SR3tuYnJmW2ZcU2JZUXZsY31zanRrY0I8N0tFQFJMR5mOhWhhW11XUoF6dHBqZXJsZ4uEfsG5so6Ig2xnY2plYVlVUnhzb5uWksC7t/Pw7t3a2J6YlY+NjP37+vj29ff19JWSkWZlZWVkZObl5ePi4t3c3Jybm/7+/v39/fv7+/n5+fb29vHx8dbW1ry8vG9vb2xsbGZmZlJSUkxMTP///xWf3yUAAAEAdFJOU////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wBT9wclAAAJMUlEQVR42qxXe1BT6RU/997ckBeQECEYw6MuAl1FQDSgrMjDBoUEtdg7u9qZLrpW6djZHdfpTh2qu9uus9OK2t0qap21uqyPVKpjAgSEINooBhSfu4o8RMIjkEASIORBkv6R1w3K6s70/pPvO+d3Tr7n+X4/xAWv/oyXIl16IQ4AdjUXGdoQOgsOeVWCybPiZv4f7JIqZy4AKNFiGf7XgVXyTcw3S3CclrpwvzSzzyKxIPUAIHLRZLQoFbHncbtl++sT3B7jlZrTXkhkQXi1z1hot0pk0XcYFVpO+msS1M9RjD7OvxLCkAIAFFrsQKPKAQAIs6mobmHYGp3oxxIYnwuyeeJ6thQAgBjPvMqn30hdDLfpboNBJNde08SGzpqggvu0Y2mdOxyKR0Rn3q1th9S1wzGNYW4bYchvi0/Ql86SoK9dNUfBc0OhWEddvpYaEY0MaB52Mhu5HjOhXaPLTI3yB6G+1s1OpoLf5I0nDHRd4oqcdCYjvmhd4bkcowcl5TXxFczOmy+PYFJ+LDa5Wea1x209+8edQQNcPXBdrBHlv+ft9oVIVt1/vkPsPRMUr1l5LGax2hcP/K7LHOYk6AH0MBodpuasbvC6ZPRlrmMMyYwp1GXGprRKffHEOq4uZlzv6eFrdnTk+actbU2JzawLTNBsLUtW++IJyWKo62SNeftjKA2nZxH+DOrkMmszeQ0M9X/+4JoMYLX9F4A0KrPWPRFE7wge8UUEP6npvZ9TV5+TB4AoGwEk2Sf/JGL7E9yT0a6Fgq7g+pN8MBuXq7/flZQe0+UfdNh0b+eu0XBJeygGZt3K6nAwZlskKb5FrE/rGOBB6n+Hh6ttHQlbdD178+I5XVy9f68osei3Ez+MCrlMSNw2HC7cTSj4UfUizwgsVz7fdhsyKsIP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" alt="MoinMoin Logo"></a></div>
+<div id=username><a href="https://mywiki.wooledge.org/BashFAQ/061?action=login" id=login rel=nofollow>登录</a></div>
+<h1 id=locationline>
+<span id=pagelocation><span class=pagepath><a href=https://mywiki.wooledge.org/BashFAQ>BashFAQ</a></span><span class=sep>/</span><a href=https://mywiki.wooledge.org/BashFAQ/061>061</a></span>
+</h1>
+<ul id=navibar>
+<li class=wikilink><a href=https://mywiki.wooledge.org/BashGuide>BashGuide</a><li class=wikilink><a href=https://mywiki.wooledge.org/BashFAQ>BashFAQ</a><li class=wikilink><a href=https://mywiki.wooledge.org/RecentChanges>RecentChanges</a><li class=wikilink><a href=https://mywiki.wooledge.org/FindPage>FindPage</a><li class=wikilink><a href=https://mywiki.wooledge.org/HelpContents>HelpContents</a><li class=current><a href=https://mywiki.wooledge.org/BashFAQ/061>BashFAQ/061</a></li>
+</ul>
+<div id=pageline><hr style=display:none></div>
+<ul class=editbar><li><a href="https://mywiki.wooledge.org/BashFAQ/061?action=edit&amp;editor=text" name=texteditlink rel=nofollow>编辑</a><li class=toggleCommentsButton style=display:none><li><a class=nbinfo href="https://mywiki.wooledge.org/BashFAQ/061?action=info" rel=nofollow>信息</a><li><a class=nbattachments href="https://mywiki.wooledge.org/BashFAQ/061?action=AttachFile" rel=nofollow>附件</a><li>
+<form class=actionsmenu method=GET action=/BashFAQ/061>
+<div>
+ 
+ <select name=action>
+        <option value=show selected>更多操作：<option value=raw>源码</option>
+<option value=print>打印视图</option>
+<option value=RenderAsDocbook>输出Docbook格式</option>
+<option value=refresh>删除缓存</option>
+<option value=show disabled class=disabled>------------------------</option>
+<option value=SpellCheck>拼写检查</option>
+<option value=LikePages>相似网页</option>
+<option value=LocalSiteMap>本站地图</option>
+<option value=show disabled class=disabled>------------------------</option>
+<option value=RenamePage disabled class=disabled>改名</option>
+<option value=DeletePage disabled class=disabled>删除</option>
+<option value=show disabled class=disabled>------------------------</option>
+<option value=show disabled class=disabled>订阅</option>
+<option value=show disabled class=disabled>------------------------</option>
+<option value=show disabled class=disabled>删除垃圾广告</option>
+<option value=show disabled class=disabled>恢复成此版本</option>
+<option value=PackagePages>网页打包</option>
+<option value=SyncPages>同步网页</option>
+<option value=show disabled class=disabled>------------------------</option>
+<option value=Load>加载</option>
+<option value=Save>保存</option>
+<option value=SlideShow>SlideShow</option>
+    </select>
+ 
+ 
+</div>
+</form>
+</ul>
+</div>
+<div id=page lang=en dir=ltr>
+<div dir=ltr id=content lang=en><span class=anchor id=top></span>
+<span class=anchor id=line-1></span><p class=line867><span class=anchor id=faq61></span> <span class=anchor id=line-2></span>
+<h2 id=Is_there_a_list_of_which_features_were_added_to_specific_releases_.28versions.29_of_Bash.3F>Is there a list of which features were added to specific releases (versions) of Bash?</h2>
+<span class=anchor id=line-3></span><p class=line874>Here are some links to official Bash documentation: <span class=anchor id=line-4></span><span class=anchor id=line-5></span><ul><li><p class=line891><a class=http href=http://tiswww.case.edu/php/chet/bash/NEWS>NEWS</a>: a file tersely listing the notable changes between the current and previous versions <span class=anchor id=line-6></span></p><li><p class=line891><a class=http href=http://tiswww.case.edu/php/chet/bash/CHANGES>CHANGES</a>: a "complete" bash change history (back to 2.0 only) <span class=anchor id=line-7></span></p><li><p class=line891><a class=http href=http://tiswww.case.edu/php/chet/bash/COMPAT>COMPAT</a>: compatibility issues between bash3 and previous versions <span class=anchor id=line-8></span><span class=anchor id=line-9></span></p></ul><p class=line862>A more extensive list than the one below can be found at <a class=http href=http://wiki.bash-hackers.org/scripting/bashchanges>http://wiki.bash-hackers.org/scripting/bashchanges</a> <span class=anchor id=line-10></span><span class=anchor id=line-11></span><p class=line867>
+<h3 id=Notable_changes_in_released_bash_versions>Notable changes in released bash versions</h3>
+<span class=anchor id=line-12></span><div><table><tbody><tr> <td><p class=line891><strong>Feature</strong> </p></td>
+ <td><p class=line891><strong>Added in version</strong> </p></td>
+ <td><p class=line891><strong>Copied/inspired from</strong> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-13></span><p class=line862> READLINE_ARGUMENT (variable) </p></td>
+ <td><p class=line862> 5.2 (2022) </p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-14></span><p class=line862> varredir_close (shopt) </p></td>
+ <td><p class=line862> 5.2 (2022) </p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-15></span><p class=line862> printf %Q </p></td>
+ <td><p class=line862> 5.2 (2022) </p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-16></span><p class=line862> noexpand_translations (shopt) </p></td>
+ <td><p class=line862> 5.2 (2022) </p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-17></span><p class=line862> ${var@k} </p></td>
+ <td><p class=line862> 5.2 (2022) </p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-18></span><p class=line862> patsub_replacement (shopt) </p></td>
+ <td><p class=line862> 5.2 (2022) </p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-19></span><p class=line862> globskipdots (shopt) </p></td>
+ <td><p class=line862> 5.2 (2022) </p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-20></span><p class=line862>BASH_REMATCH is no longer readonly </p></td>
+ <td><p class=line862> 5.1 (2020) </p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-21></span><p class=line862>PROMPT_COMMAND may be an array </p></td>
+ <td><p class=line862> 5.1 (2020) </p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-22></span><p class=line862>SRANDOM (variable) </p></td>
+ <td><p class=line862> 5.1 (2020) </p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-23></span><p class=line862>wait -p varname </p></td>
+ <td><p class=line862> 5.1 (2020) </p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-24></span><p class=line862>declare -I </p></td>
+ <td><p class=line862> 5.1 (2020) </p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-25></span><p class=line862>${var@U}, ${var@u}, ${var@L}, ${var@K} </p></td>
+ <td><p class=line862> 5.1 (2020) </p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-26></span><p class=line862>BASH_ARGV0 (variable) </p></td>
+ <td><p class=line862> 5.0 (2019) </p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-27></span><p class=line862>EPOCHSECONDS, EPOCHREALTIME (variables) </p></td>
+ <td><p class=line862>5.0 (2019) </p></td>
+ <td><p class=line862>zsh (2003, 2011) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-28></span><p class=line862>wait -f </p></td>
+ <td><p class=line862>5.0 (2019) </p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-29></span><p class=line862>history -d allows negative offsets </p></td>
+ <td><p class=line862>5.0 (2019) </p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-30></span><p class=line862>assoc_expand_once (shopt) </p></td>
+ <td><p class=line862>5.0 (2019) </p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-31></span><p class=line862>localvar_inherit (shopt) </p></td>
+ <td><p class=line862>5.0 (2019) </p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-32></span><p class=line862>--pretty-print (invocation option) </p></td>
+ <td><p class=line862>5.0 (2019) </p></td>
+ <td><p class=line862>native </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-33></span><p class=line862>assoc=(key1 value1 key2 value2) assoc+=(key value) </p></td>
+ <td><p class=line862> 5.0 (2019) </p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-34></span><p class=line862>PS0 (variable) </p></td>
+ <td><p class=line862>4.4 (2016) </p></td>
+ <td><p class=line862>native </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-35></span><p class=line891><a href=https://mywiki.wooledge.org/BashLoadableBuiltins>loadable builtin</a> deployment infrastructure </p></td>
+ <td><p class=line862>4.4 (2016) </p></td>
+ <td><p class=line862>ksh93 (1993) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-36></span><p class=line862>mapfile/readarray -d </p></td>
+ <td><p class=line862>4.4 (2016) </p></td>
+ <td><p class=line862>native </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-37></span><p class=line862>--help for builtins </p></td>
+ <td><p class=line862>4.4 (2016) </p></td>
+ <td><p class=line862>ksh93 (2001, possibly earlier) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-38></span><p class=line862>${var@a}, ${var@A}, ${var@E}, ${var@P}, ${var@Q}</p></td>
+ <td><p class=line862>4.4 (2016) </p></td>
+ <td><p class=line862>mksh (2012) for the syntax, zsh (1990s) for the feature </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-39></span><p class=line862>local - </p></td>
+ <td><p class=line862>4.4 (2016) </p></td>
+ <td><p class=line862>Almquist shell (1989) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-40></span><p class=line862>$! and wait for process substitutions </p></td>
+ <td><p class=line862>4.4 (2016) </p></td>
+ <td><p class=line862>native </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-41></span><p class=line862>wait -n </p></td>
+ <td><p class=line862>4.3 (2014) </p></td>
+ <td><p class=line862>native </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-42></span><p class=line862>test -R </p></td>
+ <td><p class=line862>4.3 (2014) </p></td>
+ <td><p class=line862>ksh93 (1993) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-43></span><p class=line862>test -v 'array[element]' (bug fix) </p></td>
+ <td><p class=line862>4.3 (2014) </p></td>
+ <td><p class=line862>ksh93 (1993) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-44></span><p class=line862>declare/typeset -n and associated changes to ${!ref} and for..in </p></td>
+ <td><p class=line862>4.3 (2014) </p></td>
+ <td><p class=line862>ksh93 (1993) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-45></span><p class=line862>array[-idx] (in assignments, read, unset, etc) </p></td>
+ <td><p class=line862>4.3 (2014) </p></td>
+ <td><p class=line862>zsh (1990s) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-46></span><p class=line862>printf %(fmt)T uses -1 as default argument instead of 0 </p></td>
+ <td><p class=line862>4.3 (2011) </p></td>
+ <td><p class=line862>ksh93 (1999) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-47></span><p class=line862>quotes in the replacement part of ${var/pat/"$rep"} are no longer literal </p></td>
+ <td><p class=line862>4.3 (2011) </p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-48></span><p class=line862>\uXXXX and \UXXXXXXXX </p></td>
+ <td><p class=line862>4.2 (2011) </p></td>
+ <td><p class=line862>zsh (2001) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-49></span><p class=line862>declare -g </p></td>
+ <td><p class=line862>4.2 (2011) </p></td>
+ <td><p class=line862>zsh (1990s) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-50></span><p class=line862>test -v </p></td>
+ <td><p class=line862>4.2 (2011) </p></td>
+ <td><p class=line862>ksh93 (2009) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-51></span><p class=line862>printf %(fmt)T </p></td>
+ <td><p class=line862>4.2 (2011) </p></td>
+ <td><p class=line862>ksh93 (1999) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-52></span><p class=line862>${array[-idx]} and ${var:start:-len} </p></td>
+ <td><p class=line862>4.2 (2011) </p></td>
+ <td><p class=line862>zsh (1990s) and native </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-53></span><p class=line862>lastpipe (shopt) </p></td>
+ <td><p class=line862>4.2 (2011) </p></td>
+ <td><p class=line862>ksh (1980s) default behaviour there </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-54></span><p class=line862>read -N </p></td>
+ <td><p class=line862>4.1 (2010) </p></td>
+ <td><p class=line862>ksh93 (2003) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-55></span><p class=line862>{var}&gt; or {var}&lt; etc. (FD variable assignment) </p></td>
+ <td><p class=line862>4.1 (2010) </p></td>
+ <td><p class=line862>developed jointly with ksh93 and zsh </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-56></span><p class=line862>syslog history (compile option) </p></td>
+ <td><p class=line862>4.1 (2010) </p></td>
+ <td><p class=line862>native </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-57></span><p class=line862>complete -D (allowing dynamically loaded completions) </p></td>
+ <td><p class=line862>4.1 (2010)</p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-58></span><p class=line862>BASH_XTRACEFD (variable) </p></td>
+ <td><p class=line862>4.1 (2010) </p></td>
+ <td><p class=line862>native </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-59></span><p class=line862>${@:offset[:length]} includes $0 </p></td>
+ <td><p class=line862>4.0 (2009) </p></td>
+ <td><p class=line862>ksh </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-60></span><p class=line862>;&amp; and ;;&amp; fall-throughs for case </p></td>
+ <td><p class=line862>4.0 (2009) </p></td>
+ <td><p class=line862>ksh93 (1993) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-61></span><p class=line862>associative arrays </p></td>
+ <td><p class=line862>4.0 (2009) </p></td>
+ <td><p class=line862>ksh93 (1993) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-62></span><p class=line891>&amp;&gt;&gt; and |&amp; </p></td>
+ <td><p class=line862>4.0 (2009) </p></td>
+ <td><p class=line862>native and csh (1970s) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-63></span><p class=line862>command_not_found_handle (function) </p></td>
+ <td><p class=line862>4.0 (2009) </p></td>
+ <td><p class=line862>native </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-64></span><p class=line862>compopt (builtin) </p></td>
+ <td><p class=line862> 4.0 (2009) </p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-65></span><p class=line862>coproc (keyword) </p></td>
+ <td><p class=line862>4.0 (2009) </p></td>
+ <td><p class=line862>ksh (1980s), zsh (1990) for the coproc keyword </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-66></span><p class=line862>globstar (shopt) </p></td>
+ <td><p class=line862>4.0 (2009) </p></td>
+ <td><p class=line862>zsh (1992), ksh93 (2005) for the name of the option </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-67></span><p class=line862>mapfile/readarray (builtin) </p></td>
+ <td><p class=line862>4.0 (2009) </p></td>
+ <td><p class=line862>native </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-68></span><p class=line862>${var,} ${var,,} ${var^} ${var^^} </p></td>
+ <td><p class=line862>4.0 (2009) </p></td>
+ <td><p class=line862>native </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-69></span><p class=line862>{009..012} (leading zeros in brace expansions) </p></td>
+ <td><p class=line862>4.0 (2009) </p></td>
+ <td><p class=line862>zsh (1995) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-70></span><p class=line862>{x..y..incr} </p></td>
+ <td><p class=line862>4.0 (2009) </p></td>
+ <td><p class=line862>ksh93 (2005) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-71></span><p class=line862>read -t 0 (test input availability) </p></td>
+ <td><p class=line862>4.0 (2009) </p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-72></span><p class=line862>read -t 0.5 </p></td>
+ <td><p class=line862>4.0 (2009) </p></td>
+ <td><p class=line862>zsh (2003) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-73></span><p class=line862>read -i </p></td>
+ <td><p class=line862>4.0 (2009) </p></td>
+ <td><p class=line862>zsh (vared) (1990s) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-74></span><p class=line862>x+=string array+=(string) </p></td>
+ <td><p class=line862>3.1 (2005) </p></td>
+ <td><p class=line862>ksh93 (2000) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-75></span><p class=line862>printf -v var </p></td>
+ <td><p class=line862>3.1 (2005) </p></td>
+ <td><p class=line862>native </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-76></span><p class=line862>nocasematch (shopt) </p></td>
+ <td><p class=line862>3.1 (2005) </p></td>
+ <td><p class=line862>native </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-77></span><p class=line862>{x..y} </p></td>
+ <td><p class=line862>3.0 (2004) </p></td>
+ <td><p class=line862>zsh (1995) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-78></span><p class=line862>${!array[@]} </p></td>
+ <td><p class=line862>3.0 (2004) </p></td>
+ <td><p class=line862>ksh93 (1993) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-79></span><p class=line862>\xXX sequences in $'...' </p></td>
+ <td><p class=line862>3.0 (2004) </p></td>
+ <td><p class=line862> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-80></span><p class=line862>[[ =~ </p></td>
+ <td><p class=line862>3.0 (2004) </p></td>
+ <td><p class=line862>native </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-81></span><p class=line862>BASH_REMATCH </p></td>
+ <td><p class=line862>3.0 (2004) </p></td>
+ <td><p class=line862>native </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-82></span><p class=line862>RETURN (trap) </p></td>
+ <td><p class=line862>3.0 (2004) </p></td>
+ <td><p class=line862>native </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-83></span><p class=line862>pipefail (option) </p></td>
+ <td><p class=line862>3.0 (2004) </p></td>
+ <td><p class=line862>ksh93 </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-84></span><p class=line862>failglob (shopt) </p></td>
+ <td><p class=line862>3.0 (2004) </p></td>
+ <td><p class=line862>native </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-85></span><p class=line862>printf %q produces $'...' </p></td>
+ <td><p class=line862>2.05b (2002) </p></td>
+ <td><p class=line862>ksh93 (1993) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-86></span><p class=line862>[n]&gt;&amp;word- and [n]&lt;&amp;word- </p></td>
+ <td><p class=line862>2.05b (2002) </p></td>
+ <td><p class=line862>ksh93 </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-87></span><p class=line891>&lt;&lt;&lt; </p></td>
+ <td><p class=line862>2.05b (2002) </p></td>
+ <td><p class=line862>zsh (1991) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-88></span><p class=line862>printf %n </p></td>
+ <td><p class=line862>2.05a (2001) </p></td>
+ <td><p class=line862>ksh93 </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-89></span><p class=line862>i++ </p></td>
+ <td><p class=line862>2.04 (2000) </p></td>
+ <td><p class=line862>ksh93 (1993) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-90></span><p class=line862>for ((;;)) </p></td>
+ <td><p class=line862>2.04 (2000) </p></td>
+ <td><p class=line862>ksh93 (1993) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-91></span><p class=line862>/dev/fd/N, /dev/tcp/host/port, etc. </p></td>
+ <td><p class=line862>2.04 (2000) </p></td>
+ <td><p class=line862>ksh93 (1993) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-92></span><p class=line862>read -t, -n, -d and -s </p></td>
+ <td><p class=line862>2.04 (2000) </p></td>
+ <td><p class=line862>ksh93 (1993) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-93></span><p class=line862>a=(*.txt) file expansion </p></td>
+ <td><p class=line862>2.03 (1999) </p></td>
+ <td><p class=line862>ksh93 (1993) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-94></span><p class=line862>extglob (shopt) </p></td>
+ <td><p class=line862>2.02 (1998) </p></td>
+ <td><p class=line862>ksh (1980s) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-95></span><p class=line862>[[ </p></td>
+ <td><p class=line862>2.02 (1998) </p></td>
+ <td><p class=line862>ksh (1980s) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-96></span><p class=line862>printf (builtin) </p></td>
+ <td><p class=line862>2.02 (1998) </p></td>
+ <td><p class=line862>ksh (1980s) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-97></span><p class=line862>$(&lt; filename) </p></td>
+ <td><p class=line862>2.02 (1998) </p></td>
+ <td><p class=line862>ksh (1980s) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-98></span><p class=line862>** (exponentiation) </p></td>
+ <td><p class=line862>2.02 (1998) </p></td>
+ <td><p class=line862>zsh (1994) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-99></span><p class=line862>\xNN </p></td>
+ <td><p class=line862>2.02 (1998) </p></td>
+ <td><p class=line862>zsh (1994 or earlier) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-100></span><p class=line862>(( )) </p></td>
+ <td><p class=line862>2.0 (1996) </p></td>
+ <td><p class=line862>ksh (1980s) </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-101></span><p class=line862>arrays </p></td>
+ <td><p class=line862>2.0 (1996) </p></td>
+ <td><p class=line862>csh (1979), zsh (1991) for array=(assignment) syntax </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-102></span><p class=line862>$'...' (new quoting syntax) </p></td>
+ <td><p class=line862>2.0 (1996) </p></td>
+ <td><p class=line862>ksh93 (1993) </p></td>
+</tr>
+</table></div><span class=anchor id=line-103></span><span class=anchor id=line-104></span><span class=anchor id=line-105></span><p class=line867>
+<h3 id=List_of_bash_releases_and_other_notable_events>List of bash releases and other notable events</h3>
+<span class=anchor id=line-106></span><div><table><tbody><tr> <td><p class=line891><strong>Release</strong> </p></td>
+ <td><p class=line891><strong>Date</strong> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-107></span><p class=line862>bash-5.2 </p></td>
+ <td><p class=line891><a class=https href=https://lists.gnu.org/archive/html/bug-bash/2022-09/msg00056.html>2022-09-26</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-108></span><p class=line862>bash-5.1 </p></td>
+ <td><p class=line891><a class=https href=https://lists.gnu.org/archive/html/bug-bash/2020-12/msg00002.html>2020-12-07</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-109></span><p class=line862>bash-5.0 </p></td>
+ <td><p class=line891><a class=http href=http://lists.gnu.org/archive/html/bug-bash/2019-01/msg00063.html>2019-01-07</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-110></span><p class=line862>bash-4.4 </p></td>
+ <td><p class=line891><a class=http href=http://lists.gnu.org/archive/html/bug-bash/2016-09/msg00018.html>2016-09-16</a> </p></td>
+</tr>
+<tr> <td style=width:30%><span class=anchor id=line-111></span><p class=line862>Shellshock patches are released for bash-2.05b through bash-4.3 </p></td>
+ <td><p class=line862>2014-09-24 to 2014-10-05 </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-112></span><p class=line862>bash-4.3 </p></td>
+ <td><p class=line891><a class=http href=http://lists.gnu.org/archive/html/bug-bash/2014-02/msg00081.html>2014-02-27</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-113></span><p class=line862>bash-4.2 </p></td>
+ <td><p class=line891><a class=http href=http://lists.gnu.org/archive/html/bug-bash/2011-02/msg00134.html>2011-02-14</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-114></span><p class=line862>bash-4.1 </p></td>
+ <td><p class=line891><a class=http href=http://lists.gnu.org/archive/html/bug-bash/2010-01/msg00000.html>2010-01-02</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-115></span><p class=line862>bash-4.0 </p></td>
+ <td><p class=line891><a class=http href=http://lists.gnu.org/archive/html/bug-bash/2009-02/msg00164.html>2009-02-23</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-116></span><p class=line862>bash-3.2 </p></td>
+ <td><p class=line891><a class=http href=http://lists.gnu.org/archive/html/bug-bash/2006-10/msg00057.html>2006-10-12</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-117></span><p class=line862>bash-3.1 </p></td>
+ <td><p class=line891><a class=http href=http://lists.gnu.org/archive/html/bug-bash/2005-12/msg00018.html>2005-12-09</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-118></span><p class=line862>bash-3.0 </p></td>
+ <td><p class=line891><a class=http href=http://lists.gnu.org/archive/html/bug-bash/2004-07/msg00255.html>2004-07-27</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-119></span><p class=line862>bash-2.05b </p></td>
+ <td><p class=line891><a class=http href=http://lists.gnu.org/archive/html/bug-bash/2002-07/msg00169.html>2002-07-17</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-120></span><p class=line862>bash-2.05a </p></td>
+ <td><p class=line891><a class=http href=http://lists.gnu.org/archive/html/bug-bash/2001-11/msg00086.html>2001-11-15</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-121></span><p class=line862>bash-2.05 </p></td>
+ <td><p class=line891><a class=http href=http://lists.gnu.org/archive/html/bug-bash/2001-04/msg00047.html>2001-04-09</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-122></span><p class=line862>bash-2.04 </p></td>
+ <td><p class=line891><a class=http href=http://ftp.gnu.org/gnu/bash>http://ftp.gnu.org/gnu/bash</a> puts it around 2000-03-21 </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-123></span><p class=line862>bash-2.03 </p></td>
+ <td><p class=line891><a class=https href=https://groups.google.com/d/msg/gnu.bash.bug/3t0I8b4C848/PD66z8r966oJ>1999-02-19</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-124></span><p class=line862>bash-2.02 </p></td>
+ <td><p class=line891><a class=https href=https://groups.google.com/d/msg/gnu.bash.bug/wjK6DNyivbo/o_fzmlMXuh4J>1998-04-20</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-125></span><p class=line862>bash-2.01 </p></td>
+ <td><p class=line891><a class=https href=https://groups.google.com/d/msg/gnu.bash.bug/1YaFSUY31SI/QeaBAOzEfNUJ>1997-06-06</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-126></span><p class=line862>bash-2.0 </p></td>
+ <td><p class=line891><a class=https href=https://groups.google.com/d/msg/gnu.bash.bug/WE1Fa--vKw0/l9S7xZFP44AJ>1996-12-23</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-127></span><p class=line862>bash-1.14 </p></td>
+ <td><p class=line891><a class=https href=https://groups.google.com/d/msg/gnu.bash.bug/oOfJhX8Es74/H1fYjpvy9toJ>1994-06-02</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-128></span><p class=line862>bash-1.13 </p></td>
+ <td><p class=line891><a class=https href=https://groups.google.com/d/msg/gnu.bash.bug/KSGrYVYsxEE/ldpQw6UHd5wJ>1993-09-03</a> </p></td>
+</tr>
+<tr> <td colspan=2 style=text-align:center><span class=anchor id=line-129></span><p class=line862>Looks like Chet Ramey takes over as maintainer between 1.12 and 1.13 </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-130></span><p class=line862>bash-1.12 </p></td>
+ <td><p class=line891><a class=https href=https://groups.google.com/d/msg/gnu.bash.bug/LqJlezOLPmw/fWEU5dx63swJ>1992-01-26</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-131></span><p class=line862>bash-1.11 </p></td>
+ <td><p class=line891><a class=https href=https://groups.google.com/d/msg/gnu.bash.bug/mtiSajVLFWQ/IO7lRZZaXuEJ>1992-01-10</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-132></span><p class=line862>bash-1.10 </p></td>
+ <td><p class=line862>First mention found at <a class=https href=https://groups.google.com/d/msg/gnu.bash.bug/2JCACpoweVo/VcbTlUED2L8J>1991-10-07</a>, so some time before that </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-133></span><p class=line862>bash-1.09 </p></td>
+ <td><p class=line862>First mention found at <a class=https href=https://groups.google.com/d/msg/gnu.bash.bug/r2mPhpzeFA0/uEe2lEymOOAJ>1991-06-02</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-134></span><p class=line862>bash-1.08 </p></td>
+ <td><p class=line891><a class=https href=https://groups.google.com/d/msg/gnu.bash.bug/6IYJUqnlXbo/PtB74jsSdBEJ>1991-05-22</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-135></span><p class=line862>bash-1.07 </p></td>
+ <td><p class=line862>likely <a class=https href=https://groups.google.com/d/msg/gnu.bash.bug/IbPT47bVNak/TgM9oOgwDOEJ>1991-02-01</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-136></span><p class=line862>bash-1.06 </p></td>
+ <td><p class=line862>This is a tough one. There was apparently a "bootleg" version of 1.06, so this requires more digging </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-137></span><p class=line862>bash-1.05 </p></td>
+ <td><p class=line891><a class=https href=https://groups.google.com/d/msg/gnu.bash.bug/sdSJj38zObM/9OJmiMwsEeYJ>1990-03-03</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-138></span><p class=line862>bash-1.04 </p></td>
+ <td><p class=line862>First mention found at <a class=https href=https://groups.google.com/d/msg/gnu.bash.bug/OEAOMxIgXNM/_0MmMKhwBUoJ>1989-11-07</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-139></span><p class=line862>bash-1.03 </p></td>
+ <td><p class=line891><a class=https href=https://groups.google.com/d/msg/gnu.bash.bug/0BNtldi31-I/0z3R_gKQQ5AJ>1989-09-02</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-140></span><p class=line862>bash-1.02 </p></td>
+ <td><p class=line862>First mention found at <a class=https href=https://groups.google.com/d/msg/gnu.bash.bug/n6oK8g9ZT_s/ZoiyAtJ0PmgJ>1989-07-09</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-141></span><p class=line862>bash-1.01 </p></td>
+ <td><p class=line891><a class=https href=https://groups.google.com/d/msg/gnu.bash.bug/cDuxRblQx4c/KsqoeeDF7KgJ>1989-06-23</a> </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-142></span><p class=line862>bash-1.00 </p></td>
+ <td><p class=line862>Hard to search for ... </p></td>
+</tr>
+<tr> <td><span class=anchor id=line-143></span><p class=line862>bash-0.99 </p></td>
+ <td><p class=line862> First beta release <a class=https href=https://groups.google.com/g/gnu.announce/c/hvhlR1Vn1P0/m/NYwp-4_0CaUJ>1989-06-7</a> </p></td>
+</tr>
+</table></div><span class=anchor id=line-144></span><span class=anchor id=bottom></span></div><p id=pageinfo class=info lang=zh dir=ltr>BashFAQ/061 (2023-06-02 19:41:10由<span title="emanuele6 @ 37.179.248.128[37.179.248.128]"><a class=nonexistent href=https://mywiki.wooledge.org/emanuele6 title="emanuele6 @ 37.179.248.128[37.179.248.128]">emanuele6</a></span>编辑)</p>
+<div id=pagebottom></div>
+</div>
+<div id=footer>
+<ul class=editbar><li><a href="https://mywiki.wooledge.org/BashFAQ/061?action=edit&amp;editor=text" name=texteditlink rel=nofollow>编辑</a><li class=toggleCommentsButton style=display:none><li><a class=nbinfo href="https://mywiki.wooledge.org/BashFAQ/061?action=info" rel=nofollow>信息</a><li><a class=nbattachments href="https://mywiki.wooledge.org/BashFAQ/061?action=AttachFile" rel=nofollow>附件</a><li>
+<form class=actionsmenu method=GET action=/BashFAQ/061>
+<div>
+ 
+ <select name=action>
+        <option value=show selected>更多操作：<option value=raw>源码</option>
+<option value=print>打印视图</option>
+<option value=RenderAsDocbook>输出Docbook格式</option>
+<option value=refresh>删除缓存</option>
+<option value=show disabled class=disabled>------------------------</option>
+<option value=SpellCheck>拼写检查</option>
+<option value=LikePages>相似网页</option>
+<option value=LocalSiteMap>本站地图</option>
+<option value=show disabled class=disabled>------------------------</option>
+<option value=RenamePage disabled class=disabled>改名</option>
+<option value=DeletePage disabled class=disabled>删除</option>
+<option value=show disabled class=disabled>------------------------</option>
+<option value=show disabled class=disabled>订阅</option>
+<option value=show disabled class=disabled>------------------------</option>
+<option value=show disabled class=disabled>删除垃圾广告</option>
+<option value=show disabled class=disabled>恢复成此版本</option>
+<option value=PackagePages>网页打包</option>
+<option value=SyncPages>同步网页</option>
+<option value=show disabled class=disabled>------------------------</option>
+<option value=Load>加载</option>
+<option value=Save>保存</option>
+<option value=SlideShow>SlideShow</option>
+    </select>
+ 
+ 
+</div>
+</form>
+</ul>
+<ul id=credits>
+<li><a href=http://moinmo.in/ title="This site uses the MoinMoin Wiki software.">MoinMoin Powered</a><li><a href=http://moinmo.in/Python title="MoinMoin is written in Python.">Python Powered</a><li><a href=http://moinmo.in/GPL title="MoinMoin is GPL licensed.">GPL licensed</a><li><a href="http://validator.w3.org/check?uri=referer" title="Click here to validate this page.">Valid HTML 4.01</a></li>
+</ul>
+</div>
