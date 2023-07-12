@@ -1,5 +1,13 @@
 
 
+sh    Bourne Shell               由Stephen Bourne于1975年开发。
+bash  Bourne Again Shell         bash-0.99    First beta release 1989-06-7     Brian Fox(布莱恩·福克斯)
+
+
+
+
+
+
 oids=$(daos cont list-objects -p p1  -c c1)
 for oid in $oids; do daos obj delete  -p p1  -c c1 --oid=$oid ; done
 
