@@ -1,10 +1,24 @@
 
 汇编(Assembly)
 
+汇编语言风格       汇编器
+1、AT&T汇编语法：  GNU Assembler (GAS)是基于此                    linux采用
+2、Intel汇编语法： Microsoft Macro Assembler (MASM)               windows采用
+                   Netwide Assembler (NASM)
 
-AT&T汇编语法： GNU Assembler (GAS)
-Intel汇编语法： Microsoft Macro Assembler (MASM)
-Netwide Assembler (NASM)使用的汇编语法和Intel汇编语法类似
+
+
+
+
+
+AT&T汇编                                  Intel汇编         
+寄存器前加%符号                           无符号
+立即数前加$符号                           无符号
+16进制数使用0x前缀                        使用h后缀
+源在前，目标在后                          目标在前，源在后       
+间接寻址使用()表示                        间接寻址使用[]表示
+操作位数指令+l、w、b                      +dword  ptr
+
 
 
 汇编语言指令大致分为以下几类
