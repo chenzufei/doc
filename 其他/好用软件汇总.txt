@@ -12,7 +12,7 @@ uml画图：staruml
 文本编辑器:Notpad++
 比较软件: winmerge,beyond compare 4
 vpn: clash
-ssh客户端：mobaxterm, xmanager(商业)
+ssh客户端：mobaxterm, xmanager(商业),Tabby(开源)
 思维导图：xmind（大名鼎鼎）   mindmaster（商业软件）  MindManager（老品牌） FreeMind（界面太简单）
 便利贴：SimpleStickyNotes
 窗口管理：Qdir
