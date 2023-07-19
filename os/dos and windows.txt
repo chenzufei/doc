@@ -1,0 +1,48 @@
+
+
+70年代末比较流行的小型微型计算机系统是CP/M，由Gary Kildall在1974年左右编写并由其创办的公司开始销售
+
+X86-DOS，这是当时西雅图电脑产品公司（SCP,Seattle Computer Products）一名24岁的程序员Tim Paterson花费了四个月时间编写的操作系统，微软以五万美元的代价向西雅图公司购买了本产品的全部版权。
+
+1981年，IBM 5150采用了X86-DOS
+
+1981年到2000年，MS-DOS一直在更新，直到最后一版MS-DOS 8.0出现之后，微软看到了windows的未来，于是就放弃了DOS。
+
+MS-DOS操作系统版本1.1和2.0源代码已经放开（非商业用途）。
+
+
+CP/M是用FORTRAN编写
+MS-DOS用汇编
+
+
+
+
+1981年4月30日   MS-DOS 1.00
+1981年12月11日  MS-DOS 1.14
+1983年          MS-DOS 2.0随IBM XT发布
+1984年          MS-DOS 3.0增加了对新的IBM AT支持，并开始支持局域网。
+1988年          MS-DOS 4.0 增加了DOS Shell 操作环境
+1991年          MS-DOS 5.0发行，增加了DOS Shell功能
+1993年          MS-DOS 6.x 
+1995年          MS-DOS 7.0 增加了长文件名支持
+2000年          MS-DOS 8.0，MS-DOS的最后一个版本。
+
+1985年，windows 1.0，16位操作系统，图形界面，多任务。
+1987年，windows 2.0，加入了窗口重叠的功能。
+1990年，windows 3.0，文字变成图标
+1992年，windows 3.1，windows注册表，屏保等
+1995年，windows 95，颠覆性的，经典的窗口。
+1998年，windows 98（95升级版）
+2001年，windows xp
+2006年，windows vista
+2009年，windows 7
+2015年，windows 10
+2022年，windows 11
+
+
+
+2020年9月25日晚间,国外科技媒体突然爆出消息称，微软历史上最受欢迎的操作系统Windows XP的源代码，疑似遭到大规模泄漏。
+泄漏人士将Windows XP的源代码和微软其他类似的系统代码打包成一个BT种子文件，公开放在MEGA网盘，文件名为“nt5src.7z”，大小2.93GB。
+泄露人士将此消息在4ch上发布
+研究人员称,这份资料包含了MSDOS3.30、MSDOS6.0、Windows2000、WindowsCE3、WindowsCE4、WindowsCE5、WindowsEmbedded7、WindowsEmbeddedCE、WindowsNT3.5、WindowsNT4、原始Xbox源码转储。
+

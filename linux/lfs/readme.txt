@@ -1,5 +1,10 @@
-Linux From Scratch
-
+Linux From Scratch           一切从源码开始
+                             scratch  搔痒
+                             from scratch  从无到有
+							 
+构造lfs分两大步： 1、构建临时编译环境：（1）构建一个不依赖宿主系统的工具链(Binutils、GCC和Glibc： 编译器、汇编器、连接器、库文件以及一些有用的软件)
+                                       （2）利用工具链构建其他基本工具
+                  2、构建lfs系统
 
 lfs官网  http://www.linuxfromscratch.org
 中文     https://lctt.github.io/LFS-BOOK/
