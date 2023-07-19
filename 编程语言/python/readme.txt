@@ -13,9 +13,14 @@
 （2）只有容器（列表、字典、类、元组）才会出现循环引用，整数、字符串、浮点数等不会。
 
 
-
-Python源码剖析
-
-
 任何对象创建都会加入到refchain
 container对象还会加入可收集对象链表
+
+
+
+Python源码剖析： 这本书很老了，讲的还是Python2.4版本。
+《Python 源码深度剖析》：https://www.imooc.com/read/76
+
+
+
+
