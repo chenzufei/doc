@@ -2,13 +2,13 @@
 
 PDF阅读器:edge,SumatraPDF,极光pdf阅读器
 画图软件：draw.io
-uml画图：staruml
+uml画图：staruml，plantuml
 录屏：    FastStone Capture
 屏幕录制和视频直播软件： OBS
 视频播放： PotPlayer
-文件搜索： everythin
+文件搜索： everything
 解压缩:7-Zip
-代码编辑器: VSCode
+代码编辑器: VSCode, pycharm(python), goland(go), source insight(c/c++), IntelliJ IDEA/eclipse(java)
 文本编辑器:Notpad++
 比较软件: winmerge,beyond compare 4
 vpn: clash
