@@ -1,11 +1,15 @@
 
 
-sh    Bourne Shell               由Stephen Bourne于1975年开发。
+bsh   Bourne Shell               由Stephen Bourne于1975年开发。
 bash  Bourne Again Shell         bash-0.99    First beta release 1989-06-7     Brian Fox(布莱恩·福克斯)
 
 
-
-
+之前贝尔实验室：Multics项目，Shell的概念、用途、从内核中分离出来单独成为一个用户程序都是在Multics时期有的。
+UNIX诞生于1969年，由Bell Labs的Dennis Ritchie和Ken Thompson编写。
+Thompson在UNIX的开发过程中，就写了thompson shell，在1971年，随第一个版本的UNIX发布。路径就是/bin/sh。
+在1979年发布的第7版本UNIX中，sh换成了同是贝尔实验室的Stephen Bourne编写的Bourne sh，后来缩写就是bsh。
+在1980年代，Richard Stallman发起了自由软件运动，在GNU项目中，Brian Fox重写了Shell的部分，取名为Bourne Again Shell，读起来像Born again，重生的意思
+当前我们遇到的绝大多数Linux发行版，默认的Shell都是Bash。
 
 
 oids=$(daos cont list-objects -p p1  -c c1)
@@ -367,3 +371,12 @@ http://ftp.gnu.org/gnu/bash/
 
 
 https://brennan.io/2015/01/16/write-a-shell-in-c/
+
+
+
+其实除了Bash以外，还有不少Shell
+csh，Bill Joy大神写的，语法类似于C语言
+tcsh，csh的增强版，FreeBSD中的默认Shell
+ksh，AIX中的默认Shell
+dash，新版本Debian/Ubuntu的默认Shell
+
