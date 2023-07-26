@@ -58,4 +58,36 @@ linux内核重要组成部分：
 
 
 
+IPC（Inter-Process Communication，进程间通信）
+1、管道 pipe
+   pipe      //fd[0]为读端 fd[1]为写端
+   write
+   read
+   close
+   
+   mkfifo
+   
+2、信号 signal
+3、信号量semaphore
+   sem_open
+   sem_wait
+   sem_post
+   sem_close
+   sem_unlink
+5、消息队列 message
+6、共享内存：
+   ftok     申请IPC的key 
+   shmget   创建
+   shmat    映射
+   shmdt、shmctl
+7、套接字 socket
 
+
+查询命令：ipcs -m    共享内存    shmid
+          ipcs -q    消息队列    msqid
+          ipcs -s    显示信号量  semid
+
+
+
+互斥量 mutex
+信号量 semaphore
