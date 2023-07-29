@@ -30,6 +30,7 @@ git config --global user.email "xxx@gmail.com" 全局用户邮箱
 git config --global http://alias.co checkout # 别名
 git config --global core.editor "vim" # 设置Editor使用vim
 git config --global color.ui true
+git config --global --list
 git config -l
 
 
@@ -107,4 +108,52 @@ ln -s /path/to/src /path/to/dst             linux
 # Clone a project with submodules
 git clone --recursive
 
-git checkout -b some_branch origin/some_branch
+
+git checkout -b xxx  创建xxx分支并切换（git branch xxx; git checkout xxx）
+git branch xxx       创建xxx分支，但不切换
+
+参数	        功能	                                                场景
+–hard	        清空工作区与缓存区	                                    放弃目标版本后所有的修改
+–soft	        保留工作区与缓存区，但是把版本之间的差异存放在缓存区	合并多个commit
+–mixed(或缺省)	保留工作区清空缓存区，把版本之间的差异存放在工作区	    1、有错误的commit需要修改；2、git reset HEAD清空缓存区
+
+git reset用于撤销操作
+git reset --hard   HEAD/HEAD^/xxx
+          --soft
+          --mixed
+		  
+		  
+		  
+git checkout:
+切换分支                 git checkout xxx(branch name)
+放弃对某个文件的修改     git checkout xxx(file)
+新建分支                 git checkout -b xxx(branch name)
+
+
+git push    将本地分支push到远程仓库
+
+
+rebase：使用rebase，那么其他开发人员想看主分支的历史，就不是原来的历史了
+merge：大部分公司其实会禁用rebase，不管是拉代码还是push代码统一都使用merge
+        合并commit与普通commit不一样
+git merge --no-ff <branch>
+
+
+git rebase -i合并多次提交的实现
+git reset：当commit的内容有错误，需要回撤到之前的某个版本时。
+
+
+Git一般划分为3个区域，working directory 为当前工作区、stage/index为暂存区（git add后的代码就会存储在这部分）、repository则记录提交的历史（git comment后的代码会存在这里）
+
+stage：阶段 staging area就是index
+stash:隐藏  将工作区和索引区的文件暂时存放在堆上。
+
+
+文件类型，是git cat-file -t
+查看文件内容是git cat-file -p
+
+
+
+
+其他
+git rm --cached xxx
