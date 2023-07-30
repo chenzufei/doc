@@ -90,6 +90,61 @@ $ENV{NAME}指令就可以调用系统的环境变量了
 jenkins+cmake持续构建C++项目
 
 
+重要指令：
+cmake_minimum_required(VERSION 3.20)          CMake最低版本要求
+project(hello)                                定义工程名称
+set(src hello.cc main.cc)                     显示定义变量
+include_directories(dir1 dir2)                定义文件搜索路径（相当于g++编译器的-l参数）
+link_directories(dir1 dir2)                   库文件搜索路径（相当于g++编译器的-L参数）
+add_library(libname [SHARED|STATIC|MODULE|EXCLUED_FROM_ALL] source1 source2)                                   生成库文件
+add_complie_options(-Wall -std=c++11 -o2)                          添加编译参数
+add_executable(exename source1 source2)       生成可执行文件
+target_link_libraries                         为target添加需要连接的共享库（相当于g++编译器的-I参数）
+add_subdirectory                              添加子目录
+aux_source_directory(. SRC)                   目录下所有源码文件存储在变量中                  
+
+
+cmake常用变量
+CMAKE_C_FLAGS    gcc编译选项
+CMAKE_CXX_FLAGS  g++编译选项       set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+
+CMAKE_BUILD_TYPE   编译类型(Debug, Release)  set(CMAKE_BUILD_TYPE Debug)
+
+CMAKE_BINARY_DIR   
+PROJECT_BINARY_DIR
+BINARY_DIR
+
+CMAKE_SOURCE_DIR
+PROJECT_SOURCE_DIR
+SOURCE_DIR
+
+CMAKE_C_COMPILER
+CMAKE_CXX_COMPILER
+EXECUTABLE_OUTPUT_PATH
+LIBRARY_OUTPUT_PATH
+
+
+
+最小CMake工程
+cmake_minimum_required(VERSION 3.0)
+project(hello)
+add_executable(hello main.cc)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
