@@ -3,3 +3,6 @@ ssh-keygen -t rsa     //生成私有密钥id_rsa和公有密钥id rsa.pub两个�
 
 2、用ssh-copy-id将公钥复制到远程机器中
 ssh-copy-id remote_ip
+
+
+或者将id rsa.pub内容拷贝追加到/root/.ssh/authorized_keys
