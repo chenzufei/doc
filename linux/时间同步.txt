@@ -27,6 +27,9 @@ timedatectl set-ntp no                          #设置是否启用ntp    sudo t
 timedatectl set-timezone America/New_York       #设置时区，比如Asia/Shanghai
 timedatectl list-timezones                      #列出所有可用的时区
 
+tzselect
+
+
 3、chrony
 Chrony是一个开源的自由软件，centos8中默认使用chronyd来做时间服务。
 chrony既可作时间服务器服务端，也可作客户端。
